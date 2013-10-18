@@ -1,4 +1,4 @@
-Instructions to buld the portal
+Instructions to build the portal
 
 cd dharaportalproject
 mvn install
