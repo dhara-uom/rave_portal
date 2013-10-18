@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/annotations-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/tomcat-i18n-fr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/catalina-ha.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/el-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/catalina-ant.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/jasper-el.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/catalina.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/catalina-tribes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/tomcat-i18n-es.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/jasper.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/tomcat-dbcp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/ecj-4.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/tomcat-i18n-ja.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/cargo/installs/apache-tomcat-6.0.37/apache-tomcat-6.0.37/lib/tomcat-coyote.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

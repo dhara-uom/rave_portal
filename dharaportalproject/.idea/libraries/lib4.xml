@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/tomcat6x/shared/lib/activation-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dharaportalproject-portal/target/tomcat6x/shared/lib/mail-1.4.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
