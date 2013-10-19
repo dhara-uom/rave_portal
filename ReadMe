@@ -1,0 +1,10 @@
+Instructions to build the portal
+
+cd dharaportalproject
+mvn install
+
+cd dharaportalproject-portal
+mvn cargo:run
+
+Copy the .wgt files in the widget folder into
+dharaportalproject-portal > target > tomcat6x > webapps > wookie > deploy
