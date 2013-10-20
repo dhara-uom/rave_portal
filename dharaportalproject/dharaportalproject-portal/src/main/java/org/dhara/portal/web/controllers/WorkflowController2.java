@@ -31,8 +31,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.util.WebUtils;
+import org.apache.airavata.workflow.model.wf.Workflow;
+import org.dhara.portal.web.airavataService.AiravataClientAPIService;
+import org.dhara.portal.web.helper.WorkflowHelper;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
 
 import static org.apache.rave.portal.web.controller.admin.AdminControllerUtil.*;
 
@@ -41,7 +51,7 @@ import static org.apache.rave.portal.web.controller.admin.AdminControllerUtil.*;
  */
 @Controller
 
-public class GatewayController {
+public class WorkflowController2 {
 
    private static final String SELECTED_ITEM = "gateway";
 
@@ -49,27 +59,32 @@ public class GatewayController {
     private UserService userService;
 
     @Autowired
-    private CategoryService categoryService;
+    private AiravataClientAPIService airavataClientAPIService;
 
-    @RequestMapping(value = {"/admin/gateway", "/admin/gateway/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/workflow", "/admin/workflow/"}, method = RequestMethod.GET)
     public String getCategories(@RequestParam(required = false) final String action,
-                                @RequestParam(required = false) String referringPageId,Model model){
-        addNavigationMenusToModel(SELECTED_ITEM, model, referringPageId);
+                                @RequestParam(required = false) String referringPageId,Model model,HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception{
 
-        List<Category> gateways = categoryService.getAllList();
+        List<Workflow> workflowList = airavataClientAPIService.getAllWorkflows();
 
-        model.addAttribute("gateway", gateways);
-        // put category object in the model to allow creating categories from view
-        model.addAttribute(ModelKeys.CATEGORY, new CategoryImpl());
-        // add tokencheck attribute for creating new category
-        model.addAttribute(ModelKeys.TOKENCHECK, AdminControllerUtil.generateSessionToken());
-        model.addAttribute(ModelKeys.REFERRING_PAGE_ID, referringPageId);
-
-        if (isCreateDeleteOrUpdate(action)) {
-            model.addAttribute("actionresult", action);
+        List<WorkflowHelper> workflowHelpers=new ArrayList<WorkflowHelper>();
+        for(int index = 0; index<workflowList.size();index++){
+            WorkflowHelper helper = new WorkflowHelper();
+            Workflow workflow = workflowList.get(index);
+            helper.setName(workflow.getName());
+           //TODO get author and created data (need to implement methods)
+            workflowHelpers.add(helper);
         }
 
-        return "store";
+Map paramMap = WebUtils.getParametersStartingWith(httpServletRequest, "d-");
+        if (paramMap.size() == 0) {
+            WebUtils.setSessionAttribute(httpServletRequest, "workflows", workflowHelpers);
+        }
+ model.addAttribute("message", workflowHelpers);
+
+        
+
+        return "workflows";
     }
 
 }

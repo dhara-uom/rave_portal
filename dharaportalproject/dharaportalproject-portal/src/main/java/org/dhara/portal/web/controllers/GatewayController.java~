@@ -69,7 +69,7 @@ public class GatewayController {
             model.addAttribute("actionresult", action);
         }
 
-        return ViewNames.ADMIN_CATEGORIES;
+        return "error2";
     }
 
 }
