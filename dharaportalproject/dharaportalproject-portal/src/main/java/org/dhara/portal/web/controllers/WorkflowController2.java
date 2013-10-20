@@ -43,7 +43,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
 import static org.apache.rave.portal.web.controller.admin.AdminControllerUtil.*;
 
 /**
@@ -53,7 +52,7 @@ import static org.apache.rave.portal.web.controller.admin.AdminControllerUtil.*;
 
 public class WorkflowController2 {
 
-   private static final String SELECTED_ITEM = "gateway";
+    private static final String SELECTED_ITEM = "gateway";
 
     @Autowired
     private UserService userService;
@@ -63,28 +62,27 @@ public class WorkflowController2 {
 
     @RequestMapping(value = {"/admin/workflow", "/admin/workflow/"}, method = RequestMethod.GET)
     public String getCategories(@RequestParam(required = false) final String action,
-                                @RequestParam(required = false) String referringPageId,Model model,HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception{
+                                @RequestParam(required = false) String referringPageId, Model model, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
 
         List<Workflow> workflowList = airavataClientAPIService.getAllWorkflows();
 
-        List<WorkflowHelper> workflowHelpers=new ArrayList<WorkflowHelper>();
-        for(int index = 0; index<workflowList.size();index++){
+        List<WorkflowHelper> workflowHelpers = new ArrayList<WorkflowHelper>();
+        for (int index = 0; index < workflowList.size(); index++) {
             WorkflowHelper helper = new WorkflowHelper();
             Workflow workflow = workflowList.get(index);
             helper.setName(workflow.getName());
-           //TODO get author and created data (need to implement methods)
+            //TODO get author and created data (need to implement methods)
             workflowHelpers.add(helper);
         }
 
-Map paramMap = WebUtils.getParametersStartingWith(httpServletRequest, "d-");
+        Map paramMap = WebUtils.getParametersStartingWith(httpServletRequest, "d-");
         if (paramMap.size() == 0) {
             WebUtils.setSessionAttribute(httpServletRequest, "workflows", workflowHelpers);
         }
- model.addAttribute("message", workflowHelpers);
+        model.addAttribute("message", workflowHelpers);
 
-        
 
-        return "workflows";
+        return "a";
     }
 
 }
