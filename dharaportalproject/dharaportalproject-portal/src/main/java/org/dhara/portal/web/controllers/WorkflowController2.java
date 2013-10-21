@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package org.apache.rave.portal.web.controller.admin;
+package org.dhara.portal.web.controllers;
 
 import org.apache.rave.model.Category;
 import org.apache.rave.model.User;
@@ -52,16 +52,13 @@ import static org.apache.rave.portal.web.controller.admin.AdminControllerUtil.*;
 
 public class WorkflowController2 {
 
-    private static final String SELECTED_ITEM = "gateway";
-
-    @Autowired
-    private UserService userService;
+    private static final String SELECTED_ITEM = "workflow";
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;
 
     @RequestMapping(value = {"/admin/workflow", "/admin/workflow/"}, method = RequestMethod.GET)
-    public String getCategories(@RequestParam(required = false) final String action,
+    public String handleRequestInternal(@RequestParam(required = false) final String action,
                                 @RequestParam(required = false) String referringPageId, Model model, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
 
         List<Workflow> workflowList = airavataClientAPIService.getAllWorkflows();
@@ -82,7 +79,7 @@ public class WorkflowController2 {
         model.addAttribute("message", workflowHelpers);
 
 
-        return "a";
+        return "workflow2";
     }
 
 }
