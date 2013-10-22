@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/jsp/includes/taglibs.jsp" %>
 <html>
 <head>
     <style type="text/css">
@@ -19,6 +20,16 @@
 
 </head>
 <body>
+<fmt:setBundle basename="messages"/>
+
+<fmt:message key="${pageTitleKey}" var="pagetitle"/>
+<rave:navbar pageTitle="${pagetitle}"/>
+<div class="container-fluid adminUI" id="preference_detail">
+    <div class="span2">
+        <div class="tabs-respond">
+            <rave:admin_tabsheader/>
+        </div>
+    </div>
 <div class="row">
 
     <div class="span10">
@@ -46,7 +57,7 @@
 
     </div>
 
-
+</div>
 </div>
 
 

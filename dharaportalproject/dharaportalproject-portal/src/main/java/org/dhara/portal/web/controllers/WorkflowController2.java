@@ -42,8 +42,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import static org.apache.rave.portal.web.controller.admin.AdminControllerUtil.*;
+import static org.dhara.portal.web.controllers.GatewayControllerUtil.*;
 
 /**
  * Controller for the admin pages
@@ -52,15 +51,16 @@ import static org.apache.rave.portal.web.controller.admin.AdminControllerUtil.*;
 
 public class WorkflowController2 {
 
-    private static final String SELECTED_ITEM = "workflow";
+    private static final String SELECTED_ITEM = "workflows";
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;
 
-    @RequestMapping(value = {"/admin/workflow", "/admin/workflow/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/workflows", "/admin/workflows/"}, method = RequestMethod.GET)
     public String handleRequestInternal(@RequestParam(required = false) final String action,
                                 @RequestParam(required = false) String referringPageId, Model model, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
 
+        addNavigationMenusToModel(SELECTED_ITEM, model, referringPageId);
         List<Workflow> workflowList = airavataClientAPIService.getAllWorkflows();
 
         List<WorkflowHelper> workflowHelpers = new ArrayList<WorkflowHelper>();
@@ -79,7 +79,7 @@ public class WorkflowController2 {
         model.addAttribute("message", workflowHelpers);
 
 
-        return "workflow2";
+        return "templates.admin.workflows";
     }
 
 }

@@ -38,7 +38,7 @@ public class ExperimentController2 {
 
 
 
-    @RequestMapping(value = {"/admin/experiment", "/admin/experiment/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/experiments", "/admin/experiments/"}, method = RequestMethod.GET)
     public String handleRequestInternal(@RequestParam(required = false) final String action,
                                            @RequestParam(required = false) String referringPageId, Model model, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
 
@@ -78,7 +78,7 @@ public class ExperimentController2 {
         }
 
         model.addAttribute("message", experimentHelpers);
-        return "experiments2";
+        return "experiments";
     }
 
     public ArrayList<ExperimentHelper> reverseList(List<ExperimentHelper> list) {
