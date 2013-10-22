@@ -5,8 +5,12 @@ import org.apache.airavata.workflow.model.wf.WorkflowInput;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.json.simple.JSONObject;
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
@@ -23,7 +27,8 @@ public class WorkflowExecutionServlet extends javax.servlet.http.HttpServlet {
 
     }
 
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    @RequestMapping(value = {"/connect/ExecutionServlet", "/connect/ExecutionServlet/"}, method = RequestMethod.GET)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         PrintWriter pw = response.getWriter();
         String workflowId=request.getParameter("workflowId");
         try {
