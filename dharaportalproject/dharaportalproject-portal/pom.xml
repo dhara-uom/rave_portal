@@ -39,10 +39,15 @@
   override on command line with -Dcargo.debug.suspend=y -->
         <cargo.debug.suspend>n</cargo.debug.suspend>
         <cargo.args/>
-<airavataVersion>0.7</airavataVersion>
+        <airavataVersion>0.7</airavataVersion>
     </properties>
 
     <dependencyManagement>
+        <!--<packagingExcludes>
+            WEB-INF/lib/jackson-databind-2.1.5.jar
+        </packagingExcludes>-->
+
+
         <dependencies>
             <!--
                 spring-security-web has dependencies on older spring 3.0.x.RELEASE jars,
@@ -58,7 +63,6 @@
     </dependencyManagement>
 
     <dependencies>
-
         <!-- servlet-api, jsp-api and el-api api must be scope provided -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -194,8 +198,15 @@
             <version>${javax.mail.version}</version>
         </dependency>
 
-<!--dhara-->
-<!-- Workflow Invoker-->
+        <!--dhara-->
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <!-- Workflow Invoker-->
         <dependency>
             <groupId>org.apache.airavata</groupId>
             <artifactId>airavata-rest-client</artifactId>
@@ -231,16 +242,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-<dependency>
-            <groupId>org.apache.airavata</groupId>
-            <artifactId>airavata-workflow-model-core</artifactId>
-            <version>0.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.airavata</groupId>
-            <artifactId>airavata-jpa-registry</artifactId>
-            <version>0.7</version>
-        </dependency>
+
         <dependency>
             <groupId>org.apache.airavata</groupId>
             <artifactId>airavata-workflow-model-core</artifactId>
@@ -251,12 +253,22 @@
             <artifactId>airavata-jpa-registry</artifactId>
             <version>0.7</version>
         </dependency>
-<dependency>
+        <dependency>
+            <groupId>org.apache.airavata</groupId>
+            <artifactId>airavata-workflow-model-core</artifactId>
+            <version>0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.airavata</groupId>
+            <artifactId>airavata-jpa-registry</artifactId>
+            <version>0.7</version>
+        </dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>4.2.1.Final</version>
         </dependency>
-<dependency>
+        <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>

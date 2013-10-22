@@ -35,16 +35,16 @@
                 </tr>
                 </thead>
 
-                <c:forEach items="${message}" var="experiment" varStatus="loop">
+                <c:forEach items="${message}" var="workflow" varStatus="loop">
                     <tr>
                         <td>
-                            <c:out value="${experiment.name}"></c:out>
+                            <c:out value="${workflow.name}"></c:out>
                         </td>
                         <td>
-                            <c:out value="${experiment.updatedTime}"></c:out>
+                           <%-- <c:out value="${experiment.updatedTime}"></c:out>--%>
                         </td>
                         <td>
-                            <c:out value="${experiment.author}"></c:out>
+                            <c:out value="${workflow.description}"></c:out>
                         </td>
                     </tr>
                 </c:forEach>
