@@ -45,6 +45,12 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+
+    <servlet>
+        <servlet-name>ExecutionServlet</servlet-name>
+        <servlet-class>org.dhara.portal.web.northToAiravataConnector.WorkflowExecutionServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <!-- Handles all requests into the application -->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -52,12 +58,10 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <servlet>
+    <servlet-mapping>
         <servlet-name>ExecutionServlet</servlet-name>
-        <servlet-class>org.dhara.portal.web.northToAiravataConnector.WorkflowExecutionServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
+        <url-pattern>/connect/*</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/app/*</url-pattern>
@@ -69,10 +73,6 @@
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ExecutionServlet</servlet-name>
-        <url-pattern>/connect/*</url-pattern>
     </servlet-mapping>
 
     <servlet>
