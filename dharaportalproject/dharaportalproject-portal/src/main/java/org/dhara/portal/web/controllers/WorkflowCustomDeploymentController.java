@@ -40,7 +40,7 @@ import java.util.Map;
 @Controller
 
 @RequestMapping(value = {"/admin/workflow/custom", "/admin/workflow/custom/"})
-public class WorkflowCustomDeploymentController2{
+public class WorkflowCustomDeploymentController{
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;

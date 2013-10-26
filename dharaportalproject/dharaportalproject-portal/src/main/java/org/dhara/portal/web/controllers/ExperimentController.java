@@ -31,7 +31,7 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-public class ExperimentController2 {
+public class ExperimentController {
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;

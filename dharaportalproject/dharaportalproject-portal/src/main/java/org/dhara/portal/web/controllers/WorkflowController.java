@@ -49,7 +49,7 @@ import static org.dhara.portal.web.controllers.GatewayControllerUtil.*;
  */
 @Controller
 
-public class WorkflowController2 {
+public class WorkflowController {
 
     private static final String SELECTED_ITEM = "workflows";
 

@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-public class WorkflowDeploymentController2 {
+public class WorkflowDeploymentController {
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;
