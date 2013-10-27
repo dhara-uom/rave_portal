@@ -84,8 +84,8 @@
                         <div class="table_column">
                             <display:column sortable="false" title="Deployment options"
                                             maxLength="100">
-                                <a href="deploy?workflowId=${user.name}">Deafult</a> <a
-                                    href="custom?workflowId=${user.name}"> Custom</a>
+                                <a href="/portal/app/admin/workflow/deploy?workflowId=${user.name}">Deafult</a> <a
+                                    href="/portal/app/admin/workflow/customdeploy?workflowId=${user.name}"> Custom</a>
                             </display:column>
                         </div>
                         <display:setProperty name="basic.empty.showtable" value="true"/>

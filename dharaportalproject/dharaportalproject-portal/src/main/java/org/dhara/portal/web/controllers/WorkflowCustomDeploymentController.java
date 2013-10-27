@@ -39,7 +39,7 @@ import java.util.Map;
  */
 @Controller
 
-@RequestMapping(value = {"/admin/workflow/custom", "/admin/workflow/custom/"})
+@RequestMapping(value = {"/admin/workflow/customdeploy", "/admin/workflow/custom/"})
 public class WorkflowCustomDeploymentController{
 
     @Autowired
@@ -107,6 +107,6 @@ public class WorkflowCustomDeploymentController{
         modelMap.addAttribute("inputNodes",inputNodes);
         modelMap.addAttribute("outputNodes",outputNodes);
 
-        return "customDeploy";
+        return "templates.admin.customdeploy";
     }
 }
