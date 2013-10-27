@@ -133,6 +133,9 @@ be overridden by setting a system property "portal.override.properties" -->
     <bean id="wps52NorthConfig" class="org.dhara.portal.web.wps52NorthService.WPS52NorthConfig" scope="singleton">
     </bean>
 
+    <bean id="restServiceConfig" class="org.dhara.portal.web.restClientService.RestServiceConfig" scope="singleton">
+    </bean>
+
     <bean id="airavataAPIService" class="org.dhara.portal.web.airavataService.AiravataClientAPIServiceImpl">
         <property name="airavataConfig">
             <ref bean="airavataConfig"/>

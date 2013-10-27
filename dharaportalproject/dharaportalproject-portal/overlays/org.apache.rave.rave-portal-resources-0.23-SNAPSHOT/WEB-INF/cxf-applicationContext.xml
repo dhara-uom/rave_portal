@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one
+  ~ or more contributor license agreements.  See the NOTICE file
+  ~ distributed with this work for additional information
+  ~ regarding copyright ownership.  The ASF licenses this file
+  ~ to you under the Apache License, Version 2.0 (the
+  ~ "License"); you may not use this file except in compliance
+  ~ with the License.  You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://cxf.apache.org/jaxrs
+            http://cxf.apache.org/schemas/jaxrs.xsd
+            http://cxf.apache.org/core
+            http://cxf.apache.org/schemas/core.xsd">
+
+    <!-- do not use import statements if CXFServlet init parameters link to this beans.xml -->
+
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+
+    <jaxrs:server id="rave" address="/rest">
+        <jaxrs:providers>
+            <!-- Marshalling providers -->
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+            <bean class="org.apache.cxf.jaxrs.provider.JAXBElementProvider"/>
+
+            <!-- Custom filters -->
+            <ref bean="NoContentResponseFilter"/>
+            <ref bean="CreatedResponseFilter"/>
+            <ref bean="JsonWrapperResponseFilter"/>
+
+            <!-- Exception Mappers -->
+            <ref bean="NotFoundExceptionMapper"/>
+            <ref bean="BadRequestExceptionMapper"/>
+        </jaxrs:providers>
+        <jaxrs:serviceBeans>
+            <ref bean="peopleBean"/>
+            <ref bean="usersBean"/>
+            <ref bean="pagesBean" />
+            <ref bean="pageLayoutBean" />
+            <ref bean="pagesForRenderBean" />
+            <ref bean="categoriesBean"/>
+            <ref bean="preferencesBean"/>
+        </jaxrs:serviceBeans>
+    </jaxrs:server>
+
+    <bean id="peopleBean" class="org.apache.rave.rest.impl.DefaultPeopleResource">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <bean id="usersBean" class="org.apache.rave.rest.impl.DefaultUsersResource">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <bean id="categoriesBean" class="org.apache.rave.rest.impl.DefaultCategoriesResource">
+        <property name="categoryService" ref="defaultCategoryService"/>
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <bean id="preferencesBean" class="org.apache.rave.rest.impl.DefaultPortalPreferenceResource" autowire="byType" />
+
+    <bean id="pageLayoutBean" class="org.apache.rave.rest.impl.DefaultPageLayoutResource" autowire="byType" />
+
+    <bean id="pagesBean" class="org.apache.rave.rest.impl.DefaultPageResource" autowire="byType" />
+    <bean id="regionsBean" class="org.apache.rave.rest.impl.DefaultRegionsResource" autowire="byType" />
+    <bean id="regionWidgetsBean" class="org.apache.rave.rest.impl.DefaultRegionWidgetsResource" autowire="byType" />
+    <bean id="pageUsersResource" class="org.apache.rave.rest.impl.DefaultPageUsersResource" autowire="byType" />
+    <bean id="pagesForRenderBean" class="org.apache.rave.rest.impl.DefaultPageForRenderResource" autowire="byType" />
+    <bean id="pageTemplatesBean" class="org.apache.rave.rest.impl.DefaultPageTemplatesResource" autowire="byType" />
+
+    <bean id="JsonWrapperResponseFilter" class="org.apache.rave.rest.filters.JsonWrapperResponseFilter"/>
+    <bean id="CreatedResponseFilter" class="org.apache.rave.rest.filters.CreatedResponseFilter"/>
+    <bean id="NoContentResponseFilter" class="org.apache.rave.rest.filters.NoContentResponseFilter"/>
+
+    <bean id="NotFoundExceptionMapper" class="org.apache.rave.rest.filters.NotFoundExceptionMapper"/>
+    <bean id="BadRequestExceptionMapper" class="org.apache.rave.rest.filters.BadRequestExceptionMapper"/>
+
+</beans>

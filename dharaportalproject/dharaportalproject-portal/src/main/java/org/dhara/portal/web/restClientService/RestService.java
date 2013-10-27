@@ -1,5 +1,9 @@
 package org.dhara.portal.web.restClientService;
 
+import com.fasterxml.jackson.core.JsonParseException;
+
+import java.io.IOException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: harsha
@@ -9,7 +13,7 @@ package org.dhara.portal.web.restClientService;
  */
 public interface RestService {
 
-    public  Object getExperiments();
+    public  Object getExperiments() throws IOException;
 
     public  Object monitorExperiment();
 }
