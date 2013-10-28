@@ -41,7 +41,7 @@ public class AiravataConfig {
     }
 
     private boolean isAiravataConfigurationExists() {
-        File file=new File("airavata_config.xml");
+        File file=new File(System.getProperty("catalina.base")+File.separator+"webapps"+File.separator+"portal"+File.separator+"WEB-INF"+File.separator+"conf"+File.separator+"airavata_config.xml");
         return file.exists();
     }
 

@@ -30,6 +30,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.dhara.portal.web.controllers.GatewayControllerUtil.addNavigationMenusToModel;
+
 /**
  * Created with IntelliJ IDEA.
  * User: harsha
@@ -41,6 +43,8 @@ import java.util.Map;
 
 @RequestMapping(value = {"/admin/workflow/customdeploy", "/admin/workflow/custom/"})
 public class WorkflowCustomDeploymentController{
+
+    private static final String SELECTED_ITEM = "workflows";
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;
@@ -79,8 +83,9 @@ public class WorkflowCustomDeploymentController{
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showDeployForm(HttpServletRequest request, ModelMap modelMap) throws Exception {
-
+    public String showDeployForm(@RequestParam(required = false) final String action,
+                                 @RequestParam(required = false) String referringPageId, Model model,HttpServletRequest request) throws Exception {
+        addNavigationMenusToModel(SELECTED_ITEM, model, referringPageId);
         String workflowId=request.getParameter("workflowId");
         List<WorkflowHelper> workflowHelpers=new ArrayList<WorkflowHelper>();
         Workflow workflow=airavataClientAPIService.getWorkflow(workflowId);
@@ -102,10 +107,10 @@ public class WorkflowCustomDeploymentController{
             outputNodes.add(mappingHelper);
         }
 
-        modelMap.addAttribute("workflowList",workflowHelpers);
-        modelMap.addAttribute("workflowId",workflowId);
-        modelMap.addAttribute("inputNodes",inputNodes);
-        modelMap.addAttribute("outputNodes",outputNodes);
+        model.addAttribute("workflowList",workflowHelpers);
+        model.addAttribute("workflowId",workflowId);
+        model.addAttribute("inputNodes",inputNodes);
+        model.addAttribute("outputNodes",outputNodes);
 
         return "templates.admin.customdeploy";
     }

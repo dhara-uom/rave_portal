@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ include file="/WEB-INF/jsp/includes/taglibs.jsp" %>
 <html>
 <head>
 
@@ -52,19 +52,21 @@
 </head>
 <body>
 
+<fmt:setBundle basename="messages"/>
 
-
-        <div class="row">
-                <div class="page-header">
-                    <h2>Custom Deployment-${workflowId}</h2>
-                </div>
+<fmt:message key="${pageTitleKey}" var="pagetitle"/>
+<rave:navbar pageTitle="${pagetitle}"/>
+<div class="container-fluid adminUI" id="preference_detail">
+    <div class="span2">
+        <div class="tabs-respond">
+            <rave:admin_tabsheader/>
         </div>
-
-        <div class="row" style="margin-top: -35px">
+    </div>
+        <div class="row">
+            <h2>Custom Deployment-${workflowId}</h2>
             <div class="span10">
-                <div class="slate clearfix">
+                <div class="slate clearfix" style="margin-left: 250px">
                     <form:form method="post" action="/admin/workflow/custom">
-
                         <h3>Custom Properties</h3>
 
                         <table style="text-align:center; vertical-align:middle;">
@@ -183,17 +185,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-
-            <div class="span10 footer">
-
-                <p>&copy; 2013 Project Dhara</p>
-
-            </div>
-
-        </div>
-
-
     </div> <!-- end span10 -->
 
 </div> <!-- end row -->

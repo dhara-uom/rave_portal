@@ -47,7 +47,7 @@ public class WPS52NorthConfig {
     }
 
     private void set52NorthConfiguration() throws PortalException {
-        File file= new File("wps-52north.xml");
+        File file= new File(System.getProperty("catalina.base")+File.separator+"webapps"+File.separator+"portal"+File.separator+"WEB-INF"+File.separator+"conf"+File.separator+"wps-52north.xml");
         FileInputStream fis;
         XMLInputFactory xif;
         XMLStreamReader reader;
