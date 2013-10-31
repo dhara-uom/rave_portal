@@ -49,13 +49,20 @@
     <file url="file://$PROJECT_DIR$/dharaportalproject-portal/overlays" />
     <file url="file://$PROJECT_DIR$/dharaportalproject-portal/overlays" />
     <file url="file://$PROJECT_DIR$/dharaportalproject-shindig/overlays" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server/rave-shindig-resources/overlays" />
     <file type="web" url="file://$PROJECT_DIR$/dharaportalproject-portal" />
     <file type="web" url="file://$PROJECT_DIR$/dharaportalproject-shindig" />
+    <file type="web" url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-demo-gadgets" />
+    <file type="web" url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal" />
+    <file type="web" url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal-resources" />
+    <file type="web" url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server/rave-shindig" />
+    <file type="web" url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server/rave-shindig-resources" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../portal-sameera/rave/pom.xml" />
       </list>
     </option>
   </component>

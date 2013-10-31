@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/dharaportalproject-portal" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dharaportalproject-shindig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-components" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-components/rave-commons" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-components/rave-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-components/rave-core-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-components/rave-jpa" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-components/rave-mongodb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-components/rave-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-custom-project-archetype" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-demo-gadgets" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-integration-tests" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-integration-tests/rave-admin-tests" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-integration-tests/rave-core-tests" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-integration-tests/rave-default-account-tests" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-integration-tests/rave-newuser-tests" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal-dependencies" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal-resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server/rave-shindig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server/rave-shindig-dependencies" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server/rave-shindig-resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-w3c-provider" charset="UTF-8" />
+  </component>
 </project>
 

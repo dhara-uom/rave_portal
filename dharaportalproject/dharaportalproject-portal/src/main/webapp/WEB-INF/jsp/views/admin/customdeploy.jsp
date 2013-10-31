@@ -63,7 +63,7 @@
         </div>
     </div>
         <div class="row">
-            <h2>Custom Deployment-${workflowId}</h2>
+            <h2>${workflowId}</h2>
             <div class="span10">
                 <div class="slate clearfix" style="margin-left: 250px">
                     <form:form method="post" action="/admin/workflow/custom">

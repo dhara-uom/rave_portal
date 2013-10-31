@@ -2,24 +2,84 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-custom-project-archetype/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
-      <entry name="?*.properties" />
-      <entry name="?*.xml" />
-      <entry name="?*.gif" />
-      <entry name="?*.png" />
-      <entry name="?*.jpeg" />
-      <entry name="?*.jpg" />
-      <entry name="?*.html" />
-      <entry name="?*.dtd" />
-      <entry name="?*.tld" />
-      <entry name="?*.ftl" />
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="dharaportalproject-portal" />
+        <module name="dharaportalproject-shindig" />
+        <module name="rave-admin-tests" />
+        <module name="rave-commons" />
+        <module name="rave-core" />
+        <module name="rave-core-api" />
+        <module name="rave-core-tests" />
+        <module name="rave-custom-project-archetype" />
+        <module name="rave-default-account-tests" />
+        <module name="rave-demo-gadgets" />
+        <module name="rave-jpa" />
+        <module name="rave-mongodb" />
+        <module name="rave-newuser-tests" />
+        <module name="rave-opensocial-client" />
+        <module name="rave-opensocial-core" />
+        <module name="rave-portal" />
+        <module name="rave-portal-resources" />
+        <module name="rave-shindig" />
+        <module name="rave-shindig-resources" />
+        <module name="rave-w3c-provider" />
+        <module name="rave-web" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dharaportalproject" target="1.6" />
+      <module name="dharaportalproject-portal" target="1.6" />
+      <module name="dharaportalproject-shindig" target="1.6" />
+      <module name="rave" target="1.6" />
+      <module name="rave-admin-tests" target="1.6" />
+      <module name="rave-commons" target="1.6" />
+      <module name="rave-components" target="1.6" />
+      <module name="rave-core" target="1.6" />
+      <module name="rave-core-api" target="1.6" />
+      <module name="rave-core-tests" target="1.6" />
+      <module name="rave-custom-project-archetype" target="1.6" />
+      <module name="rave-default-account-tests" target="1.6" />
+      <module name="rave-demo-gadgets" target="1.6" />
+      <module name="rave-integration-tests" target="1.6" />
+      <module name="rave-jpa" target="1.6" />
+      <module name="rave-mongodb" target="1.6" />
+      <module name="rave-newuser-tests" target="1.6" />
+      <module name="rave-opensocial-client" target="1.6" />
+      <module name="rave-opensocial-core" target="1.6" />
+      <module name="rave-opensocial-provider" target="1.6" />
+      <module name="rave-opensocial-server" target="1.6" />
+      <module name="rave-portal" target="1.6" />
+      <module name="rave-portal-dependencies" target="1.6" />
+      <module name="rave-portal-resources" target="1.6" />
+      <module name="rave-providers" target="1.6" />
+      <module name="rave-shindig" target="1.6" />
+      <module name="rave-shindig-dependencies" target="1.6" />
+      <module name="rave-shindig-resources" target="1.6" />
+      <module name="rave-w3c-provider" target="1.6" />
+      <module name="rave-web" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
