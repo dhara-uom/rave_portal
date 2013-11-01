@@ -2,6 +2,7 @@ package org.dhara.portal.web.restClientService;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import org.apache.airavata.registry.api.workflow.ExperimentData;
+import org.dhara.portal.web.helper.ExperimentHelper;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 public interface RestService {
 
-    public List<ExperimentData> getExperiments() throws IOException;
+    public List<ExperimentHelper> getExperiments() throws IOException;
 
     public  Object monitorExperiment();
 }

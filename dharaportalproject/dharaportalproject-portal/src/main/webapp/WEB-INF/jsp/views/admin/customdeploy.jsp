@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/WEB-INF/jsp/includes/taglibs.jsp" %>
 <html>
@@ -66,9 +65,9 @@
             <h2>${workflowId}</h2>
             <div class="span10">
                 <div class="slate clearfix" style="margin-left: 250px">
-                    <form:form method="post" action="/admin/workflow/custom">
-                        <h3>Custom Properties</h3>
-
+                <form:form cssClass="form-horizontal" action="deploy"  method="POST">
+                    <h3>Custom Properties</h3>
+                        <input type="hidden" name="workflowId" value="${workflowId}"/>
                         <table style="text-align:center; vertical-align:middle;">
                             <tr>
                                 <td style="width: 140px">Extending Class</td>

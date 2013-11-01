@@ -40,8 +40,6 @@ import static org.dhara.portal.web.controllers.GatewayControllerUtil.addNavigati
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-
-@RequestMapping(value = {"/admin/workflow/customdeploy", "/admin/workflow/custom/"})
 public class WorkflowCustomDeploymentController{
 
     private static final String SELECTED_ITEM = "workflows";
@@ -57,10 +55,9 @@ public class WorkflowCustomDeploymentController{
 
     protected final Log log = LogFactory.getLog(getClass());
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String onSubmit(@RequestParam(required = false) final String action,
-                              @RequestParam(required = false) String referringPageId, Model model,HttpServletRequest request, HttpServletResponse response, Object command,
-                                    BindException errors) throws Exception {
+    @RequestMapping(value = {"/admin/workflow/deploy"}, method = RequestMethod.POST)
+    public String customDeployment(@RequestParam(required = false) final String action,
+                              @RequestParam(required = false) String referringPageId, ModelMap modelMap,HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         String workflowId=request.getParameter("workflowId");
         String extendingAlgorithm=request.getParameter("extendingAlgo");
@@ -82,7 +79,7 @@ public class WorkflowCustomDeploymentController{
         return "redirect:/";
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/workflow/customdeploy", "/admin/workflow/custom/"}, method = RequestMethod.GET)
     public String showDeployForm(@RequestParam(required = false) final String action,
                                  @RequestParam(required = false) String referringPageId, Model model,HttpServletRequest request) throws Exception {
         addNavigationMenusToModel(SELECTED_ITEM, model, referringPageId);

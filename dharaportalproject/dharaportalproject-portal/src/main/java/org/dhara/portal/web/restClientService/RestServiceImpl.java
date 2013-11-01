@@ -3,6 +3,7 @@ package org.dhara.portal.web.restClientService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.airavata.registry.api.workflow.ExperimentData;
+import org.dhara.portal.web.helper.ExperimentHelper;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,10 +26,10 @@ public class RestServiceImpl implements RestService {
     }
 
     @Override
-    public List<ExperimentData> getExperiments() throws IOException {
+    public List<ExperimentHelper> getExperiments() throws IOException {
         String response= getRestClient().getResponse(getRestServiceConfig().getServerUrl() + RestResourceUtils.EXPERIMENTDATA_RESOURCE);
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(response, new TypeReference<List<ExperimentData>>(){});
+        return mapper.readValue(response, new TypeReference<List<ExperimentHelper>>(){});
     }
 
     @Override
