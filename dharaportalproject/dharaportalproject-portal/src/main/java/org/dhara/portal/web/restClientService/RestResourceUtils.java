@@ -8,5 +8,5 @@ package org.dhara.portal.web.restClientService;
  * To change this template use File | Settings | File Templates.
  */
 public class RestResourceUtils {
-    public static final String EXPERIMENTDATA_RESOURCE="/airavata/experiment";
+    public static final String EXPERIMENTDATA_RESOURCE="/experiment";
 }

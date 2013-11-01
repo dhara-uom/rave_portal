@@ -1,10 +1,8 @@
 package org.dhara.portal.web.restClientService;
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.dhara.portal.web.helper.ExperimentHelper;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.airavata.registry.api.workflow.ExperimentData;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,20 +15,20 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class RestServiceImpl implements RestService {
-    @Autowired
+
     private RestServiceConfig restServiceConfig;
 
     private RestClient restClient;
 
     public RestServiceImpl() {
-        restClient=new RestClient();
+        setRestClient(new RestClient());
     }
 
     @Override
-    public List<ExperimentHelper> getExperiments() throws IOException {
-        String response=restClient.getResponse(restServiceConfig.getServerUrl()+RestResourceUtils.EXPERIMENTDATA_RESOURCE);
+    public List<ExperimentData> getExperiments() throws IOException {
+        String response= getRestClient().getResponse(getRestServiceConfig().getServerUrl() + RestResourceUtils.EXPERIMENTDATA_RESOURCE);
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(response, new TypeReference<List<ExperimentHelper>>(){});
+        return mapper.readValue(response, new TypeReference<List<ExperimentData>>(){});
     }
 
     @Override
@@ -44,5 +42,13 @@ public class RestServiceImpl implements RestService {
 
     public void setRestClient(RestClient restClient) {
         this.restClient = restClient;
+    }
+
+    public void setRestServiceConfig(RestServiceConfig restServiceConfig) {
+        this.restServiceConfig = restServiceConfig;
+    }
+
+    public RestServiceConfig getRestServiceConfig() {
+        return restServiceConfig;
     }
 }

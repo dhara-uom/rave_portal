@@ -154,6 +154,13 @@ be overridden by setting a system property "portal.override.properties" -->
         </property>
     </bean>
 
+
+    <bean id="restAPISerservice" class="org.dhara.portal.web.restClientService.RestServiceImpl" scope="prototype">
+        <property name="restServiceConfig">
+            <ref bean="restServiceConfig"/>
+        </property>
+    </bean>
+
     <!-- example on how to setup a Spring Timer to refresh the Static Content cache at a fixed interval
     <bean id="refreshStaticContentCacheScheduledTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
         <property name="delay" value="5000"/>

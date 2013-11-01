@@ -5,6 +5,7 @@ import org.apache.airavata.registry.api.workflow.NodeExecutionData;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.helper.ExperimentHelper;
 import org.dhara.portal.web.helper.Nodehelper;
+import org.dhara.portal.web.restClientService.RestServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import static org.dhara.portal.web.controllers.GatewayControllerUtil.addNavigationMenusToModel;
+
 /**
  * Created with IntelliJ IDEA.
  * User: nipuni
@@ -33,16 +36,18 @@ import java.util.Map;
 @Controller
 public class ExperimentController {
 
+    private static final String SELECTED_ITEM = "experiments";
+
     @Autowired
-    private AiravataClientAPIService airavataClientAPIService;
+    private RestServiceImpl restService;
 
 
 
     @RequestMapping(value = {"/admin/experiments", "/admin/experiments/"}, method = RequestMethod.GET)
     public String handleRequestInternal(@RequestParam(required = false) final String action,
                                            @RequestParam(required = false) String referringPageId, Model model, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-
-        List<ExperimentData> experimentData = airavataClientAPIService.getExperimentData();
+        addNavigationMenusToModel(SELECTED_ITEM, model, referringPageId);
+        List<ExperimentData> experimentData = restService.getExperiments();
 
         List<ExperimentHelper> experimentHelpers = new ArrayList<ExperimentHelper>();
         for (int index = 0; index < experimentData.size(); index++) {
@@ -54,7 +59,7 @@ public class ExperimentController {
             helper.setState(data.getState().toString());
 
             //retrieve experiment data by id
-            List<NodeExecutionData> nodeExecutionDataList = airavataClientAPIService.getWorkflowExperimentData(data.getExperimentId());
+           /* List<NodeExecutionData> nodeExecutionDataList = airavataClientAPIService.getWorkflowExperimentData(data.getExperimentId());
             List<Nodehelper> nodehelperList = new ArrayList<Nodehelper>();
 
             for (int i = 0; i < nodeExecutionDataList.size(); i++) {
@@ -66,7 +71,7 @@ public class ExperimentController {
                 nodehelperList.add(nodehelper);
             }
 
-            helper.setNodehelperList(nodehelperList);
+            helper.setNodehelperList(nodehelperList);*/
             experimentHelpers.add(helper);
 
         }
@@ -78,7 +83,7 @@ public class ExperimentController {
         }
 
         model.addAttribute("message", experimentHelpers);
-        return "experiments";
+        return "templates.admin.experiments";
     }
 
     public ArrayList<ExperimentHelper> reverseList(List<ExperimentHelper> list) {
