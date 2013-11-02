@@ -15,7 +15,7 @@
                 <form:form id="customDeployment" cssClass="form-inline" action="deploy" method="POST">
                     <form:errors cssClass="error" element="p"/>
                     <fieldset>
-                        <legend>Custom Deployment - ${workflowId} </legend>
+                        <legend class="dhara">Custom Deployment - ${workflowId} </legend>
                         <input type="hidden" name="workflowId" value="${workflowId}"/>
                         <table class="table table-striped table-bordered table-condensed">
                             <tr>
@@ -41,7 +41,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <h3>Workflow Inputs</h3>
+                        <h3 class="dhara">Workflow Inputs</h3>
                         <table id="customDeploymentInput" class="table table-striped table-bordered table-condensed">
                             <thead>
                             <tr>
@@ -80,7 +80,7 @@
                             </tbody>
                         </table>
                         <br/>
-                        <h3>Workflow Outputs</h3>
+                        <h3 class="dhara">Workflow Outputs</h3>
                         <table id="customDeploymentOutput" class="table table-striped table-bordered table-condensed">
                             <thead>
                             <tr>

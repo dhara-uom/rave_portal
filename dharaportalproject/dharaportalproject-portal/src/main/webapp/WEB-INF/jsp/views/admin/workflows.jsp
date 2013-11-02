@@ -14,7 +14,7 @@
         </div>
         <div class="span10">
             <article>
-                <h2><fmt:message key="admin.category.shortTitle"/></h2>
+                <h2><fmt:message key="admin.workflows.shortTitle"/></h2>
 
                 <table id="workflowList" class="table table-striped table-bordered table-condensed">
                     <thead>
@@ -29,7 +29,7 @@
                     <c:forEach items="${message}" var="workflow">
                         <tr>
                             <td>
-                                <c:out value="${workflow.name}"/></a>
+                                <c:out value="${workflow.name}"/>
                             </td>
                             <td>
                                 <c:out value="admin"/>
