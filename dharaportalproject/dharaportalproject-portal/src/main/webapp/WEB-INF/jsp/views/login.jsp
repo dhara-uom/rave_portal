@@ -43,7 +43,7 @@
                 <h5 style="padding-below:20px;  font-size: 18px"><fmt:message
                         key="page.overview.title"/></h5>
 
-                <p style="padding-top:20px; padding-bottom:20px">
+                <p style="padding-top:20px; color:#383636; padding-bottom:20px">
                     some more text some more text some more text
                     some more text some more text some more text
                     some more text some more text some more text
@@ -66,11 +66,11 @@
                     <div class="slate">
 
                         <div class="page-header">
-                            <h2><i class="icon-globe pull-right"></i>Map</h2>
+                            <h2 style="color:#383636"><i class="icon-globe pull-right"></i>Map</h2>
                         </div>
                         <div id="map_element_1" style="height: 297px;"></div>
                         <div class="slate" id="map_description">
-                            <p>The map shows locations in Sri Lanka</p>
+                            <p style="color: #383636">The map shows locations in Sri Lanka</p>
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@
                     <div class="slate">
 
                         <div class="page-header">
-                            <h2><i class="icon-briefcase pull-right"></i>Features</h2>
+                            <h2 style="color:#383636"><i class="icon-briefcase pull-right"></i>Features</h2>
                         </div>
                         <h5 style="font-size: 18px; font-weight: normal">Workflows</h5>
 
@@ -91,7 +91,7 @@
             <div class="row-fluid" id="lastRow">
                 <h5 style="padding-below:20px;  font-size: 18px">Some more details</h5>
 
-                <p style="padding-top:20px; padding-bottom:20px">
+                <p style="padding-top:20px; padding-bottom:20px; color: #383636">
                     some more text some more text some more text
                     some more text some more text some more text
                     some more text some more text some more text
@@ -129,7 +129,7 @@
                                 key="page.login.usernamepassword.fail"/></div>
                     </c:if>
                     <div class="control-group">
-                        <label class="control-label" for="usernameField"><fmt:message
+                        <label class="control-label-1" for="usernameField"><fmt:message
                                 key="page.general.username"/></label>
 
                         <div class="controls">
@@ -138,7 +138,7 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="passwordField"><fmt:message
+                        <label class="control-label-1" for="passwordField"><fmt:message
                                 key="page.general.password"/></label>
 
                         <div class="controls">
@@ -153,7 +153,8 @@
 
                         <div class="controls">
                             <input type='checkbox' name='_spring_security_remember_me' id="remember_me"
-                                   value="true" style="margin-left: -60px; margin-top: -47px "/>
+                                   value="true"
+                                   style="margin-left: -60px" />
                         </div>
                     </div>
                 </fieldset>
@@ -185,7 +186,7 @@
                         <div class="alert alert-error"><fmt:message key="page.login.openid.fail"/></div>
                     </c:if>
                     <div class="control-group">
-                        <label class="control-label" for="openid_identifier"><fmt:message
+                        <label class="control-label-1" for="openid_identifier"><fmt:message
                                 key="page.login.openid.identifier"/></label>
 
                         <div class="controls">
@@ -201,7 +202,7 @@
                         <div class="controls">
                             <input type='checkbox' name='_spring_security_remember_me'
                                    id="remember_me_openid" value="true"
-                                   style="margin-left: -60px; margin-top: -47px "/>
+                                   style="margin-left: -60px"/>
                         </div>
                     </div>
                 </fieldset>
@@ -220,25 +221,25 @@
                 <div class="slate">
 
                     <div class="page-header">
-                        <h2><i class="icon-rss pull-right"></i>News</h2>
+                        <h2 style="color:#383636"><i class="icon-rss pull-right"></i>News</h2>
                     </div>
 
                     <table class="orders-table table">
                         <tbody>
                         <tr>
-                            <td><a href="">News article title</a></td>
+                            <td><a class="news" href="">News article title</a></td>
                         </tr>
                         <tr>
-                            <td><a href="">Another news article title</a></td>
+                            <td><a class="news" href="">Another news article title</a></td>
                         </tr>
                         <tr>
-                            <td><a href="">A third news article title</a></td>
+                            <td><a class="news" href="">A third news article title</a></td>
                         </tr>
                         <tr>
-                            <td><a href="">A final news article title</a></td>
+                            <td><a class="news" href="">A final news article title</a></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><a href="">Read more news</a></td>
+                            <td colspan="2"><a class="news" href="">Read more news</a></td>
                         </tr>
                         </tbody>
                     </table>
