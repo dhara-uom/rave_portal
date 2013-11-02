@@ -31,8 +31,31 @@ background-image:-moz-linear-gradient(top,#9ecff5,#fff 320px);
 background-image:-o-linear-gradient(top,#9ecff5,#fff 320px);
 background-image:-ms-linear-gradient(top,#9ecff5,#fff 320px);
 background-image:linear-gradient(top,#9ecff5,#fff 320px);
-background-repeat:repeat;background-image:-webkit-gradient(linear,0 0,1111 320,from(#D39857),to(#F1D5AA));
+background-repeat:repeat;background-image:-webkit-gradient(linear,0 0,11111 320,from(#383636),to(rgba(0, 0, 0, 0.92)));
 }
+
+/*h6 {*/
+    /*font-size: 18px;*/
+    /*color: #000;*/
+    /*padding-bottom: 13px;*/
+    /*margin-left: 80px;*/
+/*}*/
+
+/*h5 {*/
+    /*font-size: 18px;*/
+/*}*/
+
+/*h4 {*/
+    /*padding-bottom: 10px;*/
+/*}*/
+
+.logo-wrapper-login {
+    width: 100%;
+    height: 100px;
+    padding: 5px 0;
+    background: url("../images/rave-logo-sm.png") no-repeat 520px 0;
+}
+
 .page {
 padding: 40px!important;
 }
@@ -60,3 +83,95 @@ padding-bottom: 65px;
     float: left;
     margin-left: 0px;
 }
+
+.span10 {
+    margin-left: 20px;
+}
+
+.span3 {
+    margin-left: 20px;
+}
+
+.input-large {
+    width: 150px;
+    margin-left:-90px;
+    height: 12px;
+}
+
+.form-horizontal .control-label {
+    width: 0px;
+}
+
+.form-horizontal .control-label-2 {
+    width: 90px;
+}
+
+/*input[type="checkbox"]{*/
+    /*margin-left:-60px;*/
+    /*margin-top: -46px;*/
+/*}*/
+
+.btn-custom{
+    margin-left: -90px;
+    margin-top: -30px;
+}
+
+.btn-custom-2{
+    margin-left: -120px;
+    margin-top: -30px;
+}
+
+.btn.btn-link {
+    background: none;
+    padding: 0;
+    color: #CA2017;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-left: 50px;
+    margin-top: -35px;
+    font-size: 12px;
+}
+
+.btn {
+    border-color: transparent transparent transparent;
+}
+
+.slate {
+    background: #FFF;
+    padding: 10px 20px;
+    border: 1px solid #F8F8F8;
+    margin-bottom: 20px;
+}
+
+.slate .page-header {
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+.slate h2 {
+    font-weight: normal;
+    font-family: "Oxygen", sans-serif;
+    font-size: 18px;
+}
+
+.well-2 {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background: white;
+    border: 1px solid #BBB;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
