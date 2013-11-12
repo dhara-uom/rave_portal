@@ -27,11 +27,11 @@ public class CodeGenServiceImpl implements CodeGenService{
     */
     public String getGeneratedClass(String workflowId) throws PortalException {
         Workflow workflow=airavataClientAPIService.getWorkflow(workflowId);
-        List<WorkflowInput> workflowInputs = null;
+        List<WSComponentPort> workflowInputs = null;
         List<WSComponentPort> workflowOutputs = null;
 
         try {
-            workflowInputs = workflow.getWorkflowInputs();
+            workflowInputs = workflow.getInputs();
             workflowOutputs = workflow.getOutputs();
         } catch (Exception e) {
             throw new PortalException("Error getting workflow with id="+workflowId,e);
@@ -43,35 +43,35 @@ public class CodeGenServiceImpl implements CodeGenService{
         Map<String,String> outputBindings=new HashMap<String, String>();
         ArrayList<CodeGenInOutAssociations> inputs=new ArrayList<CodeGenInOutAssociations>();
         ArrayList<CodeGenInOutAssociations> outputs=new ArrayList<CodeGenInOutAssociations>();
-        for (WorkflowInput workflowInput : workflowInputs) {
+        for (WSComponentPort workflowInput : workflowInputs) {
             inputIds.add(workflowInput.getName());
             CodeGenInOutAssociations codeGenInOutAssociations=new CodeGenInOutAssociations();
-            if("int".equalsIgnoreCase(workflowInput.getType()) || "integer".equalsIgnoreCase(workflowInput.getType()) || "IntegerParameterType".equalsIgnoreCase(workflowInput.getType())) {
+            if("int".equalsIgnoreCase(workflowInput.getType().getLocalPart()) || "integer".equalsIgnoreCase(workflowInput.getType().getLocalPart()) || "IntegerParameterType".equalsIgnoreCase(workflowInput.getType().getLocalPart())) {
                 inputBindings.put(workflowInput.getName()+"_TypeClass", CodegenUtils.LITERAL_INT_BINDING);
                 codeGenInOutAssociations.setIdentifier(workflowInput.getName());
                 codeGenInOutAssociations.setMappingClass(CodegenUtils.LITERAL_INT_BINDING);
                 inputs.add(codeGenInOutAssociations);
-            } else if ("string".equalsIgnoreCase(workflowInput.getType()) || "StringParameterType".equalsIgnoreCase(workflowInput.getType())) {
+            } else if ("string".equalsIgnoreCase(workflowInput.getType().getLocalPart()) || "StringParameterType".equalsIgnoreCase(workflowInput.getType().getLocalPart())) {
                 inputBindings.put(workflowInput.getName()+"_TypeClass", CodegenUtils.LITERAL_STRING_BINDING);
                 codeGenInOutAssociations.setIdentifier(workflowInput.getName());
                 codeGenInOutAssociations.setMappingClass(CodegenUtils.LITERAL_STRING_BINDING);
                 inputs.add(codeGenInOutAssociations);
-            } else if ("short".equalsIgnoreCase(workflowInput.getType()) || "ShortParameterType".equalsIgnoreCase(workflowInput.getType())) {
+            } else if ("short".equalsIgnoreCase(workflowInput.getType().getLocalPart()) || "ShortParameterType".equalsIgnoreCase(workflowInput.getType().getLocalPart())) {
                 inputBindings.put(workflowInput.getName()+"_TypeClass", CodegenUtils.LITERAL_SHORT_BINDING);
                 codeGenInOutAssociations.setIdentifier(workflowInput.getName());
                 codeGenInOutAssociations.setMappingClass(CodegenUtils.LITERAL_SHORT_BINDING);
                 inputs.add(codeGenInOutAssociations);
-            } else if ("double".equalsIgnoreCase(workflowInput.getType()) || "DoubleParameterType".equalsIgnoreCase(workflowInput.getType())) {
+            } else if ("double".equalsIgnoreCase(workflowInput.getType().getLocalPart()) || "DoubleParameterType".equalsIgnoreCase(workflowInput.getType().getLocalPart())) {
                 inputBindings.put(workflowInput.getName()+"_TypeClass", CodegenUtils.LITERAL_DOUBLE_BINDING);
                 codeGenInOutAssociations.setIdentifier(workflowInput.getName());
                 codeGenInOutAssociations.setMappingClass(CodegenUtils.LITERAL_DOUBLE_BINDING);
                 inputs.add(codeGenInOutAssociations);
-            } else if ("float".equalsIgnoreCase(workflowInput.getType()) || "FloatParameterType".equalsIgnoreCase(workflowInput.getType())) {
+            } else if ("float".equalsIgnoreCase(workflowInput.getType().getLocalPart()) || "FloatParameterType".equalsIgnoreCase(workflowInput.getType().getLocalPart())) {
                 inputBindings.put(workflowInput.getName()+"_TypeClass", CodegenUtils.LITERAL_FLOAT_BINDING);
                 codeGenInOutAssociations.setIdentifier(workflowInput.getName());
                 codeGenInOutAssociations.setMappingClass(CodegenUtils.LITERAL_FLOAT_BINDING);
                 inputs.add(codeGenInOutAssociations);
-            } else if ("boolean".equalsIgnoreCase(workflowInput.getType()) || "BooleanParameterType".equalsIgnoreCase(workflowInput.getType())) {
+            } else if ("boolean".equalsIgnoreCase(workflowInput.getType().getLocalPart()) || "BooleanParameterType".equalsIgnoreCase(workflowInput.getType().getLocalPart())) {
                 inputBindings.put(workflowInput.getName()+"_TypeClass", CodegenUtils.LITERAL_BOOLEAN_BINDING);
                 codeGenInOutAssociations.setIdentifier(workflowInput.getName());
                 codeGenInOutAssociations.setMappingClass(CodegenUtils.LITERAL_BOOLEAN_BINDING);
