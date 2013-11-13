@@ -19,28 +19,24 @@
 
 package org.dhara.portal.web.controllers;
 
-import org.apache.airavata.workflow.model.wf.Workflow;
 import org.apache.rave.model.PortalPreference;
 import org.apache.rave.portal.service.PortalPreferenceService;
 import org.apache.rave.portal.web.util.ModelKeys;
 import org.apache.rave.portal.web.util.PortalPreferenceKeys;
 import org.apache.rave.rest.model.SearchResult;
-import org.dhara.portal.web.airavataService.AiravataClientAPIService;
-import org.dhara.portal.web.helper.ExperimentHelper;
 import org.dhara.portal.web.helper.WorkflowHelper;
+import org.dhara.portal.web.restClientService.RestServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.util.WebUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static org.dhara.portal.web.controllers.GatewayControllerUtil.addNavigationMenusToModel;
 
@@ -54,12 +50,12 @@ public class WorkflowController {
 
     int DEFAULT_PAGE_SIZE=10;
 
+    @Autowired
+    private RestServiceImpl restService;
 
     @Autowired
     private PortalPreferenceService preferenceService;
 
-    @Autowired
-    private AiravataClientAPIService airavataClientAPIService;
 
     @RequestMapping(value = {"/admin/workflows", "/admin/workflows/"}, method = RequestMethod.GET)
     public String handleRequestInternal(@RequestParam(required = false, defaultValue = "0") int offset,
@@ -67,35 +63,19 @@ public class WorkflowController {
                                 @RequestParam(required = false) String referringPageId, Model model,
                                 HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
 
+        model.addAttribute(ModelKeys.REFERRING_PAGE_ID, referringPageId);
         addNavigationMenusToModel(SELECTED_ITEM, model, referringPageId);
-        List<Workflow> workflowList = airavataClientAPIService.getAllWorkflows();
 
-        List<WorkflowHelper> workflowHelpers = new ArrayList<WorkflowHelper>();
-        for (int index = 0; index < workflowList.size(); index++) {
-            WorkflowHelper helper = new WorkflowHelper();
-            Workflow workflow = workflowList.get(index);
-            helper.setName(workflow.getName());
-            //TODO get author and created data (need to implement methods)
-            workflowHelpers.add(helper);
-        }
+        List<WorkflowHelper> workflowHelperList = restService.getWorkflows();
+        int count=workflowHelperList.size();
 
-        Map paramMap = WebUtils.getParametersStartingWith(httpServletRequest, "d-");
-        if (paramMap.size() == 0) {
-            WebUtils.setSessionAttribute(httpServletRequest, "workflows", workflowHelpers);
-        }
-
-        int count =workflowHelpers.size();
-        workflowHelpers=getLimitedList(offset,count,workflowHelpers);
-        final SearchResult<WorkflowHelper> workflows =new SearchResult<WorkflowHelper>(workflowHelpers,count);
+        workflowHelperList=getLimitedList(offset,count,workflowHelperList);
+        final SearchResult<WorkflowHelper> workflows =new SearchResult<WorkflowHelper>(workflowHelperList,count);
         workflows.setOffset(offset);
         workflows.setPageSize(getPageSize());
         model.addAttribute(ModelKeys.SEARCHRESULT, workflows);
-
-
-//        model.addAttribute("message", workflowHelpers);
-
-
         return "templates.admin.workflows";
+
     }
 
     private List<WorkflowHelper> getLimitedList(int offset, int count, List<WorkflowHelper> exp){

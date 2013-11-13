@@ -1,5 +1,7 @@
 package org.dhara.portal.web.helper;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: harsha
@@ -10,6 +12,7 @@ package org.dhara.portal.web.helper;
 public class WorkflowHelper {
     private String name;
     private String description;
+    private List<InputHelper> inputs;
 
     public String getName() {
         return name;
@@ -25,5 +28,13 @@ public class WorkflowHelper {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<InputHelper> getInputs() {
+        return inputs;
+    }
+
+    public void setInputs(List<InputHelper> inputs) {
+        this.inputs = inputs;
     }
 }
