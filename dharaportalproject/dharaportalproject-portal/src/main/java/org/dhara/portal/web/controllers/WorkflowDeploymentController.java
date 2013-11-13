@@ -46,7 +46,7 @@ public class WorkflowDeploymentController {
         String workflowId=request.getParameter("workflowId");
         String generatedCode=codeGenService.getGeneratedClass(workflowId);
         wpsConnect52Service.uploadClass(generatedCode,workflowId);
-        return "redirect:/";
+        return "redirect:/app/admin/workflows";
     }
 
 }

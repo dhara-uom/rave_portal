@@ -76,7 +76,7 @@ public class WorkflowCustomDeploymentController{
         String generatedCode=codeGenService.getGeneratedClass(workflowId);
         wpsConnect52Service.uploadClass(generatedCode,workflowId);
 
-        return "redirect:/";
+        return "redirect:/app/admin/workflows";
     }
 
     @RequestMapping(value = {"/admin/workflow/customdeploy", "/admin/workflow/custom/"}, method = RequestMethod.GET)
