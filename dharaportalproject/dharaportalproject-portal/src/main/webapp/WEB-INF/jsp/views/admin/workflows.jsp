@@ -18,7 +18,7 @@
                 opacity: .5,
                 color: '#fff'
             } });
-            setTimeout($.unblockUI, 20000);
+            setTimeout($.unblockUI, 40000);
         });
     });
     })

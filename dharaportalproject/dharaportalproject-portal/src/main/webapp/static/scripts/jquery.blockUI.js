@@ -15,7 +15,6 @@
 ;(function() {
 /*jshint eqeqeq:false curly:false latedef:false */
 "use strict";
-    require(["portal/rave_admin", "jquery"], function(raveAdmin, $){
 	function setup($) {
 		$.fn._fadeIn = $.fn.fadeIn;
 
@@ -608,12 +607,12 @@
 
 	}
 
-
+    require(["portal/rave_admin", "jquery"], function(raveAdmin, $){
 	/*global define:true */
 	if (typeof define === 'function' && define.amd && define.amd.jQuery) {
 		define(['jquery'], setup);
 	} else {
 		setup(jQuery);
 	}
-    })
+    });
 })();
