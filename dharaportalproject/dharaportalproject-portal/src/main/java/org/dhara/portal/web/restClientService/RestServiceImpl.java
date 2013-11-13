@@ -2,8 +2,8 @@ package org.dhara.portal.web.restClientService;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.airavata.registry.api.workflow.ExperimentData;
 import org.dhara.portal.web.helper.ExperimentHelper;
+import org.dhara.portal.web.helper.WorkflowHelper;
 
 import java.io.IOException;
 import java.util.List;
@@ -31,6 +31,14 @@ public class RestServiceImpl implements RestService {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(response, new TypeReference<List<ExperimentHelper>>(){});
     }
+
+    public List<WorkflowHelper> getWorkflows() throws IOException {
+        String response= getRestClient().getResponse(getRestServiceConfig().getServerUrl() + RestResourceUtils.WORKFLOWDATA_RESOURCE);
+        ObjectMapper mapper = new ObjectMapper();
+        //TODO exception in this mapper object
+        return mapper.readValue(response, new TypeReference<List<WorkflowHelper>>(){});
+    }
+
 
     @Override
     public Object monitorExperiment() {

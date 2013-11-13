@@ -19,39 +19,33 @@
 
 package org.dhara.portal.web.controllers;
 
-import org.apache.rave.model.Category;
-import org.apache.rave.model.User;
-import org.apache.rave.portal.model.impl.CategoryImpl;
-import org.apache.rave.portal.service.CategoryService;
-import org.apache.rave.portal.service.UserService;
-import org.apache.rave.portal.web.util.ModelKeys;
-import org.apache.rave.portal.web.util.ViewNames;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.util.WebUtils;
 import org.apache.airavata.workflow.model.wf.Workflow;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.helper.WorkflowHelper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.util.WebUtils;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-import static org.dhara.portal.web.controllers.GatewayControllerUtil.*;
+import static org.dhara.portal.web.controllers.GatewayControllerUtil.addNavigationMenusToModel;
 
 /**
  * Controller for the admin pages
  */
 @Controller
-
 public class WorkflowController {
 
     private static final String SELECTED_ITEM = "workflows";
+
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;
