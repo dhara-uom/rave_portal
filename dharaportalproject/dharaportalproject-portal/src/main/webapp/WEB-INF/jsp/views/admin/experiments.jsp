@@ -68,7 +68,10 @@
         <div class="span10">
             <article>
                 <h2>Experiments List</h2>
+                <rave:admin_listheader/>
+                    <rave:admin_paging/>
 
+    <c:if test="${searchResult.totalResults > 0}">
                 <table id="experimentsList" class="table table-striped table-bordered table-condensed">
                     <thead>
                     <tr>
@@ -80,7 +83,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${message}" var="experiment">
+                    <c:forEach items="${searchResult.resultSet}" var="experiment">
                         <tr>
                             <td>
                                 <c:out value="${experiment.name}"/>
@@ -126,6 +129,8 @@
                     </c:forEach>
                     </tbody>
                 </table>
+        </c:if>
+
             </article>
         </div>
     </div>

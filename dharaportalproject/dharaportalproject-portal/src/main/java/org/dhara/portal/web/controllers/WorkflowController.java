@@ -20,7 +20,13 @@
 package org.dhara.portal.web.controllers;
 
 import org.apache.airavata.workflow.model.wf.Workflow;
+import org.apache.rave.model.PortalPreference;
+import org.apache.rave.portal.service.PortalPreferenceService;
+import org.apache.rave.portal.web.util.ModelKeys;
+import org.apache.rave.portal.web.util.PortalPreferenceKeys;
+import org.apache.rave.rest.model.SearchResult;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
+import org.dhara.portal.web.helper.ExperimentHelper;
 import org.dhara.portal.web.helper.WorkflowHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,13 +52,20 @@ public class WorkflowController {
 
     private static final String SELECTED_ITEM = "workflows";
 
+    int DEFAULT_PAGE_SIZE=10;
+
+
+    @Autowired
+    private PortalPreferenceService preferenceService;
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;
 
     @RequestMapping(value = {"/admin/workflows", "/admin/workflows/"}, method = RequestMethod.GET)
-    public String handleRequestInternal(@RequestParam(required = false) final String action,
-                                @RequestParam(required = false) String referringPageId, Model model, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+    public String handleRequestInternal(@RequestParam(required = false, defaultValue = "0") int offset,
+                                        @RequestParam(required = false) final String action,
+                                @RequestParam(required = false) String referringPageId, Model model,
+                                HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
 
         addNavigationMenusToModel(SELECTED_ITEM, model, referringPageId);
         List<Workflow> workflowList = airavataClientAPIService.getAllWorkflows();
@@ -70,10 +83,45 @@ public class WorkflowController {
         if (paramMap.size() == 0) {
             WebUtils.setSessionAttribute(httpServletRequest, "workflows", workflowHelpers);
         }
-        model.addAttribute("message", workflowHelpers);
+
+        int count =workflowHelpers.size();
+        workflowHelpers=getLimitedList(offset,count,workflowHelpers);
+        final SearchResult<WorkflowHelper> workflows =new SearchResult<WorkflowHelper>(workflowHelpers,count);
+        workflows.setOffset(offset);
+        workflows.setPageSize(getPageSize());
+        model.addAttribute(ModelKeys.SEARCHRESULT, workflows);
+
+
+//        model.addAttribute("message", workflowHelpers);
 
 
         return "templates.admin.workflows";
     }
 
+    private List<WorkflowHelper> getLimitedList(int offset, int count, List<WorkflowHelper> exp){
+        List<WorkflowHelper> limited=new ArrayList<WorkflowHelper>();
+
+        int max=count;
+        if(count>DEFAULT_PAGE_SIZE+offset)
+            max=DEFAULT_PAGE_SIZE+offset;
+        int j=0;
+        for(int i=offset;i<max;i++){
+            limited.add(j,exp.get(i));
+            j++;
+        }
+        return limited;
+
+    }
+
+    public int getPageSize() {
+        final PortalPreference pageSizePref = preferenceService.getPreference(PortalPreferenceKeys.PAGE_SIZE);
+        if (pageSizePref == null) {
+            return DEFAULT_PAGE_SIZE;
+        }
+        try {
+            return Integer.parseInt(pageSizePref.getValue());
+        } catch (NumberFormatException e) {
+            return DEFAULT_PAGE_SIZE;
+        }
+    }
 }
