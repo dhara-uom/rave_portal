@@ -15,6 +15,8 @@
         <div class="span10">
             <article>
                 <h2><fmt:message key="admin.workflows.shortTitle"/></h2>
+                <rave:admin_listheader/>
+                <rave:admin_paging/>
 
                 <table id="workflowList" class="table table-striped table-bordered table-condensed">
                     <thead>
@@ -26,7 +28,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${message}" var="workflow">
+                    <c:forEach items="${searchResult.resultSet}" var="workflow">
                         <tr>
                             <td>
                                 <c:out value="${workflow.name}"/>
