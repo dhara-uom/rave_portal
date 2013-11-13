@@ -63,11 +63,11 @@ public class WPS52NorthConfig {
             throw new PortalException(e.getMessage(),e);
         }
         OMElement documentElement= builder.getDocumentElement();
-        OMElement airavataConfiguration=documentElement.getFirstElement();
-        OMElement server=airavataConfiguration.getFirstElement();
-        this.setPassword(server.getFirstChildWithName(new QName("username")).toString());
-        this.setUserName(server.getFirstChildWithName(new QName("password")).toString());
-        this.setServerUrl(server.getFirstChildWithName(new QName("server-url")).toString());
+        OMElement northConfiguration=documentElement.getFirstElement();
+        OMElement server=northConfiguration.getFirstElement();
+        this.setPassword(server.getFirstChildWithName(new QName("username")).getText().toString());
+        this.setUserName(server.getFirstChildWithName(new QName("password")).getText().toString());
+        this.setServerUrl(server.getFirstChildWithName(new QName("server-url")).getText().toString());
     }
 
     public String getServerUrl() {
