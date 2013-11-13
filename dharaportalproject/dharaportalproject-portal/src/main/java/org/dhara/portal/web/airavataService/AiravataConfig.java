@@ -53,7 +53,7 @@ public class AiravataConfig {
         this.setPassword("admin");
         this.setUserName("admin");
         this.setGatewayName("default");
-        this.setPort(8001);
+        this.setPort(8081);
         this.setServerContextName("airavata-registry");
         this.setServerUrl("localhost");
     }
@@ -78,20 +78,22 @@ public class AiravataConfig {
         } catch (XMLStreamException e) {
             throw new PortalException(e.getMessage(),e);
         }
+
         OMElement documentElement= builder.getDocumentElement();
         OMElement airavataConfiguration=documentElement.getFirstElement();
         OMElement server=airavataConfiguration.getFirstElement();
-        this.setPassword(server.getFirstChildWithName(new QName("username")).toString());
-        this.setUserName(server.getFirstChildWithName(new QName("password")).toString());
-        this.setGatewayName(server.getFirstChildWithName(new QName("gateway-name")).toString());
-        this.setPort(Integer.parseInt(server.getFirstChildWithName(new QName("port")).toString()));
-        this.setServerContextName(server.getFirstChildWithName(new QName("server-context")).toString());
-        this.setServerUrl(server.getFirstChildWithName(new QName("server-url")).toString());
-        this.setBroker(server.getFirstChildWithName(new QName("broker")).toString());
-        this.setGfac(server.getFirstChildWithName(new QName("gfac")).toString());
-        this.setMessageBox(server.getFirstChildWithName(new QName("message-box")).toString());
-        this.setJcr(server.getFirstChildWithName(new QName("jcr")).toString());
+        this.setPassword(server.getFirstChildWithName(new QName("username")).getText().toString());
+        this.setUserName(server.getFirstChildWithName(new QName("password")).getText().toString());
+        this.setGatewayName(server.getFirstChildWithName(new QName("gateway-name")).getText().toString());
+        this.setPort(Integer.parseInt(server.getFirstChildWithName(new QName("port")).getText().toString()));
+        this.setServerContextName(server.getFirstChildWithName(new QName("server-context")).getText().toString());
+        this.setServerUrl(server.getFirstChildWithName(new QName("server-url")).getText().toString());
+        this.setBroker(server.getFirstChildWithName(new QName("broker")).getText().toString());
+        this.setGfac(server.getFirstChildWithName(new QName("gfac")).getText().toString());
+        this.setMessageBox(server.getFirstChildWithName(new QName("message-box")).getText().toString());
+        this.setJcr(server.getFirstChildWithName(new QName("jcr")).getText().toString());
     }
+
     public int getPort() {
         return port;
     }
