@@ -2239,10 +2239,10 @@
     <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIServiceImpl.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383274371992" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/java/org/dhara/portal/web/controllers/WorkflowDeploymentController.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383051377723" ignored="false" />
     <file path="/messages.properties" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383392280237" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/webapp/WEB-INF/web.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383245735693" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/webapp/WEB-INF/web.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384317057019" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/java/org/dhara/portal/web/controllers/WorkflowMonitorController.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383054090295" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/java/org/dhara/portal/web/controllers/ExperimentController.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383319231378" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/java/org/dhara/portal/web/airavataService/AiravataConfig.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384315794524" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/java/org/dhara/portal/web/airavataService/AiravataConfig.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384317033932" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/portal/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_2.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383057235615" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/portal/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_2.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383057235616" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/portal/.idea/libraries/Maven__wsdl4j_wsdl4j_1_5_2.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383057235618" ignored="false" />
@@ -2656,7 +2656,7 @@
     <file path="$PROJECT_DIR$/../../../dhara-portal/portal/src/main/java/org/dhara/portal/web/northToAiravataConnector/WorkflowExecutionServlet.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383274460984" ignored="false" />
     <file path="/WorkflowExecutionServlet.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383274460984" ignored="false" />
     <file path="/userdetail.jsp" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383309126388" ignored="false" />
-    <file path="/workflows.jsp" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383382755550" ignored="false" />
+    <file path="/workflows.jsp" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384323560864" ignored="false" />
     <file path="/experiments.jsp" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1383392103337" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/.idea/copyright/profiles_settings.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384224815608" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/.idea/compiler.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384224868674" ignored="false" />
@@ -2786,23 +2786,23 @@
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/test/northtest/WPSNorthServiceConstants.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384244435689" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/backendtest/RestClient.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384244488604" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/backendtest/RestResourceUtils.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384244488604" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/backendtest/RestServiceConfig.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384314872042" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/backendtest/RestServiceConfig.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384334605537" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/northtest/WPS52NorthConfig.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384314994447" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/exception/PortalException.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384244488604" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/MonitorWorkflow.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384245345660" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/MonitorWorkflow.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384334605537" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/AiravataConfig.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384314694076" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/MonitorListener.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384244488604" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/RunWorkflow.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384245302514" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/northtest/WPSNorthServiceConstants.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384244488604" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/AiravataWorkflowUploadingTest.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384245654169" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/AiravataWorkflowExecutionTest.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384278757012" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/WorkflowManager.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384278757012" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/AiravataWorkflowExecutionTest.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384334605537" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/airavatatest/WorkflowManager.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384334605537" ignored="false" />
     <file path="/WorkflowManager.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384278532795" ignored="false" />
     <file path="/AiravataWorkflowExecutionTest.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384278714219" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/northtest/WPS52Manager.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384250541554" ignored="false" />
     <file path="/WPS52Manager.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384250423663" ignored="false" />
     <file path="/WPS52NorthConfig.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384315571160" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/northtest/WPS52NorthUploadClassTest.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384280677901" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../dhara-portal/dharatest/src/test/java/org/dhara/portal/test/northtest/WPS52NorthUploadClassTest.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384334605538" ignored="false" />
     <file path="/WPS52NorthUploadClassTest.java" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384250516884" ignored="false" />
     <file path="$USER_HOME$/Application/openMRSSync/new-patient/patientRegistrationSLHMS/pom.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384254922346" ignored="false" />
     <file path="$USER_HOME$/Application/openMRSSync/new-patient/patientRegistrationSLHMS/patientregistration/pom.xml" changelist="2985896d-b79e-486f-bdd0-e70ffe236c86" time="1384255063912" ignored="false" />
@@ -2853,7 +2853,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceImpl.java" line="29" class="org.dhara.portal.web.restClientService.RestServiceImpl" package="org.dhara.portal.web.restClientService">
+      <breakpoint url="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceImpl.java" line="36" class="org.dhara.portal.web.restClientService.RestServiceImpl" package="org.dhara.portal.web.restClientService">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -2881,7 +2881,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceImpl.java" line="30" class="org.dhara.portal.web.restClientService.RestServiceImpl" package="org.dhara.portal.web.restClientService">
+      <breakpoint url="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceImpl.java" line="37" class="org.dhara.portal.web.restClientService.RestServiceImpl" package="org.dhara.portal.web.restClientService">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -3025,92 +3025,96 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WPSNorthServiceConstants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPSNorthServiceConstants.java">
+      <file leaf-file-name="workflows.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/workflows.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="13" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
+            <state line="8" column="71" selection-start="348" selection-end="412" vertical-scroll-proportion="-2.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AiravataConfig.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/airavataService/AiravataConfig.java">
+      <file leaf-file-name="userProfile.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal-resources/src/main/webapp/WEB-INF/jsp/views/userProfile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="94" selection-start="2576" selection-end="3791" vertical-scroll-proportion="0.7814313">
+            <state line="10" column="35" selection-start="470" selection-end="470" vertical-scroll-proportion="18.416666">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomUserServiceTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/test/java/org/dhara/CustomUserServiceTest.java">
+      <file leaf-file-name="users.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal-resources/src/main/webapp/WEB-INF/jsp/views/admin/users.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="57" selection-start="4307" selection-end="4307" vertical-scroll-proportion="0.0">
+            <state line="107" column="4" selection-start="4960" selection-end="4966" vertical-scroll-proportion="-15.833333">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AiravataClientAPIServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIServiceImpl.java">
+      <file leaf-file-name="page_functions.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/static/scripts/page_functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="49" selection-start="6314" selection-end="6314" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WPS52NorthService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPS52NorthService.java">
+      <file leaf-file-name="userdetail.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/overlays/org.apache.rave.rave-portal-resources-0.23-SNAPSHOT/WEB-INF/jsp/views/admin/userdetail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="17" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WPS52NorthConfig.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPS52NorthConfig.java">
+      <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="102" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="130.66667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestServiceConfig.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceConfig.java">
+      <file leaf-file-name="store.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/store.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="103" selection-start="2080" selection-end="2573" vertical-scroll-proportion="0.0">
+            <state line="128" column="52" selection-start="6260" selection-end="6263" vertical-scroll-proportion="-5.4693875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodegenUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/codegenService/CodegenUtils.java">
+      <file leaf-file-name="custom_js.tag" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/tags/custom_js.tag">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="28" selection-start="2341" selection-end="2414" vertical-scroll-proportion="0.0">
+            <state line="20" column="60" selection-start="883" selection-end="971" vertical-scroll-proportion="-12.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AiravataClientAPIService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="17" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
+      <file leaf-file-name="rave-logo-sm.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/static/images/rave-logo-sm.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WPSConnect52ServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPSConnect52ServiceImpl.java">
+      <file leaf-file-name="jquery.blockUI.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/static/scripts/jquery.blockUI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="30" selection-start="379" selection-end="1776" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="617" column="6" selection-start="19977" selection-end="19977" vertical-scroll-proportion="16.797773">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1384343042306" expanded="true" signature="9742:9750" placeholder="..." />
+                <marker date="1384343042306" expanded="true" signature="9949:9961" placeholder="..." />
+                <marker date="1384343042306" expanded="true" signature="10066:10074" placeholder="..." />
+                <marker date="1384343042306" expanded="true" signature="10173:10181" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -3133,14 +3137,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/applicationContext.xml" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestResourceUtils.java" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/controllers/ExperimentController.java" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceImpl.java" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestService.java" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/overlays/org.apache.rave.rave-portal-resources-0.23-SNAPSHOT/WEB-INF/jsp/views/admin/userdetail.jsp" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/controllers/WorkflowCustomDeploymentController.java" />
-        <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/workflows.jsp" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/customdeploy.jsp" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/resources/messages.properties" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/experiments.jsp" />
@@ -3149,6 +3151,8 @@
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/airavataService/AiravataConfig.java" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceConfig.java" />
         <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPS52NorthConfig.java" />
+        <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/workflows.jsp" />
+        <option value="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/static/scripts/jquery.blockUI.js" />
       </list>
     </option>
   </component>
@@ -3160,10 +3164,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="-1" />
     <option name="y" value="24" />
-    <option name="width" value="1301" />
-    <option name="height" value="744" />
+    <option name="width" value="1368" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -3208,6 +3212,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="rave" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rave" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rave-portal-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rave" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rave-portal-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rave" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rave-portal-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dharaportalproject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3302,45 +3370,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dhara" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dharaportalproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dharaportalproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dharaportalproject-portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dhara" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3366,19 +3400,227 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dhara" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="tags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="airavataService" />
+              <option name="myItemId" value="dharaportalproject-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dharaportalproject-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3406,8 +3648,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/static/scripts" />
+      <recent name="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/images" />
       <recent name="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin" />
       <recent name="$PROJECT_DIR$/dharaportalproject-portal/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -3586,13 +3833,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="0" />
+    <frame x="-1" y="24" width="1368" height="745" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.06020067" sideWeight="0.49720672" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.49720672" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -3601,16 +3848,16 @@
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482043" sideWeight="0.6705686" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23560606" sideWeight="0.6705686" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3681,108 +3928,128 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="17" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestResourceUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/codegenService/CodeGenService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/codegenService/CodeGenServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="229" selection-start="2300" selection-end="2300" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPSConnect52ServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="30" selection-start="379" selection-end="1776" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPSNorthServiceConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPS52NorthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/codegenService/CodegenUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="28" selection-start="2341" selection-end="2414" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/test/java/org/dhara/CustomUserServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="57" selection-start="4307" selection-end="4307" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="139" column="49" selection-start="6314" selection-end="6314" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3999#4015#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/restClientService/RestServiceConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="103" selection-start="2080" selection-end="2573" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/wps52NorthService/WPS52NorthConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="102" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/java/org/dhara/portal/web/airavataService/AiravataConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="94" selection-start="2576" selection-end="3791" vertical-scroll-proportion="0.7814313">
+        <state line="55" column="31" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/customdeploy.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="39" selection-start="829" selection-end="829" vertical-scroll-proportion="-11.25">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/experiments.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="31" selection-start="698" selection-end="698" vertical-scroll-proportion="-11.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/static/images/rave-logo-sm.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/store.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="52" selection-start="6260" selection-end="6263" vertical-scroll-proportion="-5.4693875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="130.66667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/static/scripts/page_functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/tags/custom_js.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="60" selection-start="883" selection-end="971" vertical-scroll-proportion="-12.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal-resources/src/main/webapp/WEB-INF/jsp/views/userProfile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="35" selection-start="470" selection-end="470" vertical-scroll-proportion="18.416666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/overlays/org.apache.rave.rave-portal-resources-0.23-SNAPSHOT/WEB-INF/jsp/views/admin/userdetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal-resources/src/main/webapp/WEB-INF/jsp/views/admin/users.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="4" selection-start="4960" selection-end="4966" vertical-scroll-proportion="-15.833333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/WEB-INF/jsp/views/admin/workflows.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="71" selection-start="348" selection-end="412" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dharaportalproject-portal/src/main/webapp/static/scripts/jquery.blockUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="617" column="6" selection-start="19977" selection-end="19977" vertical-scroll-proportion="16.797773">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1384343042306" expanded="true" signature="9742:9750" placeholder="..." />
+            <marker date="1384343042306" expanded="true" signature="9949:9961" placeholder="..." />
+            <marker date="1384343042306" expanded="true" signature="10066:10074" placeholder="..." />
+            <marker date="1384343042306" expanded="true" signature="10173:10181" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

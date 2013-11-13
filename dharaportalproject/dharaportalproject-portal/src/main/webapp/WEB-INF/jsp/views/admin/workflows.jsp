@@ -3,9 +3,28 @@
 <fmt:setBundle basename="messages"/>
 
 <fmt:message key="${pageTitleKey}" var="pagetitle"/>
-
+<script type='text/javascript' src='/portal/static/scripts/jquery.blockUI.js'></script>
 <rave:navbar pageTitle="${pagetitle}"/>
-<div class="container-fluid admin-ui">
+<script>
+    require(["portal/rave_admin", "jquery"], function(raveAdmin, $){
+    $(document).ready(function() {
+        $('a').click(function(){
+            $.blockUI({ css: {
+                border: 'none',
+                padding: '15px',
+                backgroundColor: '#000',
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                opacity: .5,
+                color: '#fff'
+            } });
+            setTimeout($.unblockUI, 20000);
+        });
+    });
+    })
+</script>
+
+<div id="workflowdetails"  class="container-fluid admin-ui">
     <div class="row-fluid">
         <div class="span2">
             <div class="tabs-respond">
@@ -38,8 +57,8 @@
                                 <c:out value="10/10/2013"/>
                             </td>
                             <td>
-                                <a href="/portal/app/admin/workflow/deploy?workflowId=${workflow.name}">Deafult</a>
-                                <a href="/portal/app/admin/workflow/customdeploy?workflowId=${workflow.name}"> Custom</a>
+                                <a name="default" href="/portal/app/admin/workflow/deploy?workflowId=${workflow.name}">Deafult</a>
+                                <a name="custom" href="/portal/app/admin/workflow/customdeploy?workflowId=${workflow.name}"> Custom</a>
                             </td>
                         </tr>
                     </c:forEach>
