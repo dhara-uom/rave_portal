@@ -35,8 +35,10 @@ public class RestServiceImpl implements RestService {
     public List<WorkflowHelper> getWorkflows() throws IOException {
         String response= getRestClient().getResponse(getRestServiceConfig().getServerUrl() + RestResourceUtils.WORKFLOWDATA_RESOURCE);
         ObjectMapper mapper = new ObjectMapper();
+        //TODO exception in this mapper object
         return mapper.readValue(response, new TypeReference<List<WorkflowHelper>>(){});
     }
+
 
     @Override
     public Object monitorExperiment() {
