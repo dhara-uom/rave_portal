@@ -34,7 +34,7 @@
         <div class="span10">
             <article>
                 <h2><fmt:message key="admin.workflows.shortTitle"/></h2>
-                <rave:admin_listheader/>
+                <rave:admin_listheader_dhara/>
                 <rave:admin_paging/>
 
                 <table id="workflowList" class="table table-striped table-bordered table-condensed">

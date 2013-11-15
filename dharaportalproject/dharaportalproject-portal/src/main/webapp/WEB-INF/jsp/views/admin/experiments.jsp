@@ -68,7 +68,7 @@
         <div class="span10">
             <article>
                 <h2>Experiments List</h2>
-                <rave:admin_listheader/>
+                <rave:admin_listheader_dhara/>
                     <rave:admin_paging/>
 
     <c:if test="${searchResult.totalResults > 0}">

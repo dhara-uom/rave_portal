@@ -104,6 +104,18 @@ padding-bottom: 65px;
 
 }
 
+.form-horizontal .control-label-3 {
+    width: 140px;
+    color: #383636;
+
+    float: left;
+    padding-top: 5px;
+    text-align: right;
+
+}
+
+
+
 /*.form-horizontal .controls {*/
     /*margin-left: 160px;*/
     /*margin-top: -25px;*/

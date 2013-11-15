@@ -43,68 +43,61 @@
                 <h5 style="padding-below:20px;  font-size: 18px"><fmt:message
                         key="page.overview.title"/></h5>
 
-                <p style="padding-top:20px; color:#383636; padding-bottom:20px">
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
+                <p style="padding-top:20px; color:#383636; padding-bottom:20px; text-align: justify">
+                    Dhara portal provides access to Dhara-geoscience gateway, a step towards enabling computational
+                    geoscience.
+                    Gateway is based on <a href="http://airavata.apache.org/">Apache Airavata</a>,
+                    <a href="http://52north.org/communities/geoprocessing/wps/">52North WPS</a> and
+                    <a href="http://rave.apache.org/"> Apache Rave</a>. Several technologies have been brought together
+                    in building Dhara gateway to address key concerns of computational geoscience domain. Dhara portal
+                    is a free tool
+                    which caters the geoscientists, students and the general public.
                 </p>
             </div>
             <div class="row-fluid" id="mapRow">
 
-                <div class="span7">
+                <div class="span11" style="margin-left: 30px">
 
                     <div class="slate">
 
                         <div class="page-header">
                             <h2 style="color:#383636"><i class="icon-globe pull-right"></i>Map</h2>
                         </div>
-                        <div id="map_element_1" style="height: 297px;"></div>
+                        <div id="map_element_1" style="height: 312px;"></div>
                         <div class="slate" id="map_description">
-                            <p style="color: #383636">The map shows locations in Sri Lanka</p>
+                            <p style="color: #383636">The map shows significant earthquakes occurred world-wide
+                                within the year of 2013. This is an example for the use of OGC KML data format.
+                                <i>Source</i>:<a href="http://earthquake.usgs.gov/earthquakes/">
+                                    http://earthquake.usgs.gov/earthquakes/</a></p>
                         </div>
                     </div>
 
                 </div>
-                <div class="span5">
+                    <%--<div class="span5">--%>
 
-                    <div class="slate">
+                    <%--<div class="slate">--%>
 
-                        <div class="page-header">
-                            <h2 style="color:#383636"><i class="icon-briefcase pull-right"></i>Features</h2>
-                        </div>
-                        <h5 style="font-size: 18px; font-weight: normal">Workflows</h5>
+                    <%--<div class="page-header">--%>
+                    <%--<h2 style="color:#383636"><i class="icon-briefcase pull-right"></i>Features</h2>--%>
+                    <%--</div>--%>
+                    <%--<h5 style="font-size: 18px; font-weight: normal">Workflows</h5>--%>
 
-                        <h5 style="font-size: 18px; font-weight: normal">WPS</h5>
-                    </div>
-                </div>
+                    <%--<h5 style="font-size: 18px; font-weight: normal">WPS</h5>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
             </div>
             <div class="row-fluid" id="lastRow">
-                <h5 style="padding-below:20px;  font-size: 18px">Some more details</h5>
+                <h5 style="padding-below:20px;  font-size: 18px">Functionality</h5>
 
-                <p style="padding-top:20px; padding-bottom:20px; color: #383636">
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
-                    some more text some more text some more text
+                <p style="padding-top:20px; padding-bottom:20px; color: #383636; text-align: justify">
+                    Dhara portal provides its services according to standards introduced by the
+                    <a href="http://www.opengeospatial.org/">Open Geospatial Consortium</a>.
+                    Currently we cater the use of four OGC standards: WPS, WFS, KML and GML.
+                    <br>
+                    <br><i><b>WPS Client:</b></i> To load WPS processes available in a remote server
+                    <br><i><b>WFS Client:</b></i> To load geospatial data exposed through WFS from a remote server
+                    <br><i><b>KML Client:</b></i> To load and visualize geospatial data using local KML files
+                    <br><i><b>GML Client:</b></i> To load and visualize geospatial data using local GML files
                 </p>
             </div>
         </div>
@@ -154,7 +147,7 @@
                         <div class="controls">
                             <input type='checkbox' name='_spring_security_remember_me' id="remember_me"
                                    value="true"
-                                   style="margin-left: -60px" />
+                                   style="margin-left: -60px"/>
                         </div>
                     </div>
                 </fieldset>
@@ -217,34 +210,34 @@
         </div>
     </div>
     <div class="row-fluid" id="newsRow">
-            <div id="newsBlock" class="clearfix well">
-                <div class="slate">
+        <div id="newsBlock" class="clearfix well">
+            <div class="slate">
 
-                    <div class="page-header">
-                        <h2 style="color:#383636"><i class="icon-rss pull-right"></i>News</h2>
-                    </div>
-
-                    <table class="orders-table table">
-                        <tbody>
-                        <tr>
-                            <td><a class="news" href="">News article title</a></td>
-                        </tr>
-                        <tr>
-                            <td><a class="news" href="">Another news article title</a></td>
-                        </tr>
-                        <tr>
-                            <td><a class="news" href="">A third news article title</a></td>
-                        </tr>
-                        <tr>
-                            <td><a class="news" href="">A final news article title</a></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><a class="news" href="">Read more news</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-
+                <div class="page-header">
+                    <h2 style="color:#383636"><i class="icon-rss pull-right"></i>News</h2>
                 </div>
+
+                <table class="orders-table table">
+                    <tbody>
+                    <tr>
+                        <td><a class="news" href="">WPS Client 1.00 introduced</a></td>
+                    </tr>
+                    <tr>
+                        <td><a class="news" href="">WFS Client 1.00 added</a></td>
+                    </tr>
+                    <tr>
+                        <td><a class="news" href="">KML Client 1.00 added</a></td>
+                    </tr>
+                    <tr>
+                        <td><a class="news" href="">GML Client 1.00 added</a></td>
+                    </tr>
+                        <%--<tr>--%>
+                        <%--<td colspan="2"><a class="news" href="">Read more news</a></td>--%>
+                        <%--</tr>--%>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
     </div>
 </div>
