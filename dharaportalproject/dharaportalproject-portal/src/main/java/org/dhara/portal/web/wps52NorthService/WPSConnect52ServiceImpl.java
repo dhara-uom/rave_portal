@@ -1,5 +1,8 @@
 package org.dhara.portal.web.wps52NorthService;
 
+import org.dhara.portal.web.configuration.PortalConfiguration;
+import org.dhara.portal.web.configuration.WPS52NorthConfig;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -11,6 +14,11 @@ import java.net.URLEncoder;
 
 public class WPSConnect52ServiceImpl implements WPS52NorthService{
     private WPS52NorthConfig wps52NorthConfig;
+    private PortalConfiguration portalConfiguration;
+
+    public WPSConnect52ServiceImpl() {
+
+    }
     public void uploadClass(String generatedClass,String workFlowId) throws IOException {
 
         String defaultPackage = wps52NorthConfig.getDefaultPackage();
@@ -68,5 +76,14 @@ public class WPSConnect52ServiceImpl implements WPS52NorthService{
 
     public void setWps52NorthConfig(WPS52NorthConfig wps52NorthConfig) {
         this.wps52NorthConfig = wps52NorthConfig;
+    }
+
+    public PortalConfiguration getPortalConfiguration() {
+        return portalConfiguration;
+    }
+
+    public void setPortalConfiguration(PortalConfiguration portalConfiguration) {
+        this.portalConfiguration = portalConfiguration;
+        wps52NorthConfig=portalConfiguration.getWps52NorthConfig();
     }
 }
