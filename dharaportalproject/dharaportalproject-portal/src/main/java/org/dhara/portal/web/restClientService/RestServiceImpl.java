@@ -3,6 +3,8 @@ package org.dhara.portal.web.restClientService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.dhara.portal.web.helper.ExperimentHelper;
+import org.dhara.portal.web.configuration.PortalConfiguration;
+import org.dhara.portal.web.configuration.RestServiceConfig;
 import org.dhara.portal.web.helper.WorkflowHelper;
 
 import java.io.IOException;
@@ -18,7 +20,7 @@ import java.util.List;
 public class RestServiceImpl implements RestService {
 
     private RestServiceConfig restServiceConfig;
-
+    private PortalConfiguration portalConfiguration;
     private RestClient restClient;
 
     public RestServiceImpl() {
@@ -59,5 +61,14 @@ public class RestServiceImpl implements RestService {
 
     public RestServiceConfig getRestServiceConfig() {
         return restServiceConfig;
+    }
+
+    public PortalConfiguration getPortalConfiguration() {
+        return portalConfiguration;
+    }
+
+    public void setPortalConfiguration(PortalConfiguration portalConfiguration) {
+        this.portalConfiguration = portalConfiguration;
+        restServiceConfig=portalConfiguration.getRestServiceConfig();
     }
 }

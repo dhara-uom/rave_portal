@@ -15,6 +15,8 @@ import org.apache.airavata.rest.client.PasswordCallbackImpl;
 import org.apache.airavata.workflow.model.wf.Workflow;
 import org.apache.airavata.workflow.model.wf.WorkflowInput;
 import org.dhara.portal.web.exception.PortalException;
+import org.dhara.portal.web.configuration.AiravataConfig;
+import org.dhara.portal.web.configuration.PortalConfiguration;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -32,10 +34,15 @@ import java.util.Map;
 public class AiravataClientAPIServiceImpl implements AiravataClientAPIService{
 
     private AiravataConfig airavataConfig;
-
+    private PortalConfiguration portalConfiguration;
     /**
      * @see org.dhara.portal.web.airavataService.AiravataClientAPIService#getAllWorkflows()
      */
+
+    public AiravataClientAPIServiceImpl() {
+
+    }
+    
     public List<Workflow> getAllWorkflows() throws PortalException {
         List<Workflow> workflows = null;
         AiravataAPI airavataAPI=getAiravataAPI();
@@ -130,10 +137,6 @@ public class AiravataClientAPIServiceImpl implements AiravataClientAPIService{
             return airavataAPI;
     }
 
-    public void setAiravataConfig(AiravataConfig airavataConfig) {
-        this.airavataConfig = airavataConfig;
-    }
-
 
     public List<NodeExecutionData> getWorkflowExperimentData(String experimentId) throws PortalException, AiravataAPIInvocationException,
             ExperimentLazyLoadedException {
@@ -167,5 +170,10 @@ public class AiravataClientAPIServiceImpl implements AiravataClientAPIService{
         monitorWorkflow.monitor(experimentId,airavataAPI);
         //parse experiment id to monitor() method in monitorWorkflow class
         //we can run experiment without specifying inputs (it runs with its earlier inputs and configurations)
+    }
+
+    public void setPortalConfiguration(PortalConfiguration portalConfiguration) {
+        this.portalConfiguration = portalConfiguration;
+        airavataConfig=portalConfiguration.getAiravataConfig();
     }
 }

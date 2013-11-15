@@ -127,18 +127,12 @@ be overridden by setting a system property "portal.override.properties" -->
     </bean>
 
 <!--dhara-->
-	<bean id="airavataConfig" class="org.dhara.portal.web.airavataService.AiravataConfig" scope="singleton">
-    </bean>
-
-    <bean id="wps52NorthConfig" class="org.dhara.portal.web.wps52NorthService.WPS52NorthConfig" scope="singleton">
-    </bean>
-
-    <bean id="restServiceConfig" class="org.dhara.portal.web.restClientService.RestServiceConfig" scope="singleton">
+    <bean id="portalConfiguration" class="org.dhara.portal.web.configuration.PortalConfiguration" scope="singleton">
     </bean>
 
     <bean id="airavataAPIService" class="org.dhara.portal.web.airavataService.AiravataClientAPIServiceImpl">
-        <property name="airavataConfig">
-            <ref bean="airavataConfig"/>
+        <property name="portalConfiguration">
+            <ref bean="portalConfiguration"/>
         </property>
     </bean>
 
@@ -149,15 +143,15 @@ be overridden by setting a system property "portal.override.properties" -->
     </bean>
 
     <bean id="wps52NorthService" class="org.dhara.portal.web.wps52NorthService.WPSConnect52ServiceImpl" scope="prototype">
-        <property name="wps52NorthConfig">
-            <ref bean="wps52NorthConfig"/>
+        <property name="portalConfiguration">
+            <ref bean="portalConfiguration"/>
         </property>
     </bean>
 
 
     <bean id="restAPISerservice" class="org.dhara.portal.web.restClientService.RestServiceImpl" scope="prototype">
-        <property name="restServiceConfig">
-            <ref bean="restServiceConfig"/>
+        <property name="portalConfiguration">
+            <ref bean="portalConfiguration"/>
         </property>
     </bean>
 
