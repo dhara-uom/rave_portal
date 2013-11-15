@@ -19,7 +19,6 @@
 <%@ page language="java" trimDirectiveWhitespaces="true" %>
 <%@ include file="/WEB-INF/jsp/includes/taglibs.jsp" %>
 <fmt:setBundle basename="messages"/>
-<fmt:message key="${pageTitleKey}" var="pagetitle"/>
 <rave:navbar pageTitle="${pagetitle}"/>
 
 <div class="container-fluid navbar-spacer" id="widgetStore">
@@ -51,7 +50,6 @@
         </fmt:message>
     </c:otherwise>
 </c:choose>
-
 <h2>${listheader}</h2>
 <%--@elvariable id="widgets" type="org.apache.rave.rest.model.SearchResult"--%>
 <c:if test="${widgets.totalResults gt 0}">
@@ -90,7 +88,6 @@
                     <li class="storeItem">
                 </c:otherwise>
             </c:choose>
-
             <div class="widget-title-bar">
                 <c:out value="${widget.title}"/>
             </div>
@@ -104,8 +101,7 @@
                 <div id="widgetAdded_${widget.id}" class="storeButton">
                     <button class="btn btn-small btn-primary widgetAddButton" id="addWidget_${widget.id}"
                             data-widget-id="${widget.id}" data-referring-page-id="${referringPageId}"
-                            data-success="<fmt:message key=" page.widget.addedToPage
-                    "/>">
+                            data-success="<fmt:message key="page.widget.addedToPage"/>">
                         <fmt:message key="page.widget.addToPage"/>
                     </button>
                 </div>
@@ -121,7 +117,7 @@
                 <c:if test="${widget.disableRendering}">
                     <div class="storeWidgetDisabled">
                                             <span class="widget-disabled-icon-store ui-icon ui-icon-alert"
-                                                  title="<fmt:message key=" widget.chrome.disabled"/>"></span>
+                                                  title="<fmt:message key="widget.chrome.disabled"/>"></span>
                         <c:out value="${widget.disableRenderingMessage}" escapeXml="true"/>
                     </div>
                 </c:if>
@@ -137,7 +133,6 @@
                 <div class="clearfix">
                     <div class="widgetRating">
                         <strong><fmt:message key="page.widget.rate"/></strong>
-
                         <form class="hidden">
                             <input type="hidden" id="rate-${widget.id}"
                                    value="${widgetsStatistics[widget.id]!=null?widgetsStatistics[widget.id].userRating:"-1"}">
@@ -150,34 +145,27 @@
 		                                <span id="totalLikes-${widget.id}" data-rave-widget-likes="${widgetLikes}">
 		                                    <span class="like-text">${widgetLikes}</span>
 		                                </span>
-		                                <i class="icon-thumbs-up" title="${widgetLikes}&nbsp;<fmt:message key="
-                                           page.widget.rate.likes"/>"></i>
+		                                <i class="icon-thumbs-up" title="${widgetLikes}&nbsp;<fmt:message key="page.widget.rate.likes"/>"></i>
                             		</span>
                                 	 <span class="widgetDislikeCount">
 		                                <c:set var="widgetDislikes">
                                             ${widgetsStatistics[widget.id]!=null?widgetsStatistics[widget.id].totalDislike:"0"}
                                         </c:set>
 
-		                                <span id="totalDislikes-${widget.id}"
-                                              data-rave-widget-dislikes="${widgetDislikes}">
+		                                <span id="totalDislikes-${widget.id}" data-rave-widget-dislikes="${widgetDislikes}">
 		                                    <span class="dislike-text">${widgetDislikes}</span>
 		                                </span>
-		                                <i class="icon-thumbs-down" title="${widgetDislikes}&nbsp;<fmt:message key="
-                                           page.widget.rate.dislikes"/>"></i>
+		                                <i class="icon-thumbs-down" title="${widgetDislikes}&nbsp;<fmt:message key="page.widget.rate.dislikes"/>"></i>
 		                            </span>
                         </div>
                         <div id="rating-${widget.id}" class="ratingButtons" data-toggle="buttons-radio">
-                            <button id="like-${widget.id}"
-                                    class="widgetLikeButton btn btn-mini ${widgetsStatistics[widget.id].userRating==10? 'active btn-success':''}"
-                                ${widgetsStatistics[widget.id].userRating==10 ? " checked='true'":""}
-                                    name="rating-${widget.id}">
+                            <button id="like-${widget.id}" class="widgetLikeButton btn btn-mini ${widgetsStatistics[widget.id].userRating==10? 'active btn-success':''}"
+                                ${widgetsStatistics[widget.id].userRating==10 ? " checked='true'":""} name="rating-${widget.id}">
                                 <fmt:message key="page.widget.rate.likebtn"/>
                             </button>
 
-                            <button id="dislike-${widget.id}"
-                                    class="widgetDislikeButton btn btn-mini ${widgetsStatistics[widget.id].userRating==0? 'active btn-danger':''}"
-                                ${widgetsStatistics[widget.id].userRating==0 ? " checked='true'":""}
-                                    name="rating-${widget.id}">
+                            <button id="dislike-${widget.id}" class="widgetDislikeButton btn btn-mini ${widgetsStatistics[widget.id].userRating==0? 'active btn-danger':''}"
+                                ${widgetsStatistics[widget.id].userRating==0 ? " checked='true'":""} name="rating-${widget.id}">
                                 <fmt:message key="page.widget.rate.dislikebtn"/>
                             </button>
                             <!-- Displaying the likes and dislikes rating along with total votes -->
@@ -215,12 +203,10 @@
                                 <c:set var="widgetUserCountGreaterThanZero"
                                        value="${widgetStatistics != null && widgetStatistics.totalUserCount > 0}"/>
                                 <c:if test="${widgetUserCountGreaterThanZero}">
-                                    <a href="javascript:void(0);" class="displayUsersLink"
-                                       data-widget-id="${widget.id}">
+                                    <a href="javascript:void(0);" class="displayUsersLink" data-widget-id="${widget.id}">
                                         </c:if>
                                         <fmt:formatNumber groupingUsed="true"
-                                                          value="${widgetStatistics!=null?widgetStatistics.totalUserCount:0}"/>&nbsp;<fmt:message
-                                            key="page.widget.usercount"/>
+                                                          value="${widgetStatistics!=null?widgetStatistics.totalUserCount:0}"/>&nbsp;<fmt:message key="page.widget.usercount"/>
                                         <c:if test="${widgetUserCountGreaterThanZero}"></a></c:if>
                             </span>
             </div>
@@ -231,7 +217,7 @@
     </ul>
 
     <c:if test="${widgets.numberOfPages gt 1}">
-        <div>
+        <div >
             <ul class="pagination">
                 <c:forEach var="i" begin="1" end="${widgets.numberOfPages}">
                     <c:url var="pageUrl" value="">
@@ -244,7 +230,7 @@
                             <li class="active"><a href="#">${i}</a></li>
                         </c:when>
                         <c:otherwise>
-                            <li><a href="<c:out value="${pageUrl}"/>">${i}</a></li>
+                            <li> <a href="<c:out value="${pageUrl}"/>">${i}</a></li>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
@@ -254,25 +240,20 @@
 </c:if>
 </section>
 <section class="span4">
-    <form class="form-inline" action="<c:url value="
-    /app/store/search"/>" method="GET">
+    <form class="form-inline" action="<c:url value="/app/store/search"/>" method="GET">
         <fieldset>
             <input type="hidden" name="referringPageId" value="${referringPageId}">
             <legend style="margin-bottom: 0;"><fmt:message key="page.store.search"/></legend>
             <div class="control-group" style="margin-bottom: 18px;">
                 <div class="input-append">
                     <fmt:message key="page.store.search.button" var="searchButtonText"/>
-                    <input type="search" id="searchTerm" name="searchTerm" value="<c:out value="${searchTerm}"/>"/>
-                    <button class="btn btn-primary" type="submit"
-                            value="${searchButtonText}">${searchButtonText}</button>
+                    <input type="search" id="searchTerm" name="searchTerm" value="<c:out value="${searchTerm}"/>"/><button class="btn btn-primary" type="submit" value="${searchButtonText}">${searchButtonText}</button>
                 </div>
             </div>
             <legend>Filter Widget Store</legend>
             <c:if test="${not empty tags}">
                 <div class="control-group">
-                    <label class="control-label" for="categoryList"><fmt:message
-                            key="page.store.list.widgets.tag"/></label>
-
+                    <label class="control-label" for="categoryList"><fmt:message key="page.store.list.widgets.tag"/></label>
                     <div class="controls">
                         <select name="tagList" id="tagList" class="x-large">
                             <option value=""></option>
@@ -295,9 +276,7 @@
 
             <c:if test="${not empty categories}">
                 <div class="control-group">
-                    <label class="control-label" for="categoryList"><fmt:message
-                            key="page.store.list.widgets.category"/></label>
-
+                    <label class="control-label" for="categoryList"><fmt:message key="page.store.list.widgets.category"/></label>
                     <div class="controls">
                         <select name="categoryList" id="categoryList" class="x-large">
                             <option value="0"></option>
@@ -319,10 +298,8 @@
             </c:if>
         </fieldset>
     </form>
-    <a href="<spring:url value="/app/store/mine?referringPageId=${referringPageId}"/>"><fmt:message
-            key="page.store.list.widgets.mine"/></a><br/>
-    <a href="<spring:url value="/app/store?referringPageId=${referringPageId}"/>"><fmt:message
-            key="page.store.list.widgets.all"/></a>
+    <a href="<spring:url value="/app/store/mine?referringPageId=${referringPageId}"/>"><fmt:message key="page.store.list.widgets.mine"/></a><br/>
+    <a href="<spring:url value="/app/store?referringPageId=${referringPageId}"/>"><fmt:message key="page.store.list.widgets.all"/></a>
 </section>
 <section class="span4">
     <div class="storeItem">
@@ -350,9 +327,9 @@
 <portal:register-init-script location="${'AFTER_RAVE'}">
     <script>
         require(["rave", "ui", "portal/rave_store", "jquery"],
-                function (rave, ui, raveStore, $) {
+                function(rave, ui, raveStore, $){
                     //Helper function for callback below
-                    function addWidgetToPageCallback(result) {
+                    function addWidgetToPageCallback (result){
                         var widgetTitle = ui.getClientMessage("widget.add_prefix");
 
                         if (result != undefined && result.title != undefined && result.title.length > 0) {
@@ -367,8 +344,8 @@
                         $(addWidgetButton).removeClass("btn-primary").addClass("btn-success").html(addedText);
                     }
 
-                    rave.registerOnInitHandler(function () {
-                        $("#storeItems").on("click", "button.widgetAddButton", function (event) {
+                    rave.registerOnInitHandler(function(){
+                        $("#storeItems").on("click", "button.widgetAddButton", function(event){
                             var element = $(this);
                             rave.api.rpc.addWidgetToPage({widgetId: element.data('widget-id'),
                                 pageId: element.data('referring-page-id'), buttonId: element.attr('id'),
@@ -376,13 +353,13 @@
                             });
                         });
 
-                        $("#storeItems").on("click", "a.displayUsersLink", function (event) {
+                        $("#storeItems").on("click", "a.displayUsersLink", function(event){
                             var element = $(this);
                             ui.displayUsersOfWidget(element.data('widget-id'));
                         });
 
                         raveStore.init('<c:out value="${referringPageId}"/>');
                     })
-                })
+        })
     </script>
 </portal:register-init-script>
