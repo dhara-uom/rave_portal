@@ -1,0 +1,7 @@
+In the main pom.xml change the path in <portal.dataSource.url> tag and <shindig.dataSource.url> to point to the local rave_db.h2.db file
+
+<portal.dataSource.url>jdbc:h2:/path/to/file/rave_db;AUTO_SERVER=TRUE</portal.dataSource.url>
+
+<shindig.dataSource.url>jdbc:h2:/path/to/file/rave_db;AUTO_SERVER=TRUE</shindig.dataSource.url>
+
+
