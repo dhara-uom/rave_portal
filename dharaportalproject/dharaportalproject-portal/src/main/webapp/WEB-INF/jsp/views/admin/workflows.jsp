@@ -22,6 +22,25 @@
         });
     });
     })
+
+    function showTable(form_id){
+        if(document.getElementById(form_id).style.display == "none") {
+            document.getElementById(form_id).style.display = "block";
+
+        }
+        else
+            document.getElementById(form_id).style.display = "none";
+    }
+
+    function readInputs(form_name){
+
+        var query = $('#'+form_name).serialize();
+        var link = "/portal/app/admin/monitoring?workflowId="+form_name+"&"+query;
+        window.open(link);
+
+        return '';
+
+    }
 </script>
 
 <div id="workflowdetails"  class="container-fluid admin-ui">
@@ -44,6 +63,7 @@
                         <th><fmt:message key="admin.workflow.createdBy"/></th>
                         <th><fmt:message key="admin.workflow.createdDate"/></th>
                         <th><fmt:message key="admin.workflow.deploymentOptions"/></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -61,6 +81,17 @@
                             <td>
                                 <a name="default" href="/portal/app/admin/workflow/deploy?workflowId=${workflow.name}">Deafult</a>
                                 <a name="custom" href="/portal/app/admin/workflow/customdeploy?workflowId=${workflow.name}"> Custom</a>
+                            </td>
+                            <td>
+                                <a href="#" onclick="showTable('${workflow.name}')" >Input values</a>
+                                <form class="inner_table" id="${workflow.name}" style="display:none" >
+                                    <c:forEach var="item" items="${workflow.inputs}" varStatus="outer">
+
+                                        Input        ${item.name} (${item.type}) : <input type="text" name="${item.name}/(${item.type})"><br>
+
+                                    </c:forEach>
+                                     <a name="${item.type}" href='javascript:document.location.href=readInputs("${workflow.name}");' >Monitor</a>
+                                </form>
                             </td>
                         </tr>
                     </c:forEach>
