@@ -1,37 +1,36 @@
-<%@ page language="java" trimDirectiveWhitespaces="true" %>
-<%@ include file="/WEB-INF/jsp/includes/taglibs.jsp" %>
-<fmt:setBundle basename="messages"/>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<fmt:message key="${pageTitleKey}" var="pagetitle"/>
+<html>
+<head>
 
-<rave:navbar pageTitle="${pagetitle}"/>
-<script>
-
-</script>
-
-<style type="text/css">
-
-</style>
-
-<div class="container-fluid admin-ui">
-    <div class="row-fluid">
-        <div class="span2">
-            <div class="tabs-respond">
-                <rave:admin_tabsheader/>
-            </div>
-        </div>
-        <div class="span10">
-            <article>
-                <h2>Monitoring</h2>
-                <rave:admin_listheader_dhara/>
-                <rave:admin_paging/>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            setTimeout(get_events, 4000);
+        });
 
 
+        function get_events(){
+            $.ajax({
+                url: 'http://localhost:8080/portal/app/admin/monitorData',
+                success: function(data) {
+                    $('#test').append(data);
+                }
+            });
+            setTimeout(get_events, 5000);
+
+        }
+
+    </script>
+
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div id="test"></div>
+</body>
 
 
-            </article>
-        </div>
-    </div>
-</div>
-</div>
 

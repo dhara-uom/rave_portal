@@ -3,9 +3,10 @@ package org.dhara.portal.web.controllers;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.airavataService.MonitorMessage;
 import org.dhara.portal.web.helper.InputHelper;
-import org.dhara.portal.web.restAPI.RestInputAPI;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.Observable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,9 +25,12 @@ import java.util.Observable;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-public class WorkflowMonitorController extends Observable{
+public class WorkflowMonitorController {
     protected final Log log = LogFactory.getLog(getClass());
     private List<MonitorMessage> events = new ArrayList<MonitorMessage>();
+
+    @Autowired
+    private AiravataClientAPIService airavataClientAPIService;
 
     @RequestMapping(value = {"/admin/monitoring", "/admin/monitoring/"}, method = RequestMethod.GET)
     protected String handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -59,16 +62,9 @@ public class WorkflowMonitorController extends Observable{
         }
 
         int[] ints = ArrayUtils.toPrimitive(inputs.toArray(new Integer[inputs.size()]));
-        RestInputAPI restInputAPI = new RestInputAPI();
-        this.addObserver(restInputAPI);
-        setChanged();
-        notifyObservers(ints);
-        //TODO execute workflow through API  (build rest API here ane Rest client in admin portal side)
-//        ApplicationContext context= WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
-//        AiravataClientAPIService airavataClientAPIService= (AiravataClientAPIService) context.getBean("airavataAPIService");
-//
-//        RestWorkflowMonitorAPI restWorkflowMonitorAPI = new RestWorkflowMonitorAPI();
-//        restWorkflowMonitorAPI.getEvents(airavataClientAPIService, ints, workflowName);
+
+        RestWorkflowMonitorAPI restWorkflowMonitorAPI = new RestWorkflowMonitorAPI();
+        restWorkflowMonitorAPI.getEvents(airavataClientAPIService, ints, workflowName);
 
         return "templates.admin.monitoring";
     }

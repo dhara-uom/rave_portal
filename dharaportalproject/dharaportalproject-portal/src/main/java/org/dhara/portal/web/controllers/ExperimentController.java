@@ -1,16 +1,11 @@
 package org.dhara.portal.web.controllers;
 
-import org.apache.airavata.registry.api.workflow.ExperimentData;
-import org.apache.airavata.registry.api.workflow.NodeExecutionData;
 import org.apache.rave.model.PortalPreference;
-import org.apache.rave.model.Widget;
 import org.apache.rave.portal.service.PortalPreferenceService;
 import org.apache.rave.portal.web.util.ModelKeys;
 import org.apache.rave.portal.web.util.PortalPreferenceKeys;
 import org.apache.rave.rest.model.SearchResult;
-import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.helper.ExperimentHelper;
-import org.dhara.portal.web.helper.Nodehelper;
 import org.dhara.portal.web.restClientService.RestServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,17 +13,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
-import org.springframework.web.util.WebUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import static org.dhara.portal.web.controllers.GatewayControllerUtil.addNavigationMenusToModel;
 

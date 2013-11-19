@@ -14,15 +14,12 @@ import org.apache.airavata.registry.api.workflow.OutputData;
 import org.apache.airavata.rest.client.PasswordCallbackImpl;
 import org.apache.airavata.workflow.model.wf.Workflow;
 import org.apache.airavata.workflow.model.wf.WorkflowInput;
-import org.dhara.portal.web.exception.PortalException;
 import org.dhara.portal.web.configuration.AiravataConfig;
 import org.dhara.portal.web.configuration.PortalConfiguration;
+import org.dhara.portal.web.exception.PortalException;
 
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,10 +28,11 @@ import java.util.Map;
  * Time: 12:01 PM
  * To change this template use File | Settings | File Templates.
  */
-public class AiravataClientAPIServiceImpl implements AiravataClientAPIService{
+public class AiravataClientAPIServiceImpl extends Observable implements AiravataClientAPIService, Observer {
 
     private AiravataConfig airavataConfig;
     private PortalConfiguration portalConfiguration;
+    private List<MonitorMessage> events = new ArrayList<MonitorMessage>();
     /**
      * @see org.dhara.portal.web.airavataService.AiravataClientAPIService#getAllWorkflows()
      */
@@ -163,13 +161,43 @@ public class AiravataClientAPIServiceImpl implements AiravataClientAPIService{
         return nodeData;
     }
 
-    public void monitorWorkflow() throws PortalException, AiravataAPIInvocationException, URISyntaxException {
-        AiravataAPI airavataAPI = getAiravataAPI();
+    public void monitorWorkflow(int[] inputs, String workflowId) throws Exception {
+
+        AiravataAPI airavataAPI=getAiravataAPI();
+        Workflow workflow = airavataAPI.getWorkflowManager().getWorkflow(workflowId);
+
+        List<WorkflowInput> workflowInputs = workflow.getWorkflowInputs();
+        for (int count =0; count<inputs.length;count++) {
+            Object value=inputs[count];
+            WorkflowInput workflowInput = workflowInputs.get(count);
+            if ("int".equals(workflowInput.getType())||"integer".equals(workflowInput.getType())) {
+                workflowInput.setValue((Integer)value);
+            } else if("String".equals(workflowInput.getType())){
+                workflowInput.setValue((String)value);
+            } else {
+                workflowInput.setValue((Object)value);
+            }
+        }
+
+        String experimentId=airavataAPI.getExecutionManager().runExperiment(workflowId, workflowInputs);
+
         MonitorWorkflow monitorWorkflow = new MonitorWorkflow();
-        String experimentId = "";  //TODO hard coded experiment Id
-        monitorWorkflow.monitor(experimentId,airavataAPI);
-        //parse experiment id to monitor() method in monitorWorkflow class
-        //we can run experiment without specifying inputs (it runs with its earlier inputs and configurations)
+        MonitorListener monitorListener = new MonitorListener();
+        monitorListener.addObserver(monitorWorkflow);
+        monitorWorkflow.addObserver(this);
+        MonitorWorkflow.monitorWorkflow(experimentId,airavataAPI,monitorListener);
+
+    }
+
+    public void update(Observable o, Object arg) {
+        getEvents().add((MonitorMessage) arg);
+        setChanged();
+        notifyObservers(arg);
+    }
+
+
+    public List<MonitorMessage> getEvents() {
+        return events;
     }
 
     public void setPortalConfiguration(PortalConfiguration portalConfiguration) {
