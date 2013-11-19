@@ -42,7 +42,8 @@ public class RestWorkflowMonitorAPI implements Observer {
     @ResponseBody
     public String handleRequestInternal(Model model, HttpServletRequest httpServletRequest) throws Exception {
 
-        String html ="<table border=\"3\">" ;
+//        String html ="<table class=\"table table-striped table-bordered table-condensed\" border=\"3\">" ;
+        String html="";
 
         for(MonitorMessage message: events){
             String timestamp = message.getTimestamp().toString();
@@ -56,7 +57,7 @@ public class RestWorkflowMonitorAPI implements Observer {
         }
 
 
-        html=html+ "</table>";
+//        html=html+ "</table>";
         events = new ArrayList<MonitorMessage>();
         return html;
     }
