@@ -3,7 +3,6 @@ package org.dhara.portal.web.controllers;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.airavataService.AiravataClientAPIServiceImpl;
 import org.dhara.portal.web.airavataService.MonitorMessage;
-import org.dhara.portal.web.helper.WorkflowInputHelper;
 import org.dhara.portal.web.restClientService.RestServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.PathParam;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -29,8 +29,7 @@ import java.util.Observer;
 public class RestWorkflowMonitorAPI implements Observer {
 
     private static List<MonitorMessage> events = new ArrayList<MonitorMessage>();
-    private static WorkflowInputHelper inputs= new WorkflowInputHelper();
-    private static int init = 0;
+    private static String workflowId;
 
     @Autowired
     private AiravataClientAPIService airavataClientAPIService;
@@ -38,9 +37,11 @@ public class RestWorkflowMonitorAPI implements Observer {
     @Autowired
     private RestServiceImpl restService;
 
-    @RequestMapping(value = {"/admin/monitorData", "/admin/monitorData/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/admin/monitorData/{workflowId}", "/admin/monitorData/{workflowId}/"}, method = RequestMethod.GET)
     @ResponseBody
-    public String handleRequestInternal(Model model, HttpServletRequest httpServletRequest) throws Exception {
+    public String handleRequestInternal(@PathParam("name") String name, Model model, HttpServletRequest httpServletRequest) throws Exception {
+
+        workflowId = name;
 
         String html ="<table border=\"3\">" ;
 
@@ -64,6 +65,7 @@ public class RestWorkflowMonitorAPI implements Observer {
     public void getEvents(AiravataClientAPIService airavataClientAPIService,int[] ints, String workflowName) throws Exception {
         events = new ArrayList<MonitorMessage>();
         ((AiravataClientAPIServiceImpl)airavataClientAPIService).addObserver(this);
+        workflowId = workflowName;
         airavataClientAPIService.monitorWorkflow(ints,workflowName);
     }
 

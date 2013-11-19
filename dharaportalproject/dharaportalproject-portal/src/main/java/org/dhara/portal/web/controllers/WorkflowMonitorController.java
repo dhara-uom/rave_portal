@@ -5,6 +5,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.airavataService.MonitorMessage;
+import org.dhara.portal.web.configuration.PortalConfiguration;
 import org.dhara.portal.web.helper.InputHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -63,8 +64,9 @@ public class WorkflowMonitorController {
 
         int[] ints = ArrayUtils.toPrimitive(inputs.toArray(new Integer[inputs.size()]));
 
-        RestWorkflowMonitorAPI restWorkflowMonitorAPI = new RestWorkflowMonitorAPI();
-        restWorkflowMonitorAPI.getEvents(airavataClientAPIService, ints, workflowName);
+        Runnable monitorThread = new MonitorThread(workflowName,airavataClientAPIService,ints);
+        PortalConfiguration.executor.execute(monitorThread);
+
 
         return "templates.admin.monitoring";
     }

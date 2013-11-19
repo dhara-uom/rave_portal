@@ -7,14 +7,16 @@
 
 <rave:navbar pageTitle="${pagetitle}"/>
 <script>
+
+    var workflowName;
     $(document).ready(function(){
+        workflowName = document.URL.split("?")[1].split("&")[0];
         setTimeout(get_events, 4000);
     });
 
-
     function get_events(){
         $.ajax({
-            url: '/portal/app/admin/monitorData',
+            url: '/portal/app/admin/monitorData/'+workflowName,
             success: function(data) {
                 $('#test').append(data);
             }
