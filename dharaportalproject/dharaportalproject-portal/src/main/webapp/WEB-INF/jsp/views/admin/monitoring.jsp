@@ -8,16 +8,18 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
+
+    var workflowName;
+    $(document).ready(function(){
+        workflowName = document.URL.split("?")[1].split("&")[0];
         setTimeout(get_events, 4000);
     });
 
-
-    function get_events() {
+    function get_events(){
         $.ajax({
-            url: 'http://localhost:8080/portal/app/admin/monitorData',
-            success: function (data) {
-                $('#monitoringData').append(data);
+            url: '/portal/app/admin/monitorData/'+workflowName,
+            success: function(data) {
+                $('#test').append(data);
             }
         });
         setTimeout(get_events, 5000);
@@ -57,7 +59,6 @@
         </div>
     </div>
 </div>
-
 
 
 

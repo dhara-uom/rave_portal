@@ -12,6 +12,8 @@ import javax.xml.stream.XMLStreamReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,7 +27,10 @@ public class PortalConfiguration {
     private RestServiceConfig restServiceConfig;
     private WPS52NorthConfig wps52NorthConfig;
 
+    public static ExecutorService executor;
+
     public PortalConfiguration() throws PortalException {
+        executor = Executors.newFixedThreadPool(10);
         setAiravataConfig(new AiravataConfig());
         setRestServiceConfig(new RestServiceConfig());
         setWps52NorthConfig(new WPS52NorthConfig());

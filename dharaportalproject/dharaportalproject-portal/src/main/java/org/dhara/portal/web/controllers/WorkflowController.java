@@ -48,6 +48,7 @@ public class WorkflowController {
 
     private static final String SELECTED_ITEM = "workflows";
 
+
     int DEFAULT_PAGE_SIZE=10;
 
     @Autowired
@@ -74,6 +75,8 @@ public class WorkflowController {
         workflows.setOffset(offset);
         workflows.setPageSize(getPageSize());
         model.addAttribute(ModelKeys.SEARCHRESULT, workflows);
+
+
         return "templates.admin.workflows";
 
     }
@@ -104,4 +107,6 @@ public class WorkflowController {
             return DEFAULT_PAGE_SIZE;
         }
     }
+
+
 }
