@@ -17,7 +17,7 @@
         $.ajax({
             url: 'http://localhost:8080/portal/app/admin/monitorData',
             success: function (data) {
-                $('#monitoringTable').append(data);
+                $('#monitoringData').append(data);
             }
         });
         setTimeout(get_events, 5000);
@@ -40,9 +40,17 @@
         <div class="span10">
             <article>
                 <h2><fmt:message key="admin.monitoring.shortTitle"/></h2>
+
                 <div id="test">
                     <table id=monitoringTable class="table table-striped table-bordered table-condensed">
+                        <thead>
+                        <th><fmt:message key="admin.monitoring.timestamp"/></th>
+                        <th><fmt:message key="admin.monitoring.status"/></th>
+                        <th><fmt:message key="admin.monitoring.msg"/></th>
+                        </thead>
+                        <tbody id="monitoringData">
 
+                        </tbody>
                     </table>
                 </div>
             </article>
