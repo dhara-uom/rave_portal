@@ -1,11 +1,12 @@
 <%@ page language="java" trimDirectiveWhitespaces="true" %>
 <%@ include file="/WEB-INF/jsp/includes/taglibs.jsp" %>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <fmt:setBundle basename="messages"/>
 
 <fmt:message key="${pageTitleKey}" var="pagetitle"/>
-
+<%--<script type='text/javascript' src='/portal/static/scripts/jquery.blockUI.js'></script>--%>
 <rave:navbar pageTitle="${pagetitle}"/>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 
     var workflowName;
@@ -24,6 +25,7 @@
         setTimeout(get_events, 5000);
 
     }
+
 </script>
 
 <style type="text/css">
@@ -39,18 +41,24 @@
         </div>
         <div class="span10">
             <article>
-                <h2>Monitoring data</h2>
-                <rave:admin_listheader_dhara/>
-                <rave:admin_paging/>
+                <h2><fmt:message key="admin.monitoring.shortTitle"/></h2>
 
-                <div id="test"></div>
+                <div id="test">
+                    <table id=monitoringTable class="table table-striped table-bordered table-condensed">
+                        <thead>
+                        <th><fmt:message key="admin.monitoring.timestamp"/></th>
+                        <th><fmt:message key="admin.monitoring.status"/></th>
+                        <th><fmt:message key="admin.monitoring.msg"/></th>
+                        </thead>
+                        <tbody id="monitoringData">
 
+                        </tbody>
+                    </table>
+                </div>
             </article>
         </div>
     </div>
 </div>
-</div>
-
 
 
 
