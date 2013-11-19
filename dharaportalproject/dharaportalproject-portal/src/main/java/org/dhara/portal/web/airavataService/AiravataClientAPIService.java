@@ -68,4 +68,8 @@ public interface AiravataClientAPIService {
      * @throws ExperimentLazyLoadedException
      */
     public List<NodeExecutionData> getWorkflowExperimentData(String experimentId) throws PortalException, AiravataAPIInvocationException, ExperimentLazyLoadedException;
+
+    public void monitorWorkflow(int[] inputs, String workflowId) throws Exception;
+
+    public List<MonitorMessage> getEvents();
 }

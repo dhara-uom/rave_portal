@@ -27,10 +27,16 @@ import org.apache.airavata.ws.monitor.Monitor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class MonitorWorkflow {
+public class MonitorWorkflow extends Observable implements Observer {
     private static final Logger log = LoggerFactory.getLogger(MonitorWorkflow.class);
+    private List<MonitorMessage> messages = new ArrayList<MonitorMessage>();
 
     public void monitor(final String experimentId,AiravataAPI airavataAPI) throws AiravataAPIInvocationException, URISyntaxException {
         MonitorListener monitorListener = new MonitorListener();
@@ -38,5 +44,28 @@ public class MonitorWorkflow {
                 monitorListener);
         log.info("Started the Workflow monitor");
         experimentMonitor.startMonitoring();
+    }
+
+    public static void monitorWorkflow(final String experimentId,AiravataAPI airavataAPI,
+                                       MonitorListener monitorListener) throws AiravataAPIInvocationException, URISyntaxException, IOException {
+        Monitor experimentMonitor = airavataAPI.getExecutionManager().getExperimentMonitor(experimentId,
+                monitorListener);
+
+        experimentMonitor.startMonitoring();
+        airavataAPI.getExecutionManager().waitForExperimentTermination(experimentId);
+        experimentMonitor.stopMonitoring();
+
+    }
+
+
+
+    public void update(Observable o, Object arg) {
+        getMessages().add((MonitorMessage) arg);
+        setChanged();
+        notifyObservers(arg);
+    }
+
+    public List<MonitorMessage> getMessages() {
+        return messages;
     }
 }

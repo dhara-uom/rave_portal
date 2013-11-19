@@ -50,14 +50,14 @@ public class PortalConfiguration {
         this.getAiravataConfig().setPassword("admin");
         this.getAiravataConfig().setUserName("admin");
         this.getAiravataConfig().setGatewayName("default");
-        this.getAiravataConfig().setPort(8081);
+        this.getAiravataConfig().setPort(8001);
         this.getAiravataConfig().setServerContextName("airavata-registry");
         this.getAiravataConfig().setServerUrl("localhost");
 
         //rest default service configs
         this.getRestServiceConfig().setPassword("admin");
         this.getRestServiceConfig().setUserName("admin");
-        this.getRestServiceConfig().setServerUrl("http://localhost:8090/portal");
+        this.getRestServiceConfig().setServerUrl("http://localhost:8082/portal");
 
         //north default configurations
         this.getWps52NorthConfig().setPassword("admin");

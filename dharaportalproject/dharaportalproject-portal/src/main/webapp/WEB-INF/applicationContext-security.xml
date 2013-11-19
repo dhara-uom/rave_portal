@@ -27,6 +27,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
+
    <security:http auto-config="true" use-expressions="true" disable-url-rewriting="true">
      <security:intercept-url pattern="/static/**" access="permitAll"/>
      <security:intercept-url pattern="/login" access="permitAll"/>
@@ -66,6 +67,7 @@
      <security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/login?authfail=form" />
     <security:logout/>
   </security:http>
+
 
     <security:authentication-manager>
     <!-- Set the user service ref here to the implementation you want to use.  The name is
