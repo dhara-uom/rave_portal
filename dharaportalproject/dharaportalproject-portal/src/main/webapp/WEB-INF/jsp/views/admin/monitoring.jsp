@@ -10,19 +10,24 @@
 <script>
 
     var workflowName;
+    var Monitordata = " " ;
     $(document).ready(function(){
         workflowName = document.URL.split("?")[1].split("&")[0];
-        setTimeout(get_events, 4000);
+        setTimeout(get_events, 2000);
     });
 
     function get_events(){
         $.ajax({
             url: '/portal/app/admin/monitorData/'+workflowName,
             success: function(data) {
+                Monitordata = "\""+data+"\"";
                 $('#test').append(data);
             }
         });
-        setTimeout(get_events, 5000);
+        if(Monitordata.contains("workflowTerminated")){}
+        else{
+            setTimeout(get_events, 1000);
+        }
 
     }
 

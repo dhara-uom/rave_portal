@@ -43,7 +43,6 @@ public class RestWorkflowMonitorAPI implements Observer {
 
         workflowId = name;
 
-//        String html ="<table class=\"table table-striped table-bordered table-condensed\" border=\"3\">" ;
         String html="";
 
         for(MonitorMessage message: events){
@@ -58,7 +57,6 @@ public class RestWorkflowMonitorAPI implements Observer {
         }
 
 
-//        html=html+ "</table>";
         events = new ArrayList<MonitorMessage>();
         return html;
     }
