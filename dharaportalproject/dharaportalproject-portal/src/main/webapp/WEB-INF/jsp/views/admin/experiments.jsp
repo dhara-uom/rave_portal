@@ -9,32 +9,6 @@
 
     var openTable = "";
 
-    //    function showPos(event, table_id) {
-    //        var el, x, y;
-    //
-    //        el = document.getElementById(table_id);
-    //        if (window.event) {
-    //            x = window.event.clientX + document.documentElement.scrollLeft
-    //                    + document.body.scrollLeft;
-    //            y = window.event.clientY + document.documentElement.scrollTop +
-    //                    + document.body.scrollTop;
-    //        }
-    //        else {
-    //            x = event.clientX + window.scrollX;
-    //            y = event.clientY + window.scrollY;
-    //        }
-    //        x -= 2; y -= 2;
-    //        y = y+15 ;
-    //        el.style.left = x + "px";
-    //        el.style.top = y + "px";
-    //        el.style.display = "block";
-    //    }
-
-    //    function hideTable(event, table_id){
-    //        el = document.getElementById(table_id);
-    //        el.style.display = "none";
-    //    }
-
     function showTable(form_id) {
         if (document.getElementById(form_id).style.display == "none") {
             if (openTable != "" && document.getElementById(openTable).style.display == "block") {
