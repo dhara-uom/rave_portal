@@ -1,6 +1,5 @@
 package org.dhara.portal.web.controllers;
 
-import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
@@ -58,15 +57,16 @@ public class WorkflowMonitorController {
                 inputHelperList.add(inputHelper);
             }
         }
-        List<Integer> inputs = new ArrayList<Integer>();
+
+        List<Object> inputs = new ArrayList<Object>();
+
         for (InputHelper in:inputHelperList){
-            if(in.getType().equalsIgnoreCase("(int)")){
-                for (int i=0;i<in.getValues().length;i++){
-                    inputs.add(Integer.parseInt(in.getValues()[i]));
+            for (int i=0;i<in.getValues().length;i++){
+                    inputs.add(in.getValues()[i]);
                 }
-            }
         }
-        int[] ints = ArrayUtils.toPrimitive(inputs.toArray(new Integer[inputs.size()]));
+
+        Object[] ints = inputs.toArray();
 
         Runnable monitorThread = new MonitorThread(workflowName,airavataClientAPIService,ints);
         PortalConfiguration.executor.execute(monitorThread);
