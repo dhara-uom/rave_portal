@@ -7,9 +7,12 @@
 <script type='text/javascript' src='/portal/static/scripts/jquery.blockUI.js'></script>
 <rave:navbar pageTitle="${pagetitle}"/>
 <script>
+
+    var openTable="";
+
     require(["portal/rave_admin", "jquery"], function(raveAdmin, $){
     $(document).ready(function() {
-        $('a').click(function(){
+        $('').click(function(){
             $.blockUI({ css: {
                 border: 'none',
                 padding: '15px',
@@ -26,8 +29,11 @@
 
     function showTable(form_id){
         if(document.getElementById(form_id).style.display == "none") {
+            if(openTable !="" && document.getElementById(openTable).style.display == "block"){
+                document.getElementById(openTable).style.display = "none";
+            }
             document.getElementById(form_id).style.display = "block";
-
+            openTable=form_id;
         }
         else
             document.getElementById(form_id).style.display = "none";

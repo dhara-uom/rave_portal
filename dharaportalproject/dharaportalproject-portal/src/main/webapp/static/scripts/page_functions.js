@@ -16,7 +16,7 @@ function init(){
     vector_layer = new OpenLayers.Layer.Vector("KML", {
         strategies: [new OpenLayers.Strategy.Fixed(),new OpenLayers.Strategy.Cluster()],
         protocol: new OpenLayers.Protocol.HTTP({
-            url: "/portal/static/scripts/flicker_data.kml",
+            url: "/portal/static/scripts/world_earth_quake_2013.kml",
             format: new OpenLayers.Format.KML({
                 extractAttributes: true,
                 extractStyles:true,
