@@ -14,9 +14,9 @@ public class MonitorThread implements Runnable {
     private String name;
 
     private AiravataClientAPIService airavataClientAPIService;
-    private int[] inputs;
+    private Object[] inputs;
 
-    public MonitorThread(String threadName, AiravataClientAPIService airavataClientAPIService, int[] inputs){
+    public MonitorThread(String threadName, AiravataClientAPIService airavataClientAPIService, Object[] inputs){
         this.name = threadName;
         this.airavataClientAPIService = airavataClientAPIService;
         this.inputs = inputs;
@@ -25,7 +25,7 @@ public class MonitorThread implements Runnable {
     public void run(){
         try {
             RestWorkflowMonitorAPI restWorkflowMonitorAPI = new RestWorkflowMonitorAPI();
-            restWorkflowMonitorAPI.getEvents(airavataClientAPIService,inputs,name);
+            restWorkflowMonitorAPI.registerObserver(airavataClientAPIService, inputs, name);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,11 +47,11 @@ public class MonitorThread implements Runnable {
         this.airavataClientAPIService = airavataClientAPIService;
     }
 
-    public int[] getInputs() {
+    public Object[] getInputs() {
         return inputs;
     }
 
-    public void setInputs(int[] inputs) {
+    public void setInputs(Object[] inputs) {
         this.inputs = inputs;
     }
 }

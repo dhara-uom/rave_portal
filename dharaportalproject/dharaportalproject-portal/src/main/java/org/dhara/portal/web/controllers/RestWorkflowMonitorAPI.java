@@ -61,7 +61,7 @@ public class RestWorkflowMonitorAPI implements Observer {
         return html;
     }
 
-    public void getEvents(AiravataClientAPIService airavataClientAPIService,int[] ints, String workflowName) throws Exception {
+    public void registerObserver(AiravataClientAPIService airavataClientAPIService, Object[] ints, String workflowName) throws Exception {
         events = new ArrayList<MonitorMessage>();
         ((AiravataClientAPIServiceImpl)airavataClientAPIService).addObserver(this);
         workflowId = workflowName;

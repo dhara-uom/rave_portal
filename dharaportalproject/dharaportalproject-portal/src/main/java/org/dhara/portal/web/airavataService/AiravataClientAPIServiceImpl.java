@@ -93,7 +93,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
                 workflowInput.setValue((String)value);
             } else {
                 workflowInput.setValue((Object)value);
-            }
+            } //TODO remove redundant values
         }
 
         String experimentId=airavataAPI.getExecutionManager().runExperiment(workflowId, workflowInputs);
@@ -161,7 +161,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         return nodeData;
     }
 
-    public void monitorWorkflow(int[] inputs, String workflowId) throws Exception {
+    public void monitorWorkflow(Object[] inputs, String workflowId) throws Exception {
 
         AiravataAPI airavataAPI=getAiravataAPI();
         Workflow workflow = airavataAPI.getWorkflowManager().getWorkflow(workflowId);
@@ -170,13 +170,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         for (int count =0; count<inputs.length;count++) {
             Object value=inputs[count];
             WorkflowInput workflowInput = workflowInputs.get(count);
-            if ("int".equals(workflowInput.getType())||"integer".equals(workflowInput.getType())) {
-                workflowInput.setValue((Integer)value);
-            } else if("String".equals(workflowInput.getType())){
-                workflowInput.setValue((String)value);
-            } else {
-                workflowInput.setValue((Object)value);
-            }
+            workflowInput.setValue(value);
         }
 
         String experimentId=airavataAPI.getExecutionManager().runExperiment(workflowId, workflowInputs);
