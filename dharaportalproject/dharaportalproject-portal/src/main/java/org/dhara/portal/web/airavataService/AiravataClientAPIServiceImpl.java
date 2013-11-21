@@ -93,7 +93,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
                 workflowInput.setValue((String)value);
             } else {
                 workflowInput.setValue((Object)value);
-            } //TODO remove redundant values
+            }
         }
 
         String experimentId=airavataAPI.getExecutionManager().runExperiment(workflowId, workflowInputs);
