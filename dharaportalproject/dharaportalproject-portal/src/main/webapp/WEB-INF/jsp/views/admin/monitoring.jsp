@@ -21,10 +21,10 @@
             url: '/portal/app/admin/monitorData/'+workflowName,
             success: function(data) {
                 Monitordata = "\""+data+"\"";
-                $('#test').append(data);
+                $('#monitoringData').append(data);
             }
         });
-        if(Monitordata.contains("workflowTerminated")){}
+        if(Monitordata.indexOf("workflowTerminated")!=-1){}
         else{
             setTimeout(get_events, 1000);
         }
