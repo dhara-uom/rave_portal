@@ -46,13 +46,13 @@
 
   <!-- Rave Portal default jdbc datasource configuration: using rave default configuration shared with Shindig -->
   <portal.dataSource.driver>org.h2.Driver</portal.dataSource.driver>
-  <portal.dataSource.url>jdbc:h2:/tmp/rave_db;AUTO_SERVER=TRUE</portal.dataSource.url>
+  <portal.dataSource.url>jdbc:h2:/home/nipuni/Desktop/rave_db;AUTO_SERVER=TRUE</portal.dataSource.url>
   <portal.dataSource.username>sa</portal.dataSource.username>
   <portal.dataSource.password>local</portal.dataSource.password>
 
   <!-- Rave Shindig default jdbc datasource configuration: using rave default configuration shared with Portal -->
   <shindig.dataSource.driver>org.h2.Driver</shindig.dataSource.driver>
-  <shindig.dataSource.url>jdbc:h2:/tmp/rave_db;AUTO_SERVER=TRUE</shindig.dataSource.url>
+  <shindig.dataSource.url>jdbc:h2:/home/nipuni/Desktop/rave_db;AUTO_SERVER=TRUE</shindig.dataSource.url>
   <shindig.dataSource.username>sa</shindig.dataSource.username>
   <shindig.dataSource.password>local</shindig.dataSource.password>
 
