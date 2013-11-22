@@ -17,6 +17,7 @@ import org.apache.airavata.workflow.model.wf.WorkflowInput;
 import org.dhara.portal.web.configuration.AiravataConfig;
 import org.dhara.portal.web.configuration.PortalConfiguration;
 import org.dhara.portal.web.exception.PortalException;
+import org.dhara.portal.web.helper.ExperimentDataHelper;
 
 import java.io.IOException;
 import java.net.URI;
@@ -35,7 +36,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
     private AiravataConfig airavataConfig;
     private PortalConfiguration portalConfiguration;
     private List<MonitorMessage> events = new ArrayList<MonitorMessage>();
-
+    private String experimentId;
 
     /**
      * @see org.dhara.portal.web.airavataService.AiravataClientAPIService#getAllWorkflows()
@@ -178,7 +179,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         }
 
         String experimentId=airavataAPI.getExecutionManager().runExperiment(workflowId, workflowInputs);
-
+        this.experimentId = experimentId;
         return experimentId;
 
     }
@@ -196,7 +197,10 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
 
     public void update(Observable o, Object arg) {
         setChanged();
-        notifyObservers(arg);
+        ExperimentDataHelper experimentDataHelper = new ExperimentDataHelper();
+        experimentDataHelper.setExperimentId(this.experimentId);
+        experimentDataHelper.setMonitorMessage((MonitorMessage)arg);
+        notifyObservers(experimentDataHelper);
     }
 
 

@@ -15,6 +15,7 @@ public class MonitorMessage {
     private Date timestamp;
     private String messsage;
     private String statusText;
+    private String comonent;
 
     public Date getTimestamp() {
         return timestamp;
@@ -46,5 +47,13 @@ public class MonitorMessage {
 
     public void setWorkflowName(String workflowName) {
         this.workflowName = workflowName;
+    }
+
+    public String getComonent() {
+        return comonent;
+    }
+
+    public void setComonent(String comonent) {
+        this.comonent = comonent;
     }
 }
