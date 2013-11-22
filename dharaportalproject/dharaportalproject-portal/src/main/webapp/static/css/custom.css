@@ -234,6 +234,30 @@ a.news:hover{
         margin-left: 20px;
 }
 
+.table-2{
+    width: 100%;
+    margin-bottom: 0px;
+    background: #FFFFFF;
+}
+
+.table-bordered-2 {
+    border: 10px solid #383636;
+    border-collapse: separate;
+    *border-collapse: collapsed;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.table-striped-2 tbody tr:nth-child(odd) td,
+.table-striped-2 tbody tr:nth-child(odd) th {
+    background-color: #ffffff;
+}
+.table-2 tbody tr:hover td,
+.table-2 tbody tr:hover th {
+    background-color: #f5f5f5;
+}
+
 
 
 
