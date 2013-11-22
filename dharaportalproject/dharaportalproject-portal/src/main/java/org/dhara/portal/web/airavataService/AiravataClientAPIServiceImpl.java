@@ -18,7 +18,9 @@ import org.dhara.portal.web.configuration.AiravataConfig;
 import org.dhara.portal.web.configuration.PortalConfiguration;
 import org.dhara.portal.web.exception.PortalException;
 
+import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.*;
 
 /**
@@ -33,6 +35,8 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
     private AiravataConfig airavataConfig;
     private PortalConfiguration portalConfiguration;
     private List<MonitorMessage> events = new ArrayList<MonitorMessage>();
+
+
     /**
      * @see org.dhara.portal.web.airavataService.AiravataClientAPIService#getAllWorkflows()
      */
@@ -117,12 +121,12 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
 
     private AiravataAPI getAiravataAPI() throws PortalException {
             AiravataAPI airavataAPI;
-            int port = airavataConfig.getPort();
-            String serverUrl = airavataConfig.getServerUrl();
-            String serverContextName = airavataConfig.getServerContextName();
-            String username = airavataConfig.getUserName();
-            String password = airavataConfig.getPassword();
-            String gatewayName = airavataConfig.getGatewayName();
+            int port = getAiravataConfig().getPort();
+            String serverUrl = getAiravataConfig().getServerUrl();
+            String serverContextName = getAiravataConfig().getServerContextName();
+            String username = getAiravataConfig().getUserName();
+            String password = getAiravataConfig().getPassword();
+            String gatewayName = getAiravataConfig().getGatewayName();
             String registryURL = "http://" + serverUrl + ":" + port + "/" + serverContextName + "/api";
             AiravataAPI api= null;
             try{
@@ -161,7 +165,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         return nodeData;
     }
 
-    public void monitorWorkflow(Object[] inputs, String workflowId) throws Exception {
+    public String executeExperiment(Object[] inputs, String workflowId, Observer observer) throws Exception {
 
         AiravataAPI airavataAPI=getAiravataAPI();
         Workflow workflow = airavataAPI.getWorkflowManager().getWorkflow(workflowId);
@@ -175,16 +179,22 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
 
         String experimentId=airavataAPI.getExecutionManager().runExperiment(workflowId, workflowInputs);
 
+        return experimentId;
+
+    }
+
+    public void monitorWorkflow(String experimentId) throws PortalException, IOException, AiravataAPIInvocationException, URISyntaxException {
+        AiravataAPI airavataAPI=getAiravataAPI();
         MonitorWorkflow monitorWorkflow = new MonitorWorkflow();
         MonitorListener monitorListener = new MonitorListener();
         monitorListener.addObserver(monitorWorkflow);
         monitorWorkflow.addObserver(this);
         MonitorWorkflow.monitorWorkflow(experimentId,airavataAPI,monitorListener);
-
     }
 
+
+
     public void update(Observable o, Object arg) {
-        getEvents().add((MonitorMessage) arg);
         setChanged();
         notifyObservers(arg);
     }
@@ -196,6 +206,18 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
 
     public void setPortalConfiguration(PortalConfiguration portalConfiguration) {
         this.portalConfiguration = portalConfiguration;
-        airavataConfig=portalConfiguration.getAiravataConfig();
+        setAiravataConfig(portalConfiguration.getAiravataConfig());
+    }
+
+    public AiravataConfig getAiravataConfig() {
+        return airavataConfig;
+    }
+
+    public void setAiravataConfig(AiravataConfig airavataConfig) {
+        this.airavataConfig = airavataConfig;
+    }
+
+    public PortalConfiguration getPortalConfiguration() {
+        return portalConfiguration;
     }
 }

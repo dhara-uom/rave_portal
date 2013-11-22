@@ -1,6 +1,7 @@
 package org.dhara.portal.web.controllers;
 
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
+import org.dhara.portal.web.airavataService.AiravataClientAPIServiceImpl;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,20 +13,24 @@ import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 public class MonitorThread implements Runnable {
 
     private String name;
-
-    private AiravataClientAPIService airavataClientAPIService;
     private Object[] inputs;
 
-    public MonitorThread(String threadName, AiravataClientAPIService airavataClientAPIService, Object[] inputs){
+    private AiravataClientAPIServiceImpl airavataClientAPIService;
+
+    public MonitorThread(AiravataClientAPIService airavataClientAPIService,String threadName, Object[] inputs){
         this.name = threadName;
-        this.airavataClientAPIService = airavataClientAPIService;
         this.inputs = inputs;
+        AiravataClientAPIServiceImpl temp = new AiravataClientAPIServiceImpl();
+        temp.setPortalConfiguration(((AiravataClientAPIServiceImpl)airavataClientAPIService).getPortalConfiguration());
+        temp.setAiravataConfig(((AiravataClientAPIServiceImpl)airavataClientAPIService).getAiravataConfig());
+        this.airavataClientAPIService = temp;
     }
 
     public void run(){
         try {
+
             RestWorkflowMonitorAPI restWorkflowMonitorAPI = new RestWorkflowMonitorAPI();
-            restWorkflowMonitorAPI.registerObserver(airavataClientAPIService, inputs, name);
+            restWorkflowMonitorAPI.registerObserver(airavataClientAPIService,inputs, name);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -39,13 +44,6 @@ public class MonitorThread implements Runnable {
         this.name = name;
     }
 
-    public AiravataClientAPIService getAiravataClientAPIService() {
-        return airavataClientAPIService;
-    }
-
-    public void setAiravataClientAPIService(AiravataClientAPIService airavataClientAPIService) {
-        this.airavataClientAPIService = airavataClientAPIService;
-    }
 
     public Object[] getInputs() {
         return inputs;

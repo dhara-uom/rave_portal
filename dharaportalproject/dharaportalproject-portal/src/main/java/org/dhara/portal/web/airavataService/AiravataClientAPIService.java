@@ -7,8 +7,11 @@ import org.apache.airavata.registry.api.workflow.NodeExecutionData;
 import org.apache.airavata.workflow.model.wf.Workflow;
 import org.dhara.portal.web.exception.PortalException;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
+import java.util.Observer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -69,7 +72,9 @@ public interface AiravataClientAPIService {
      */
     public List<NodeExecutionData> getWorkflowExperimentData(String experimentId) throws PortalException, AiravataAPIInvocationException, ExperimentLazyLoadedException;
 
-    public void monitorWorkflow(Object[] inputs, String workflowId) throws Exception;
+    public String executeExperiment(Object[] inputs, String workflowId, Observer observer) throws Exception;
 
     public List<MonitorMessage> getEvents();
+
+    public void monitorWorkflow(String experimentId) throws PortalException, IOException, AiravataAPIInvocationException, URISyntaxException;
 }

@@ -68,7 +68,7 @@ public class WorkflowMonitorController {
 
         Object[] ints = inputs.toArray();
 
-        Runnable monitorThread = new MonitorThread(workflowName,airavataClientAPIService,ints);
+        Runnable monitorThread = new MonitorThread(airavataClientAPIService,workflowName,ints);
         PortalConfiguration.executor.execute(monitorThread);
 
 
