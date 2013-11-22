@@ -46,7 +46,7 @@ public class WorkflowDeploymentController {
         String workflowId=request.getParameter("workflowId");
         String generatedCode=codeGenService.getGeneratedClass(workflowId);
         wpsConnect52Service.uploadClass(generatedCode,workflowId);
-        response.setHeader("success","Workflow is successfully deployed in wps instance");
+        request.getSession().setAttribute("successMessage","Workflow is successfully deployed in wps instance");
         return "redirect:/app/admin/workflows";
     }
 

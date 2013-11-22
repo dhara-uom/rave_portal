@@ -29,14 +29,11 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
 public class MonitorWorkflow extends Observable implements Observer {
     private static final Logger log = LoggerFactory.getLogger(MonitorWorkflow.class);
-    private List<MonitorMessage> messages = new ArrayList<MonitorMessage>();
 
     public void monitor(final String experimentId,AiravataAPI airavataAPI) throws AiravataAPIInvocationException, URISyntaxException {
         MonitorListener monitorListener = new MonitorListener();
@@ -60,12 +57,10 @@ public class MonitorWorkflow extends Observable implements Observer {
 
 
     public void update(Observable o, Object arg) {
-        getMessages().add((MonitorMessage) arg);
         setChanged();
         notifyObservers(arg);
+
     }
 
-    public List<MonitorMessage> getMessages() {
-        return messages;
-    }
+
 }

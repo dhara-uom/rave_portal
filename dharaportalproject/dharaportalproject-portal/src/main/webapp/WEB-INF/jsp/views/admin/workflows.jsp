@@ -5,6 +5,7 @@
 <fmt:message key="${pageTitleKey}" var="pagetitle"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type='text/javascript' src='/portal/static/scripts/jquery.blockUI.js'></script>
+<style type="text/css" src='/portal/static/css/dhara.css'></style>
 <rave:navbar pageTitle="${pagetitle}"/>
 <script>
 
@@ -12,7 +13,7 @@
 
     require(["portal/rave_admin", "jquery"], function(raveAdmin, $){
     $(document).ready(function() {
-        $('').click(function(){
+        $(".defaultDeploy").click(function(){
             $.blockUI({ css: {
                 border: 'none',
                 padding: '15px',
@@ -49,7 +50,11 @@
 
     }
 </script>
-
+<div style="color: #1af81e" id="successMeassage" class="successMessage">
+    <c:if test="${not empty successMessage}">
+            <h4>Workflow Successfully Deployed!</h4>
+    </c:if>
+</div>
 <div id="workflowdetails"  class="container-fluid admin-ui">
     <div class="row-fluid">
         <div class="span2">
@@ -69,8 +74,8 @@
                         <th><fmt:message key="admin.workflow.name"/></th>
                         <th><fmt:message key="admin.workflow.createdBy"/></th>
                         <th><fmt:message key="admin.workflow.createdDate"/></th>
-                        <th><fmt:message key="admin.workflow.deploymentOptions"/></th>
-                        <th></th>
+                        <th colspan="2"><fmt:message key="admin.workflow.deploymentOptions"/></th>
+                        <th><fmt:message key="admin.workflow.execute"/></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -86,18 +91,20 @@
                                 <c:out value="10/10/2013"/>
                             </td>
                             <td>
-                                <a name="default" href="/portal/app/admin/workflow/deploy?workflowId=${workflow.name}">Deafult</a>
+                                <a name="default" class="defaultDeploy" href="/portal/app/admin/workflow/deploy?workflowId=${workflow.name}">Deafult</a>
+                            </td>
+                            <td>
                                 <a name="custom" href="/portal/app/admin/workflow/customdeploy?workflowId=${workflow.name}"> Custom</a>
                             </td>
                             <td>
-                                <a href="#" onclick="showTable('${workflow.name}')" >Input values</a>
+                                <a href="#" onclick="showTable('${workflow.name}')" >Enter Input</a>
                                 <form class="inner_table" id="${workflow.name}" style="display:none" >
                                     <c:forEach var="item" items="${workflow.inputs}" varStatus="outer">
 
                                         Input        ${item.name} (${item.type}) : <input type="text" name="${item.name}/(${item.type})"><br>
 
                                     </c:forEach>
-                                     <a name="${item.type}" href='javascript:document.location.href=readInputs("${workflow.name}");' >Monitor</a>
+                                     <a name="${item.type}" href='javascript:document.location.href=readInputs("${workflow.name}");' >Execute</a>
                                 </form>
                             </td>
                         </tr>

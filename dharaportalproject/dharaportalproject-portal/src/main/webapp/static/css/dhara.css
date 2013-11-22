@@ -1,0 +1,51 @@
+.infoMessage, .successMessage, .warningMessage, .errorMessage, .validationMessage
+{
+    border: 2px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.infoMessage
+{
+    color: #205791;
+    border-color:#92cae4;
+    background-color: #d5edf8;
+    background-image: url(images/KnobInfo.png);
+}
+.infoMessage a, .infoMessage a:link, .infoMessage a:visited, .infoMessage a:active {color:#205791;text-decoration: underline;}
+
+.successMessage
+{
+    color: #264409;
+    border-color:#c6d880;
+    background-color: #e6efc2;
+    background-image: url(images/KnobValidGreen.png);
+}
+.successMessage a, .successMessage a:link, .successMessage a:visited, .successMessage a:active {color:#264409;text-decoration: underline;}
+
+.warningMessage
+{
+    color: #514721;
+    border-color:#ffd324;
+    background-color: #FEEFB3;
+    background-image: url(images/KnobAttention.png);
+}
+.warningMessage a, .warningMessage a:link, .warningMessage a:visited, .warningMessage a:active {color:#514721;text-decoration: underline;}
+
+.errorMessage
+{
+    color: #8a1f11;
+    border-color:#f4686b;
+    background-color: #fbe3e4;
+    background-image: url(images/KnobRemoveRed.png);
+}
+.errorMessage a, .errorMessage a:link, .errorMessage a:visited, .errorMessage a:active {color:#8a1f11;text-decoration: underline;}
+
+.validationMessage
+{
+    color: Red;
+    background-image: url(images/KnobCancel.png);
+}
+.validationMessage a, .validationMessage a:link, .validationMessage a:visited, .validationMessage a:active {color:red;text-decoration: underline;}

@@ -1,10 +1,7 @@
 package org.dhara.portal.web.controllers;
 
-import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.airavataService.AiravataClientAPIServiceImpl;
 import org.dhara.portal.web.airavataService.MonitorMessage;
-import org.dhara.portal.web.restClientService.RestServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,48 +26,37 @@ import java.util.Observer;
 public class RestWorkflowMonitorAPI implements Observer {
 
     private static List<MonitorMessage> events = new ArrayList<MonitorMessage>();
-    private static String workflowId;
+    private static String html ="";
 
-    @Autowired
-    private AiravataClientAPIService airavataClientAPIService;
-
-    @Autowired
-    private RestServiceImpl restService;
 
     @RequestMapping(value = {"/admin/monitorData/{workflowId}", "/admin/monitorData/{workflowId}/"}, method = RequestMethod.GET)
     @ResponseBody
     public String handleRequestInternal(@PathParam("name") String name, Model model, HttpServletRequest httpServletRequest) throws Exception {
 
-        workflowId = name;
-
-        String html="";
-
-        for(MonitorMessage message: events){
-            String timestamp = message.getTimestamp().toString();
-            String status = message.getStatusText();
-            String msg = message.getMesssage();
-            html = html+"<tr>" +
-                    "<td>"+timestamp+"</td>" +
-                    "<td>"+status+"</td>" +
-                    "<td>"+msg+"</td>" +
-                    "</tr>";
-        }
-
-
+        String temp=html;
+        html="";
         events = new ArrayList<MonitorMessage>();
-        return html;
+
+        return temp;
     }
 
-    public void registerObserver(AiravataClientAPIService airavataClientAPIService, Object[] ints, String workflowName) throws Exception {
+    public void registerObserver(AiravataClientAPIServiceImpl airavataClientAPIService, Object[] ints, String workflowName) throws Exception {
         events = new ArrayList<MonitorMessage>();
-        ((AiravataClientAPIServiceImpl)airavataClientAPIService).addObserver(this);
-        workflowId = workflowName;
-        airavataClientAPIService.monitorWorkflow(ints,workflowName);
+        AiravataClientAPIServiceImpl apiService = new AiravataClientAPIServiceImpl();
+        apiService.setPortalConfiguration(airavataClientAPIService.getPortalConfiguration());
+        apiService.setAiravataConfig(airavataClientAPIService.getAiravataConfig());
+        apiService.addObserver(this);
+        String experimentId = apiService.executeExperiment(ints, workflowName);
+        apiService.monitorWorkflow(experimentId);
     }
 
 
     public void update(Observable o, Object arg) {
         events.add((MonitorMessage)arg);
-
+        html = html+"<tr>" +
+                "<td>"+((MonitorMessage) arg).getTimestamp().toString()+"</td>" +
+                "<td>"+((MonitorMessage) arg).getStatusText()+"</td>" +
+                "<td>"+((MonitorMessage) arg).getMesssage()+"</td>" +
+                "</tr>";
     }
 }

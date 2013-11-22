@@ -43,7 +43,7 @@ public class MonitorListener extends Observable implements EventDataListener {
         monitorMessage.setMesssage(eventData.getMessage());
         monitorMessage.setStatusText(eventData.getStatusText());
         monitorMessage.setTimestamp(eventData.getTimestamp());
-        events.add(monitorMessage);
+//        events.add(monitorMessage);
         setChanged();
         notifyObservers(monitorMessage);
 

@@ -12,7 +12,7 @@
     var workflowName;
     var Monitordata = " " ;
     $(document).ready(function(){
-        workflowName = document.URL.split("?")[1].split("&")[0];
+        workflowName = (document.URL.split("?")[1].split("&")[0]).split("=")[1];
         setTimeout(get_events, 2000);
     });
 
