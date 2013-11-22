@@ -140,6 +140,9 @@ be overridden by setting a system property "portal.override.properties" -->
         <property name="airavataClientAPIService">
             <ref bean="airavataAPIService"/>
         </property>
+        <property name="portalConfiguration">
+            <ref bean="portalConfiguration"/>
+        </property>
     </bean>
 
     <bean id="wps52NorthService" class="org.dhara.portal.web.wps52NorthService.WPSConnect52ServiceImpl" scope="prototype">

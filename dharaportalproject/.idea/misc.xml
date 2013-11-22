@@ -57,12 +57,14 @@
     <file type="web" url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-portal-resources" />
     <file type="web" url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server/rave-shindig" />
     <file type="web" url="file://$PROJECT_DIR$/../../../portal-sameera/rave/rave-providers/rave-opensocial-provider/rave-opensocial-server/rave-shindig-resources" />
+    <file type="web" url="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-webapp" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../../../portal-sameera/rave/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../WPS-1/pom.xml" />
       </list>
     </option>
   </component>

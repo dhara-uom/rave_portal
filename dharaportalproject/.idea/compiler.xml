@@ -25,6 +25,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="52n-wps-ags" />
+        <module name="52n-wps-algorithm" />
+        <module name="52n-wps-algorithm-impl" />
+        <module name="52n-wps-client-lib" />
+        <module name="52n-wps-commons" />
+        <module name="52n-wps-database" />
+        <module name="52n-wps-grass" />
+        <module name="52n-wps-io" />
+        <module name="52n-wps-io-impl" />
+        <module name="52n-wps-mc" />
+        <module name="52n-wps-python" />
+        <module name="52n-wps-r" />
+        <module name="52n-wps-server" />
+        <module name="52n-wps-server-soap" />
+        <module name="52n-wps-sextante" />
+        <module name="52n-wps-transactional" />
+        <module name="52n-wps-webadmin" />
+        <module name="52n-wps-webapp" />
         <module name="dharaportalproject-portal" />
         <module name="dharaportalproject-shindig" />
         <module name="rave-admin-tests" />
@@ -49,6 +67,25 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="52n-wps-ags" target="1.6" />
+      <module name="52n-wps-algorithm" target="1.6" />
+      <module name="52n-wps-algorithm-impl" target="1.6" />
+      <module name="52n-wps-client-lib" target="1.6" />
+      <module name="52n-wps-commons" target="1.6" />
+      <module name="52n-wps-database" target="1.6" />
+      <module name="52n-wps-grass" target="1.6" />
+      <module name="52n-wps-io" target="1.6" />
+      <module name="52n-wps-io-impl" target="1.6" />
+      <module name="52n-wps-mc" target="1.6" />
+      <module name="52n-wps-parent" target="1.6" />
+      <module name="52n-wps-python" target="1.6" />
+      <module name="52n-wps-r" target="1.6" />
+      <module name="52n-wps-server" target="1.6" />
+      <module name="52n-wps-server-soap" target="1.6" />
+      <module name="52n-wps-sextante" target="1.6" />
+      <module name="52n-wps-transactional" target="1.6" />
+      <module name="52n-wps-webadmin" target="1.6" />
+      <module name="52n-wps-webapp" target="1.6" />
       <module name="dharaportalproject" target="1.6" />
       <module name="dharaportalproject-portal" target="1.6" />
       <module name="dharaportalproject-shindig" target="1.6" />

@@ -7,6 +7,7 @@ import org.apache.airavata.workflow.model.component.ws.WSComponentPort;
 import org.apache.airavata.workflow.model.wf.Workflow;
 import org.apache.airavata.workflow.model.wf.WorkflowInput;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
+import org.dhara.portal.web.configuration.PortalConfiguration;
 import org.dhara.portal.web.exception.PortalException;
 
 import java.io.*;
@@ -21,7 +22,8 @@ import java.util.*;
  */
 public class CodeGenServiceImpl implements CodeGenService{
     private AiravataClientAPIService airavataClientAPIService;
-
+    private PortalConfiguration portalConfiguration;
+    private final String servlet="/connect/ExecutionServlet";
     /**
     * @see org.dhara.portal.web.codegenService.CodeGenService#getGeneratedClass(String) ()
     */
@@ -264,7 +266,7 @@ public class CodeGenServiceImpl implements CodeGenService{
             data.put("outputIdentifiers", outputIdentifiers);
             data.put("inputMappings",inputMappings);
             data.put("outputMappings",outputMappings);
-            data.put("executionServlet",CodegenUtils.EXECUTION_SERVLET);
+            data.put("executionServlet",portalConfiguration.getRestServiceConfig().getServerUrl()+servlet);
 
             Map<String,String> inputBindings =inputBindingsList;
             Set<Map.Entry<String, String>> entriesIn = inputBindings.entrySet();
@@ -310,5 +312,13 @@ public class CodeGenServiceImpl implements CodeGenService{
 
     public void setAiravataClientAPIService(AiravataClientAPIService airavataClientAPIService) {
         this.airavataClientAPIService = airavataClientAPIService;
+    }
+
+    public PortalConfiguration getPortalConfiguration() {
+        return portalConfiguration;
+    }
+
+    public void setPortalConfiguration(PortalConfiguration portalConfiguration) {
+        this.portalConfiguration = portalConfiguration;
     }
 }

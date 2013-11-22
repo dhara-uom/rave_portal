@@ -2,6 +2,25 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-ags/52n-wps-ags.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-ags/52n-wps-ags.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-algorithm/52n-wps-algorithm.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-algorithm/52n-wps-algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-algorithm-impl/52n-wps-algorithm-impl.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-algorithm-impl/52n-wps-algorithm-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-client-lib/52n-wps-client-lib.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-client-lib/52n-wps-client-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-commons/52n-wps-commons.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-commons/52n-wps-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-database/52n-wps-database.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-database/52n-wps-database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-grass/52n-wps-grass.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-grass/52n-wps-grass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-io/52n-wps-io.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-io/52n-wps-io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-io-impl/52n-wps-io-impl.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-io-impl/52n-wps-io-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-mc/52n-wps-mc.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-mc/52n-wps-mc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-parent.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-python/52n-wps-python.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-python/52n-wps-python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-r/52n-wps-r.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-r/52n-wps-r.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-server/52n-wps-server.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-server/52n-wps-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-server-soap/52n-wps-server-soap.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-server-soap/52n-wps-server-soap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-sextante/52n-wps-sextante.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-sextante/52n-wps-sextante.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-transactional/52n-wps-transactional.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-transactional/52n-wps-transactional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-webadmin/52n-wps-webadmin.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-webadmin/52n-wps-webadmin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../WPS-1/52n-wps-webapp/52n-wps-webapp.iml" filepath="$PROJECT_DIR$/../../../WPS-1/52n-wps-webapp/52n-wps-webapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/dharaportalproject.iml" filepath="$PROJECT_DIR$/dharaportalproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/dharaportalproject-portal/dharaportalproject-portal.iml" filepath="$PROJECT_DIR$/dharaportalproject-portal/dharaportalproject-portal.iml" />
       <module fileurl="file://$PROJECT_DIR$/dharaportalproject-shindig/dharaportalproject-shindig.iml" filepath="$PROJECT_DIR$/dharaportalproject-shindig/dharaportalproject-shindig.iml" />
