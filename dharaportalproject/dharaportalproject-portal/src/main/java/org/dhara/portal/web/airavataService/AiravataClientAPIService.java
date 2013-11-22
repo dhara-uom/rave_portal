@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
-import java.util.Observer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -72,7 +71,7 @@ public interface AiravataClientAPIService {
      */
     public List<NodeExecutionData> getWorkflowExperimentData(String experimentId) throws PortalException, AiravataAPIInvocationException, ExperimentLazyLoadedException;
 
-    public String executeExperiment(Object[] inputs, String workflowId, Observer observer) throws Exception;
+    public String executeExperiment(Object[] inputs, String workflowId) throws Exception;
 
     public List<MonitorMessage> getEvents();
 

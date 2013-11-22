@@ -46,7 +46,7 @@ public class RestWorkflowMonitorAPI implements Observer {
         apiService.setPortalConfiguration(airavataClientAPIService.getPortalConfiguration());
         apiService.setAiravataConfig(airavataClientAPIService.getAiravataConfig());
         apiService.addObserver(this);
-        String experimentId = apiService.executeExperiment(ints, workflowName, this);
+        String experimentId = apiService.executeExperiment(ints, workflowName);
         apiService.monitorWorkflow(experimentId);
     }
 

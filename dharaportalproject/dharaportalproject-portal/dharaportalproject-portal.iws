@@ -330,7 +330,7 @@
       <file leaf-file-name="RestWorkflowMonitorAPI.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/RestWorkflowMonitorAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="83" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.0">
+            <state line="48" column="77" selection-start="1966" selection-end="1966" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#923#939#0" expanded="true" />
@@ -342,7 +342,7 @@
       <file leaf-file-name="AiravataClientAPIService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="18" selection-start="2751" selection-end="2751" vertical-scroll-proportion="0.0">
+            <state line="73" column="70" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -366,10 +366,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MonitorThread.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MonitorThread.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/MonitorThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="46" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.7784431">
+            <state line="32" column="46" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -404,10 +404,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AiravataClientAPIServiceImpl.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AiravataClientAPIServiceImpl.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="198" column="29" selection-start="8837" selection-end="8837" vertical-scroll-proportion="0.0">
+            <state line="167" column="70" selection-start="7606" selection-end="7606" vertical-scroll-proportion="4.263473">
               <folding>
                 <element signature="e#4313#4329#0" expanded="true" />
               </folding>
@@ -448,13 +448,13 @@
         <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/configuration/PortalConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/MonitorListener.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/views/admin/monitoring.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/MonitorWorkflow.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/WorkflowMonitorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/MonitorThread.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/RestWorkflowMonitorAPI.java" />
         <option value="$PROJECT_DIR$/src/main/resources/logs" />
+        <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/RestWorkflowMonitorAPI.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIService.java" />
       </list>
     </option>
   </component>
@@ -1452,22 +1452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="18" selection-start="2751" selection-end="2751" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="29" selection-start="8837" selection-end="8837" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#4313#4329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/WorkflowMonitorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="30" selection-start="2803" selection-end="2803" vertical-scroll-proportion="0.0">
@@ -1475,9 +1459,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/MonitorThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="46" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/RestWorkflowMonitorAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="83" selection-start="1850" selection-end="1850" vertical-scroll-proportion="0.0">
+        <state line="48" column="77" selection-start="1966" selection-end="1966" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#923#939#0" expanded="true" />
@@ -1485,11 +1478,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/controllers/MonitorThread.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="46" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.7784431">
+        <state line="73" column="70" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/dhara/portal/web/airavataService/AiravataClientAPIServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="70" selection-start="7606" selection-end="7606" vertical-scroll-proportion="4.263473">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4313#4329#0" expanded="true" />
           </folding>
         </state>
       </provider>

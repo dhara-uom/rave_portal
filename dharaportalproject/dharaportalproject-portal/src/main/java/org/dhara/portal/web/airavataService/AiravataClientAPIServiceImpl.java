@@ -165,7 +165,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         return nodeData;
     }
 
-    public String executeExperiment(Object[] inputs, String workflowId, Observer observer) throws Exception {
+    public String executeExperiment(Object[] inputs, String workflowId) throws Exception {
 
         AiravataAPI airavataAPI=getAiravataAPI();
         Workflow workflow = airavataAPI.getWorkflowManager().getWorkflow(workflowId);
