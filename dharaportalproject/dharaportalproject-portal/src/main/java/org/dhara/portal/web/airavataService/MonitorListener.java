@@ -25,17 +25,11 @@ import org.apache.airavata.ws.monitor.EventData;
 import org.apache.airavata.ws.monitor.EventDataListener;
 import org.apache.airavata.ws.monitor.EventDataRepository;
 import org.apache.airavata.ws.monitor.Monitor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 
 public class MonitorListener extends Observable implements EventDataListener {
 
-    private static final Logger log = LoggerFactory.getLogger(MonitorListener.class);
-    private List<MonitorMessage> events = new ArrayList<MonitorMessage>();
 
     public void notify(EventDataRepository eventDataRepo, EventData eventData) {
 
@@ -43,7 +37,8 @@ public class MonitorListener extends Observable implements EventDataListener {
         monitorMessage.setMesssage(eventData.getMessage());
         monitorMessage.setStatusText(eventData.getStatusText());
         monitorMessage.setTimestamp(eventData.getTimestamp());
-//        events.add(monitorMessage);
+        monitorMessage.setComonent(eventData.getIDText());
+
         setChanged();
         notifyObservers(monitorMessage);
 

@@ -10,6 +10,7 @@
 <script>
 
     var workflowName;
+    var expId = "${id}";
     var Monitordata = " " ;
     $(document).ready(function(){
         workflowName = (document.URL.split("?")[1].split("&")[0]).split("=")[1];
@@ -18,7 +19,7 @@
 
     function get_events(){
         $.ajax({
-            url: '/portal/app/admin/monitorData/'+workflowName,
+            url: '/portal/app/admin/monitorData/'+expId,
             success: function(data) {
                 Monitordata = "\""+data+"\"";
                 $('#monitoringData').append(data);
@@ -52,6 +53,7 @@
                     <table id=monitoringTable class="table table-striped table-bordered table-condensed">
                         <thead>
                         <th><fmt:message key="admin.monitoring.timestamp"/></th>
+                        <th><fmt:message key="admin.monitoring.component"/></th>
                         <th><fmt:message key="admin.monitoring.status"/></th>
                         <th><fmt:message key="admin.monitoring.msg"/></th>
                         </thead>
