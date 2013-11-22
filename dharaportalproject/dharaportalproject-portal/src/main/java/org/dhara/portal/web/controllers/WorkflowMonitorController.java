@@ -6,6 +6,7 @@ import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.airavataService.MonitorMessage;
 import org.dhara.portal.web.configuration.PortalConfiguration;
 import org.dhara.portal.web.helper.InputHelper;
+import org.dhara.portal.web.helper.MonitorThread;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,9 +70,10 @@ public class WorkflowMonitorController {
         Object[] ints = inputs.toArray();
 
         Runnable monitorThread = new MonitorThread(airavataClientAPIService,workflowName,ints);
+        String id = ((MonitorThread)monitorThread).getExperimentId();
         PortalConfiguration.executor.execute(monitorThread);
 
-
+        model.addAttribute("id",id);
         return "templates.admin.monitoring";
     }
 }

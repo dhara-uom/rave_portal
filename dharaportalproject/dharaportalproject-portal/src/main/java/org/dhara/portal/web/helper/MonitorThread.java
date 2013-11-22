@@ -1,7 +1,8 @@
-package org.dhara.portal.web.controllers;
+package org.dhara.portal.web.helper;
 
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.airavataService.AiravataClientAPIServiceImpl;
+import org.dhara.portal.web.controllers.RestMonitorAPIController;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,6 +17,7 @@ public class MonitorThread implements Runnable {
     private Object[] inputs;
 
     private AiravataClientAPIServiceImpl airavataClientAPIService;
+    private RestMonitorAPIController restWorkflowMonitorAP;
 
     public MonitorThread(AiravataClientAPIService airavataClientAPIService,String threadName, Object[] inputs){
         this.name = threadName;
@@ -24,13 +26,18 @@ public class MonitorThread implements Runnable {
         temp.setPortalConfiguration(((AiravataClientAPIServiceImpl)airavataClientAPIService).getPortalConfiguration());
         temp.setAiravataConfig(((AiravataClientAPIServiceImpl)airavataClientAPIService).getAiravataConfig());
         this.airavataClientAPIService = temp;
+        this.restWorkflowMonitorAP = new RestMonitorAPIController();
+    }
+
+    public String getExperimentId() throws Exception {
+        String id = this.restWorkflowMonitorAP.registerObserver(airavataClientAPIService,inputs, name);
+        return id;
     }
 
     public void run(){
         try {
+            this.restWorkflowMonitorAP.monitor();
 
-            RestWorkflowMonitorAPI restWorkflowMonitorAPI = new RestWorkflowMonitorAPI();
-            restWorkflowMonitorAPI.registerObserver(airavataClientAPIService,inputs, name);
         } catch (Exception e) {
             e.printStackTrace();
         }
