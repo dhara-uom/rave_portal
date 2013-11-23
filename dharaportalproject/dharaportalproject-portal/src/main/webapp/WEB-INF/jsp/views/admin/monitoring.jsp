@@ -47,6 +47,7 @@
         </div>
         <div class="span10">
             <article>
+                <a href="<spring:url value="/app/admin/workflow/details?workflowId=${workflowId}"/>"><fmt:message key="admin.monitoring.goback"/>- ${workflowId}</a></li>
                 <h2><fmt:message key="admin.monitoring.shortTitle"/></h2>
 
                 <div id="test">
