@@ -77,7 +77,7 @@ public class PortalConfiguration {
      * @throws PortalException
      */
     private void setPortalConfiguration() throws PortalException {
-        File file= new File("portal_configuration.xml");
+        File file= new File(System.getProperty("catalina.base")+File.separator+"webapps"+File.separator+"portal"+File.separator+"WEB-INF"+File.separator+"conf"+File.separator+"portal_configuration.xml");
         FileInputStream fis;
         XMLInputFactory xif;
         XMLStreamReader reader;
@@ -96,8 +96,8 @@ public class PortalConfiguration {
         OMElement documentElement= builder.getDocumentElement();
         OMElement airavataConfig=documentElement.getFirstChildWithName(new QName("airavata-configuration"));
         OMElement aserver=airavataConfig.getFirstElement();
-        this.getAiravataConfig().setPassword(aserver.getFirstChildWithName(new QName("username")).getText().toString());
-        this.getAiravataConfig().setUserName(aserver.getFirstChildWithName(new QName("password")).getText().toString());
+        this.getAiravataConfig().setPassword(aserver.getFirstChildWithName(new QName("password")).getText().toString());
+        this.getAiravataConfig().setUserName(aserver.getFirstChildWithName(new QName("username")).getText().toString());
         this.getAiravataConfig().setGatewayName(aserver.getFirstChildWithName(new QName("gateway-name")).getText().toString());
         this.getAiravataConfig().setPort(Integer.parseInt(aserver.getFirstChildWithName(new QName("port")).getText().toString()));
         this.getAiravataConfig().setServerContextName(aserver.getFirstChildWithName(new QName("server-context")).getText().toString());
@@ -115,9 +115,10 @@ public class PortalConfiguration {
 
         OMElement northConfiguration=documentElement.getFirstChildWithName(new QName("wps-52north-configuration"));
         OMElement nserver=northConfiguration.getFirstElement();
-        this.getWps52NorthConfig().setPassword(nserver.getFirstChildWithName(new QName("username")).getText().toString());
-        this.getWps52NorthConfig().setUserName(nserver.getFirstChildWithName(new QName("password")).getText().toString());
+        this.getWps52NorthConfig().setPassword(nserver.getFirstChildWithName(new QName("password")).getText().toString());
+        this.getWps52NorthConfig().setUserName(nserver.getFirstChildWithName(new QName("username")).getText().toString());
         this.getWps52NorthConfig().setServerUrl(nserver.getFirstChildWithName(new QName("server-url")).getText().toString());
+        this.getWps52NorthConfig().setDefaultPackage(CodegenUtils.defaultPackage);
     }
 
     public AiravataConfig getAiravataConfig() {
