@@ -74,6 +74,7 @@ public class WorkflowMonitorController {
         PortalConfiguration.executor.execute(monitorThread);
 
         model.addAttribute("id",id);
+        model.addAttribute("workflowId", workflowName);
         return "templates.admin.monitoring";
     }
 }

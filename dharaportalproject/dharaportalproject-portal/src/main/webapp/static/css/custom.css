@@ -258,6 +258,14 @@ a.news:hover{
     background-color: #f5f5f5;
 }
 
+.view-btn{
+    padding: .1em 1.5em;
+}
+
+.form-custom{
+    margin: 0px;
+}
+
 
 
 
