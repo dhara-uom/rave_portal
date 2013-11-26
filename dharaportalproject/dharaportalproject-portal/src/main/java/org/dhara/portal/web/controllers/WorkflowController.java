@@ -75,7 +75,9 @@ public class WorkflowController {
         workflows.setOffset(offset);
         workflows.setPageSize(getPageSize());
         model.addAttribute(ModelKeys.SEARCHRESULT, workflows);
-
+        if(action!=null && action.equals("deployed")){
+            model.addAttribute("successMessage","Workflow successfully deployed");
+        }
 
         return "templates.admin.workflows";
 
