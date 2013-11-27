@@ -225,7 +225,7 @@ a.news:hover{
 }
 
 .alert-info {
-    background-color: #706350;
+    background-color: #928A7F;
     border-color: #2C3536;
 }
 
@@ -259,12 +259,29 @@ a.news:hover{
 }
 
 .view-btn{
-    padding: .1em 1.5em;
+    padding: .0em .8em;
 }
 
 .form-custom{
     margin: 0px;
 }
+
+.btn-primary-2 {
+    background-color: #E47611;
+    background-image: -moz-linear-gradient(top, #ca2017, #ad261f);
+    background-image: -ms-linear-gradient(top, #ca2017, #ad261f);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ca2017), to(#ad261f));
+    background-image: -webkit-linear-gradient(top,#E47611, #C0640F);
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary-2:hover{
+    background-color: #C0640F;
+    color: #FFF;
+}
+
+
 
 
 
