@@ -7,6 +7,7 @@ import org.dhara.portal.web.airavataService.MonitorMessage;
 import org.dhara.portal.web.configuration.PortalConfiguration;
 import org.dhara.portal.web.helper.InputHelper;
 import org.dhara.portal.web.helper.MonitorThread;
+import org.dhara.portal.web.helper.UserInputHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,12 +60,15 @@ public class WorkflowMonitorController {
             }
         }
 
-        List<Object> inputs = new ArrayList<Object>();
+        List<UserInputHelper> inputs = new ArrayList<UserInputHelper>();
 
         for (InputHelper in:inputHelperList){
+            UserInputHelper userInputHelper = new UserInputHelper();
+            userInputHelper.setName(in.getName());
             for (int i=0;i<in.getValues().length;i++){
-                    inputs.add(in.getValues()[i]);
-                }
+                userInputHelper.setValue(in.getValues()[i]);
+            }
+            inputs.add(userInputHelper);
         }
 
         Object[] ints = inputs.toArray();

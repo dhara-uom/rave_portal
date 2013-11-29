@@ -18,6 +18,7 @@ import org.dhara.portal.web.configuration.AiravataConfig;
 import org.dhara.portal.web.configuration.PortalConfiguration;
 import org.dhara.portal.web.exception.PortalException;
 import org.dhara.portal.web.helper.ExperimentDataHelper;
+import org.dhara.portal.web.helper.UserInputHelper;
 
 import java.io.IOException;
 import java.net.URI;
@@ -172,10 +173,14 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         Workflow workflow = airavataAPI.getWorkflowManager().getWorkflow(workflowId);
 
         List<WorkflowInput> workflowInputs = workflow.getWorkflowInputs();
-        for (int count =0; count<inputs.length;count++) {
-            Object value=inputs[count];
+        for (int count =0; count<workflowInputs.size();count++) {
             WorkflowInput workflowInput = workflowInputs.get(count);
-            workflowInput.setValue(value);
+            for(int index=0;index<inputs.length;index++){
+                UserInputHelper userInputHelper=(UserInputHelper)inputs[index];
+                if(userInputHelper.getName().equalsIgnoreCase(workflowInput.getName())){
+                    workflowInput.setValue(userInputHelper.getValue());
+                }
+            }
         }
 
         String experimentId=airavataAPI.getExecutionManager().runExperiment(workflowId, workflowInputs);
