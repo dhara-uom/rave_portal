@@ -268,9 +268,9 @@ a.news:hover{
 
 .btn-primary-2 {
     background-color: #E47611;
-    background-image: -moz-linear-gradient(top, #ca2017, #ad261f);
-    background-image: -ms-linear-gradient(top, #ca2017, #ad261f);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ca2017), to(#ad261f));
+    background-image: -moz-linear-gradient(top, #E47611, #C0640F);
+    background-image: -ms-linear-gradient(top, #E47611, #C0640F);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e47611), to(#c0640f));
     background-image: -webkit-linear-gradient(top,#E47611, #C0640F);
     color: #ffffff;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
