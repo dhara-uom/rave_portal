@@ -90,8 +90,7 @@ public class WorkflowCustomDeploymentController{
         }
 
         //Generate code
-        codeGenService.getGeneratedClassForCustomDeployment(workflowId,inputMapping,outputMapping,extendingAlgorithm);
-        String generatedCode=codeGenService.getGeneratedClass(workflowId);
+        String generatedCode=codeGenService.getGeneratedClassForCustomDeployment(workflowId,inputMapping,outputMapping,extendingAlgorithm);
         //Deploy in the WPS instance
         wpsConnect52Service.uploadClass(generatedCode,workflowId);
 
