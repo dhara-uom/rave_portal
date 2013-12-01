@@ -1,3 +1,22 @@
+/***********************************************************************************************************************
+ *
+ * Dhara- A Geoscience Gateway
+ * ==========================================
+ *
+ * Copyright (C) 2013 by Dhara
+ *
+ ***********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ ***********************************************************************************************************************/
 package org.dhara.portal.web.controllers;
 
 import org.apache.commons.logging.Log;
@@ -20,11 +39,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created with IntelliJ IDEA.
- * User: harsha
- * Date: 7/29/13
- * Time: 11:13 AM
- * To change this template use File | Settings | File Templates.
+ * Workflow default deployment controller
  */
 @Controller
 public class WorkflowDeploymentController {
@@ -44,7 +59,9 @@ public class WorkflowDeploymentController {
     public String handleRequestInternal(@RequestParam(required = false) final String action,
                                            @RequestParam(required = false) String referringPageId,HttpServletRequest request, HttpServletResponse response) throws Exception {
         String workflowId=request.getParameter("workflowId");
+        //Generate code
         String generatedCode=codeGenService.getGeneratedClass(workflowId);
+        //Deploy in the backend wps configuration
         wpsConnect52Service.uploadClass(generatedCode,workflowId);
 //        request.getSession().setAttribute("successMessage","Workflow is successfully deployed in wps instance");
         return "redirect:/app/admin/workflows?action=deployed";

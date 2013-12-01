@@ -1,3 +1,22 @@
+/***********************************************************************************************************************
+ *
+ * Dhara- A Geoscience Gateway
+ * ==========================================
+ *
+ * Copyright (C) 2013 by Dhara
+ *
+ ***********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ ***********************************************************************************************************************/
 package org.dhara.portal.web.restClientService;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -11,11 +30,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
- * User: harsha
- * Date: 10/26/13
- * Time: 9:54 PM
- * To change this template use File | Settings | File Templates.
+ * REST service implementation
  */
 public class RestServiceImpl implements RestService {
 
@@ -27,6 +42,9 @@ public class RestServiceImpl implements RestService {
         setRestClient(new RestClient());
     }
 
+    /**
+     * @see org.dhara.portal.web.restClientService.RestService#getExperiments()
+     */
     @Override
     public List<ExperimentHelper> getExperiments() throws IOException {
         String response= getRestClient().getResponse(getRestServiceConfig().getServerUrl() + RestResourceUtils.EXPERIMENTDATA_RESOURCE);
@@ -34,17 +52,15 @@ public class RestServiceImpl implements RestService {
         return mapper.readValue(response, new TypeReference<List<ExperimentHelper>>(){});
     }
 
+    /**
+     * @see org.dhara.portal.web.restClientService.RestService#getWorkflows()
+     */
     public List<WorkflowHelper> getWorkflows() throws IOException {
         String response= getRestClient().getResponse(getRestServiceConfig().getServerUrl() + RestResourceUtils.WORKFLOWDATA_RESOURCE);
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(response, new TypeReference<List<WorkflowHelper>>(){});
     }
 
-
-    @Override
-    public Object monitorExperiment() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
 
     public RestClient getRestClient() {
         return restClient;

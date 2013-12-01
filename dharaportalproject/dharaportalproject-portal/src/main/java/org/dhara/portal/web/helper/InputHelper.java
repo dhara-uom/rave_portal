@@ -1,11 +1,7 @@
 package org.dhara.portal.web.helper;
 
 /**
- * Created with IntelliJ IDEA.
- * User: nipuni
- * Date: 11/13/13
- * Time: 6:54 PM
- * To change this template use File | Settings | File Templates.
+ * Input data helper class for workflow execution to hold workflow inputs
  */
 public class InputHelper {
 

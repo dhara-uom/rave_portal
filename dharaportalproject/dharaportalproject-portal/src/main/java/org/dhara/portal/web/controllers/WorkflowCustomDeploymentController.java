@@ -1,3 +1,22 @@
+/***********************************************************************************************************************
+ *
+ * Dhara- A Geoscience Gateway
+ * ==========================================
+ *
+ * Copyright (C) 2013 by Dhara
+ *
+ ***********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ ***********************************************************************************************************************/
 package org.dhara.portal.web.controllers;
 
 import org.apache.airavata.workflow.model.component.ws.WSComponentPort;
@@ -33,11 +52,7 @@ import java.util.Map;
 import static org.dhara.portal.web.controllers.GatewayControllerUtil.addNavigationMenusToModel;
 
 /**
- * Created with IntelliJ IDEA.
- * User: harsha
- * Date: 8/9/13
- * Time: 8:20 PM
- * To change this template use File | Settings | File Templates.
+ * Workflow custom deployment controller class
  */
 @Controller
 public class WorkflowCustomDeploymentController{
@@ -64,16 +79,20 @@ public class WorkflowCustomDeploymentController{
         Workflow workflow=airavataClientAPIService.getWorkflow(workflowId);
         Map<String,String> inputMapping=new HashMap<String, String>();
         Map<String,String> outputMapping=new HashMap<String, String>();
-        for(WorkflowInput input:workflow.getWorkflowInputs()) {
+        //Map inputs with user specified types
+        for(WSComponentPort input:workflow.getInputs()) {
             inputMapping.put(input.getName(),request.getParameter(input.getName()));
         }
 
+        //Map outputs with user specified types
         for(WSComponentPort workflowOutput : workflow.getOutputs()) {
             outputMapping.put(workflowOutput.getName(),request.getParameter(workflowOutput.getName()));
         }
 
+        //Generate code
         codeGenService.getGeneratedClassForCustomDeployment(workflowId,inputMapping,outputMapping,extendingAlgorithm);
         String generatedCode=codeGenService.getGeneratedClass(workflowId);
+        //Deploy in the WPS instance
         wpsConnect52Service.uploadClass(generatedCode,workflowId);
 
         return "redirect:/app/admin/workflows";
@@ -89,14 +108,15 @@ public class WorkflowCustomDeploymentController{
         List<MappingHelper> inputNodes=new ArrayList<MappingHelper>();
         List<MappingHelper> outputNodes=new ArrayList<MappingHelper>();
 
-
-        for(WorkflowInput workflowInput:workflow.getWorkflowInputs()) {
+        //Set input data type mappings
+        for(WSComponentPort workflowInput:workflow.getInputs()) {
             MappingHelper mappingHelper=new MappingHelper();
             mappingHelper.setNodeName(workflowInput.getName());
-            mappingHelper.setExistingMapping(workflowInput.getType());
+            mappingHelper.setExistingMapping(workflowInput.getType().getLocalPart());
             inputNodes.add(mappingHelper);
         }
 
+        //Set output data type mappings
         for(WSComponentPort workflowOutput : workflow.getOutputs()) {
             MappingHelper mappingHelper=new MappingHelper();
             mappingHelper.setNodeName(workflowOutput.getName());

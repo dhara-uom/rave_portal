@@ -1,3 +1,22 @@
+/***********************************************************************************************************************
+ *
+ * Dhara- A Geoscience Gateway
+ * ==========================================
+ *
+ * Copyright (C) 2013 by Dhara
+ *
+ ***********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ ***********************************************************************************************************************/
 package org.dhara.portal.web.airavataService;
 
 import org.apache.airavata.client.api.AiravataAPIInvocationException;
@@ -13,11 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created with IntelliJ IDEA.
- * User: harsha
- * Date: 6/7/13
- * Time: 12:33 PM
- * To change this template use File | Settings | File Templates.
+ * Apache Airavata Service interface
  */
 public interface AiravataClientAPIService {
     /**
@@ -71,9 +86,28 @@ public interface AiravataClientAPIService {
      */
     public List<NodeExecutionData> getWorkflowExperimentData(String experimentId) throws PortalException, AiravataAPIInvocationException, ExperimentLazyLoadedException;
 
+    /**
+     * Execute a workflow through API
+     * @param inputs workflow inputs
+     * @param workflowId workflow identifier
+     * @return
+     * @throws Exception
+     */
     public String executeExperiment(Object[] inputs, String workflowId) throws Exception;
 
+    /**
+     * Get events of executed workflow
+     * @return
+     */
     public List<MonitorMessage> getEvents();
 
+    /**
+     * Start workflow monitoring
+     * @param experimentId experiement id of executed workflow
+     * @throws PortalException
+     * @throws IOException
+     * @throws AiravataAPIInvocationException
+     * @throws URISyntaxException
+     */
     public void monitorWorkflow(String experimentId) throws PortalException, IOException, AiravataAPIInvocationException, URISyntaxException;
 }

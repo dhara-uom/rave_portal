@@ -1,3 +1,22 @@
+/***********************************************************************************************************************
+ *
+ * Dhara- A Geoscience Gateway
+ * ==========================================
+ *
+ * Copyright (C) 2013 by Dhara
+ *
+ ***********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ ***********************************************************************************************************************/
 package org.dhara.portal.web.airavataService;
 
 import org.apache.airavata.client.AiravataAPIFactory;
@@ -25,11 +44,7 @@ import java.net.URISyntaxException;
 import java.util.*;
 
 /**
- * Created with IntelliJ IDEA.
- * User: harsha
- * Date: 6/7/13
- * Time: 12:01 PM
- * To change this template use File | Settings | File Templates.
+ * Airavata service implementation
  */
 public class AiravataClientAPIServiceImpl extends Observable implements AiravataClientAPIService, Observer {
 
@@ -38,14 +53,13 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
     private List<MonitorMessage> events = new ArrayList<MonitorMessage>();
     private String experimentId;
 
-    /**
-     * @see org.dhara.portal.web.airavataService.AiravataClientAPIService#getAllWorkflows()
-     */
-
     public AiravataClientAPIServiceImpl() {
 
     }
-    
+
+    /**
+     * @see org.dhara.portal.web.airavataService.AiravataClientAPIService#getAllWorkflows()
+     */
     public List<Workflow> getAllWorkflows() throws PortalException {
         List<Workflow> workflows = null;
         AiravataAPI airavataAPI=getAiravataAPI();
@@ -120,27 +134,34 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         return outputs;
     }
 
+    /**
+     * Create Apache Airavata API instance from configuration
+     * @return
+     * @throws PortalException
+     */
     private AiravataAPI getAiravataAPI() throws PortalException {
-            AiravataAPI airavataAPI;
-            int port = getAiravataConfig().getPort();
-            String serverUrl = getAiravataConfig().getServerUrl();
-            String serverContextName = getAiravataConfig().getServerContextName();
-            String username = getAiravataConfig().getUserName();
-            String password = getAiravataConfig().getPassword();
-            String gatewayName = getAiravataConfig().getGatewayName();
-            String registryURL = "http://" + serverUrl + ":" + port + "/" + serverContextName + "/api";
-            AiravataAPI api= null;
-            try{
-                PasswordCallback passwordCallback = new PasswordCallbackImpl(username, password);
-                api = AiravataAPIFactory.getAPI(new URI(registryURL), gatewayName, username, passwordCallback);
-                airavataAPI = api;
-            } catch (Exception e) {
-                throw new PortalException("Error creating airavata api instance",e);
-            }
-            return airavataAPI;
+        AiravataAPI airavataAPI;
+        int port = getAiravataConfig().getPort();
+        String serverUrl = getAiravataConfig().getServerUrl();
+        String serverContextName = getAiravataConfig().getServerContextName();
+        String username = getAiravataConfig().getUserName();
+        String password = getAiravataConfig().getPassword();
+        String gatewayName = getAiravataConfig().getGatewayName();
+        String registryURL = "http://" + serverUrl + ":" + port + "/" + serverContextName + "/api";
+        AiravataAPI api= null;
+        try{
+            PasswordCallback passwordCallback = new PasswordCallbackImpl(username, password);
+            api = AiravataAPIFactory.getAPI(new URI(registryURL), gatewayName, username, passwordCallback);
+            airavataAPI = api;
+        } catch (Exception e) {
+            throw new PortalException("Error creating airavata api instance",e);
+        }
+        return airavataAPI;
     }
 
-
+    /**
+     * @see AiravataClientAPIService#getExperimentData()
+     */
     public List<NodeExecutionData> getWorkflowExperimentData(String experimentId) throws PortalException, AiravataAPIInvocationException,
             ExperimentLazyLoadedException {
 
@@ -158,14 +179,14 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         String experimentId = experimentData.getExperimentId();
         String workflowInstanceId = experimentData.getWorkflowExecutionDataList().get(0).getWorkflowInstanceId();
         ProvenanceManager provenanceManager = getAiravataAPI().getProvenanceManager();
-
         List<NodeExecutionData> nodeData =
                 provenanceManager.getWorkflowInstanceData(experimentId,workflowInstanceId).getNodeDataList();
-
-
         return nodeData;
     }
 
+    /**
+     * @see org.dhara.portal.web.airavataService.AiravataClientAPIService#executeWorkflow(java.util.Map, String)
+     */
     public String executeExperiment(Object[] inputs, String workflowId) throws Exception {
 
         AiravataAPI airavataAPI=getAiravataAPI();
@@ -184,6 +205,9 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
 
     }
 
+    /**
+     * @see org.dhara.portal.web.airavataService.AiravataClientAPIService#monitorWorkflow(String)
+     */
     public void monitorWorkflow(String experimentId) throws PortalException, IOException, AiravataAPIInvocationException, URISyntaxException {
         AiravataAPI airavataAPI=getAiravataAPI();
         MonitorWorkflow monitorWorkflow = new MonitorWorkflow();
@@ -193,8 +217,11 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         MonitorWorkflow.monitorWorkflow(experimentId,airavataAPI,monitorListener);
     }
 
-
-
+    /**
+     * Notify observers
+     * @param o
+     * @param arg
+     */
     public void update(Observable o, Object arg) {
         setChanged();
         ExperimentDataHelper experimentDataHelper = new ExperimentDataHelper();
@@ -203,7 +230,9 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         notifyObservers(experimentDataHelper);
     }
 
-
+    /**
+     * @see AiravataClientAPIService#getEvents()
+     */
     public List<MonitorMessage> getEvents() {
         return events;
     }

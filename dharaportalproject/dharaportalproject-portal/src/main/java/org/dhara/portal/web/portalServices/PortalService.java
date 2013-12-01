@@ -6,15 +6,30 @@ import org.dhara.portal.web.dataAccessLayer.entity.PersistWorkflowInvocation;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
- * User: harsha
- * Date: 8/10/13
- * Time: 11:57 AM
- * To change this template use File | Settings | File Templates.
+ * Portal services interface
  */
 public interface PortalService {
+    /**
+     * Save workflow deployment
+     * @param persistWorkflowDeployment
+     */
     public void saveWorkfloeDeployment(PersistWorkflowDeployment persistWorkflowDeployment);
+
+    /**
+     * Save workflow invocation
+     * @param persistWorkflowInvocations
+     */
     public void saveWorkfloeInvocation(PersistWorkflowInvocation persistWorkflowInvocations);
+
+    /**
+     * Get all workflow invocation through portal
+     * @return
+     */
     public List<PersistWorkflowInvocation> getAllWorkfloeInvocations();
+
+    /**
+     * Get all deployed workflows
+     * @return
+     */
     public List<PersistWorkflowDeployment> getAllWorkfloeDeployments();
 }

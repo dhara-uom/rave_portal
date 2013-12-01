@@ -41,7 +41,7 @@ import java.util.List;
 import static org.dhara.portal.web.controllers.GatewayControllerUtil.addNavigationMenusToModel;
 
 /**
- * Controller for the admin pages
+ * Controller for the display workflow list in admin pages
  */
 @Controller
 public class WorkflowController {
@@ -71,6 +71,7 @@ public class WorkflowController {
         int count=workflowHelperList.size();
 
         workflowHelperList=getLimitedList(offset,count,workflowHelperList);
+        //Set workflow details
         final SearchResult<WorkflowHelper> workflows =new SearchResult<WorkflowHelper>(workflowHelperList,count);
         workflows.setOffset(offset);
         workflows.setPageSize(getPageSize());
@@ -83,6 +84,7 @@ public class WorkflowController {
 
     }
 
+    //Filter out workflow details for show in the view
     private List<WorkflowHelper> getLimitedList(int offset, int count, List<WorkflowHelper> exp){
         List<WorkflowHelper> limited=new ArrayList<WorkflowHelper>();
 
@@ -98,6 +100,7 @@ public class WorkflowController {
 
     }
 
+    //Get maximum workflows to be displayed in view
     public int getPageSize() {
         final PortalPreference pageSizePref = preferenceService.getPreference(PortalPreferenceKeys.PAGE_SIZE);
         if (pageSizePref == null) {

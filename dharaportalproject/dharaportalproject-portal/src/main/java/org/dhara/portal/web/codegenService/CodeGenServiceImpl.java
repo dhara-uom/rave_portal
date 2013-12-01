@@ -1,3 +1,22 @@
+/***********************************************************************************************************************
+ *
+ * Dhara- A Geoscience Gateway
+ * ==========================================
+ *
+ * Copyright (C) 2013 by Dhara
+ *
+ ***********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ ***********************************************************************************************************************/
 package org.dhara.portal.web.codegenService;
 
 import freemarker.template.Configuration;
@@ -5,7 +24,6 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import org.apache.airavata.workflow.model.component.ws.WSComponentPort;
 import org.apache.airavata.workflow.model.wf.Workflow;
-import org.apache.airavata.workflow.model.wf.WorkflowInput;
 import org.dhara.portal.web.airavataService.AiravataClientAPIService;
 import org.dhara.portal.web.configuration.PortalConfiguration;
 import org.dhara.portal.web.exception.PortalException;
@@ -14,19 +32,16 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Created with IntelliJ IDEA.
- * User: harsha
- * Date: 7/26/13
- * Time: 8:45 PM
- * To change this template use File | Settings | File Templates.
+ * Code generation service implementation
  */
 public class CodeGenServiceImpl implements CodeGenService{
     private AiravataClientAPIService airavataClientAPIService;
     private PortalConfiguration portalConfiguration;
     private final String servlet="/connect/ExecutionServlet";
+
     /**
-    * @see org.dhara.portal.web.codegenService.CodeGenService#getGeneratedClass(String) ()
-    */
+     * @see org.dhara.portal.web.codegenService.CodeGenService#getGeneratedClass(String) ()
+     */
     public String getGeneratedClass(String workflowId) throws PortalException {
         Workflow workflow=airavataClientAPIService.getWorkflow(workflowId);
         List<WSComponentPort> workflowInputs = null;
@@ -45,6 +60,8 @@ public class CodeGenServiceImpl implements CodeGenService{
         Map<String,String> outputBindings=new HashMap<String, String>();
         ArrayList<CodeGenInOutAssociations> inputs=new ArrayList<CodeGenInOutAssociations>();
         ArrayList<CodeGenInOutAssociations> outputs=new ArrayList<CodeGenInOutAssociations>();
+
+        //Set bindings for workflow inputs by getting its' mapping data types
         for (WSComponentPort workflowInput : workflowInputs) {
             inputIds.add(workflowInput.getName());
             CodeGenInOutAssociations codeGenInOutAssociations=new CodeGenInOutAssociations();
@@ -86,6 +103,7 @@ public class CodeGenServiceImpl implements CodeGenService{
             }
         }
 
+        //Set bindings for workflow outputs by getting its' mapping data types
         for (WSComponentPort workflowOutput : workflowOutputs) {
             CodeGenInOutAssociations codeGenInOutAssociations=new CodeGenInOutAssociations();
             outputIds.add(workflowOutput.getName());
@@ -135,11 +153,11 @@ public class CodeGenServiceImpl implements CodeGenService{
      */
     public String getGeneratedClassForCustomDeployment(String workflowId, Map<String, String> inputsMapping, Map<String, String> outputsMapping, String extendingAlgorithm) throws PortalException {
         Workflow workflow=airavataClientAPIService.getWorkflow(workflowId);
-        List<WorkflowInput> workflowInputs = null;
+        List<WSComponentPort> workflowInputs = null;
         List<WSComponentPort> workflowOutputs = null;
 
         try {
-            workflowInputs = workflow.getWorkflowInputs();
+            workflowInputs = workflow.getInputs();
             workflowOutputs = workflow.getOutputs();
         } catch (Exception e) {
             throw new PortalException("Error getting workflow with id="+workflowId,e);
@@ -152,7 +170,8 @@ public class CodeGenServiceImpl implements CodeGenService{
         ArrayList<CodeGenInOutAssociations> inputs=new ArrayList<CodeGenInOutAssociations>();
         ArrayList<CodeGenInOutAssociations> outputs=new ArrayList<CodeGenInOutAssociations>();
 
-        for (WorkflowInput workflowInput : workflowInputs) {
+        //Set bindings for workflow inputs by getting its' user specified mapping data types
+        for (WSComponentPort workflowInput : workflowInputs) {
             inputIds.add(workflowInput.getName());
             CodeGenInOutAssociations codeGenInOutAssociations=new CodeGenInOutAssociations();
             if("int".equalsIgnoreCase(inputsMapping.get(workflowInput.getName())) || "integer".equalsIgnoreCase(inputsMapping.get(workflowInput.getName())) || "IntegerParameterType".equalsIgnoreCase(inputsMapping.get(workflowInput.getName()))) {
@@ -193,6 +212,7 @@ public class CodeGenServiceImpl implements CodeGenService{
             }
         }
 
+        //Set bindings for outputs workflow by getting its' user specified mapping data types
         for (WSComponentPort workflowOutput : workflowOutputs) {
             CodeGenInOutAssociations codeGenInOutAssociations=new CodeGenInOutAssociations();
             outputIds.add(workflowOutput.getName());
@@ -238,6 +258,19 @@ public class CodeGenServiceImpl implements CodeGenService{
         return classContents;
     }
 
+    /**
+     * Generate class from the wps template
+     * @param inputIdentifiersList input identifier list
+     * @param outputIdentifiersList output identifier list
+     * @param className  class  name of generated class
+     * @param extendingClass extending algorithm class
+     * @param inputBindingsList input binding list
+     * @param outputBindingsList output binding list
+     * @param inputMappings  input mappings
+     * @param outputMappings  output mappings
+     * @return generated class
+     * @throws PortalException
+     */
     private String generateClassFromTemplate(List<String> inputIdentifiersList,List<String> outputIdentifiersList, String className,String extendingClass, Map<String,String> inputBindingsList,
                                              Map<String,String> outputBindingsList, ArrayList<CodeGenInOutAssociations> inputMappings,ArrayList<CodeGenInOutAssociations> outputMappings) throws PortalException {
         Configuration cfg = new Configuration();
@@ -284,7 +317,7 @@ public class CodeGenServiceImpl implements CodeGenService{
                 }
             }
 
-
+            //Generate the class using wps template
             Writer file = new FileWriter(new File(className+".java"));
             template.process(data, file);
             file.flush();
@@ -298,7 +331,7 @@ public class CodeGenServiceImpl implements CodeGenService{
                 builder.append(currentLine);
                 builder.append(System.getProperty("line.separator"));
             }
-                return builder.toString();
+            return builder.toString();
 
         } catch (IOException e) {
             throw new PortalException("Error while file operations",e);
@@ -306,6 +339,7 @@ public class CodeGenServiceImpl implements CodeGenService{
             throw new PortalException("Template exception when generating the template");
         }
     }
+
     public AiravataClientAPIService getAiravataClientAPIService() {
         return airavataClientAPIService;
     }

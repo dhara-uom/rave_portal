@@ -1,3 +1,22 @@
+/***********************************************************************************************************************
+ *
+ * Dhara- A Geoscience Gateway
+ * ==========================================
+ *
+ * Copyright (C) 2013 by Dhara
+ *
+ ***********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ ***********************************************************************************************************************/
 package org.dhara.portal.web.controllers;
 
 import org.apache.airavata.client.api.AiravataAPIInvocationException;
@@ -21,11 +40,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Created with IntelliJ IDEA.
- * User: nipuni
- * Date: 11/19/13
- * Time: 8:18 AM
- * To change this template use File | Settings | File Templates.
+ * Controller class for REST monitoring handling
  */
 @Controller
 public class RestMonitorAPIController implements Observer {
@@ -47,10 +62,10 @@ public class RestMonitorAPIController implements Observer {
             events = new ArrayList<MonitorMessage>();
 
         }
-
         return temp;
     }
 
+    //Register this class as the observer for workflow monitoring
     public String registerObserver(AiravataClientAPIServiceImpl airavataClientAPIService, Object[] ints, String workflowName) throws Exception {
         events = new ArrayList<MonitorMessage>();
         expId ="";
@@ -61,11 +76,12 @@ public class RestMonitorAPIController implements Observer {
         return expId;
     }
 
+    //Start monitoring
     public void monitor() throws URISyntaxException, IOException, AiravataAPIInvocationException, PortalException {
         apiService.monitorWorkflow(expId);
     }
 
-
+    //Update the data on the time of event receiving
     public void update(Observable o, Object arg) {
         MonitorMessage monitorMessage = ((ExperimentDataHelper)arg).getMonitorMessage();
         this.expId = ((ExperimentDataHelper)arg).getExperimentId();
