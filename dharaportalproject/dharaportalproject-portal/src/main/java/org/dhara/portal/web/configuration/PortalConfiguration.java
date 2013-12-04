@@ -42,10 +42,11 @@ public class PortalConfiguration {
     private RestServiceConfig restServiceConfig;
     private WPS52NorthConfig wps52NorthConfig;
 
+    public static final int POOL_THREAD_COUNT = 10;
     public static ExecutorService executor;
 
     public PortalConfiguration() throws PortalException {
-        executor = Executors.newFixedThreadPool(10);
+        executor = Executors.newFixedThreadPool(POOL_THREAD_COUNT);
         setAiravataConfig(new AiravataConfig());
         setRestServiceConfig(new RestServiceConfig());
         setWps52NorthConfig(new WPS52NorthConfig());
