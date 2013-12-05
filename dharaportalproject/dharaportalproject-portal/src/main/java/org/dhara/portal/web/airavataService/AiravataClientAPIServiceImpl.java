@@ -54,6 +54,8 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
     private List<MonitorMessage> events = new ArrayList<MonitorMessage>();
     private String experimentId;
 
+    private AiravataAPI API;
+
     public AiravataClientAPIServiceImpl() {
 
     }
@@ -141,23 +143,24 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
      * @throws PortalException
      */
     private AiravataAPI getAiravataAPI() throws PortalException {
-        AiravataAPI airavataAPI;
-        int port = getAiravataConfig().getPort();
-        String serverUrl = getAiravataConfig().getServerUrl();
-        String serverContextName = getAiravataConfig().getServerContextName();
-        String username = getAiravataConfig().getUserName();
-        String password = getAiravataConfig().getPassword();
-        String gatewayName = getAiravataConfig().getGatewayName();
-        String registryURL = "http://" + serverUrl + ":" + port + "/" + serverContextName + "/api";
-        AiravataAPI api= null;
-        try{
-            PasswordCallback passwordCallback = new PasswordCallbackImpl(username, password);
-            api = AiravataAPIFactory.getAPI(new URI(registryURL), gatewayName, username, passwordCallback);
-            airavataAPI = api;
-        } catch (Exception e) {
-            throw new PortalException("Error creating airavata api instance",e);
+        if(API == null)  {
+            int port = getAiravataConfig().getPort();
+            String serverUrl = getAiravataConfig().getServerUrl();
+            String serverContextName = getAiravataConfig().getServerContextName();
+            String username = getAiravataConfig().getUserName();
+            String password = getAiravataConfig().getPassword();
+            String gatewayName = getAiravataConfig().getGatewayName();
+            String registryURL = "http://" + serverUrl + ":" + port + "/" + serverContextName + "/api";
+            AiravataAPI api= null;
+            try{
+                PasswordCallback passwordCallback = new PasswordCallbackImpl(username, password);
+                api = AiravataAPIFactory.getAPI(new URI(registryURL), gatewayName, username, passwordCallback);
+                API = api;
+            } catch (Exception e) {
+                throw new PortalException("Error creating airavata api instance",e);
+            }
         }
-        return airavataAPI;
+        return API;
     }
 
     /**
@@ -193,6 +196,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         AiravataAPI airavataAPI=getAiravataAPI();
         Workflow workflow = airavataAPI.getWorkflowManager().getWorkflow(workflowId);
 
+        //set values to relevant workflows input parameters
         List<WorkflowInput> workflowInputs = workflow.getWorkflowInputs();
         for (int count =0; count<workflowInputs.size();count++) {
             WorkflowInput workflowInput = workflowInputs.get(count);
@@ -204,6 +208,7 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
             }
         }
 
+        //retrieve unique id of the experiment
         String experimentId=airavataAPI.getExecutionManager().runExperiment(workflowId, workflowInputs);
         this.experimentId = experimentId;
         return experimentId;
@@ -217,17 +222,21 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         AiravataAPI airavataAPI=getAiravataAPI();
         MonitorWorkflow monitorWorkflow = new MonitorWorkflow();
         MonitorListener monitorListener = new MonitorListener();
+
+        //setup observers
         monitorListener.addObserver(monitorWorkflow);
         monitorWorkflow.addObserver(this);
+
+        //start monitoring
         MonitorWorkflow.monitorWorkflow(experimentId,airavataAPI,monitorListener);
     }
 
     /**
      * Notify observers
-     * @param o
+     * @param observable
      * @param arg
      */
-    public void update(Observable o, Object arg) {
+    public void update(Observable observable, Object arg) {
         setChanged();
         ExperimentDataHelper experimentDataHelper = new ExperimentDataHelper();
         experimentDataHelper.setExperimentId(this.experimentId);
@@ -242,19 +251,31 @@ public class AiravataClientAPIServiceImpl extends Observable implements Airavata
         return events;
     }
 
+    /**Setter method for PortalConfiguration
+     * @param portalConfiguration
+     */
     public void setPortalConfiguration(PortalConfiguration portalConfiguration) {
         this.portalConfiguration = portalConfiguration;
         setAiravataConfig(portalConfiguration.getAiravataConfig());
     }
 
+    /**Getter method for AiravataConfig
+     * @return AiravataConfig
+     */
     public AiravataConfig getAiravataConfig() {
         return airavataConfig;
     }
 
+    /**Setter method for AiravataConfig
+     * @param  airavataConfig
+     */
     public void setAiravataConfig(AiravataConfig airavataConfig) {
         this.airavataConfig = airavataConfig;
     }
 
+    /**Getter method for PortalConfiguration
+     * @return PortalConfiguration
+     */
     public PortalConfiguration getPortalConfiguration() {
         return portalConfiguration;
     }
