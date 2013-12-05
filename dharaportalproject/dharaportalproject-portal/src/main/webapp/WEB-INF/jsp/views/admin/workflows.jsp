@@ -95,7 +95,6 @@
                     <tr>
                         <th style="text-align: center"><fmt:message key="admin.workflow.name"/></th>
                         <th style="text-align: center"><fmt:message key="admin.workflow.createdBy"/></th>
-                        <th style="text-align: center"><fmt:message key="admin.workflow.createdDate"/></th>
                         <th style="text-align: center" colspan="2"><fmt:message
                                 key="admin.workflow.deploymentOptions"/></th>
                         <th style="text-align: center"><fmt:message key="admin.workflow.execute"/></th>
@@ -109,9 +108,6 @@
                             </td>
                             <td>
                                 <c:out value="admin"/>
-                            </td>
-                            <td>
-                                <c:out value="10/10/2013"/>
                             </td>
                             <td style="text-align: center">
                                 <form class="form-inline form-custom"
